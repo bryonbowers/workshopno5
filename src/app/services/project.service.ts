@@ -1,7 +1,7 @@
-import { Injectable, inject } from '@angular/core';
-import { Firestore, collection, doc, setDoc, deleteDoc, collectionData, docData, getDocs } from '@angular/fire/firestore';
+import { Injectable } from '@angular/core';
+import { Firestore, collection, doc, setDoc, deleteDoc } from '@angular/fire/firestore';
 import { Storage, ref, uploadBytesResumable, getDownloadURL, deleteObject } from '@angular/fire/storage';
-import { Observable, from, of, BehaviorSubject } from 'rxjs';
+import { Observable, from, of } from 'rxjs';
 import { map, tap, catchError, shareReplay } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
@@ -46,28 +46,24 @@ export interface Project {
   providedIn: 'root'
 })
 export class ProjectService {
-  private firestore = inject(Firestore);
-  private storage = inject(Storage);
-  private http = inject(HttpClient);
-  private cacheService = inject(CacheService);
-
   // In-memory cache for instant access
   private residentialList: ProjectListItem[] | null = null;
   private commercialList: ProjectListItem[] | null = null;
   private residentialProjects: Map<string, Project> = new Map();
   private commercialProjects: Map<string, Project> = new Map();
-
-  // Loading flags to prevent duplicate requests
-  private residentialListLoading = false;
-  private commercialListLoading = false;
   private residentialDetailsLoaded = false;
   private commercialDetailsLoaded = false;
 
-  // Shared observables
+  // Shared observables to prevent duplicate requests
   private residentialList$: Observable<ProjectListItem[]> | null = null;
   private commercialList$: Observable<ProjectListItem[]> | null = null;
 
-  constructor() {
+  constructor(
+    private http: HttpClient,
+    private cacheService: CacheService,
+    private firestore: Firestore,
+    private storage: Storage
+  ) {
     // Load from localStorage cache on init
     const cachedResList = this.cacheService.getResidentialList();
     if (cachedResList) {
