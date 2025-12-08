@@ -64,13 +64,13 @@ export class ProjectService {
     private firestore: Firestore,
     private storage: Storage
   ) {
-    // Load from localStorage cache on init
+    // Load from localStorage cache on init (only if data is valid and non-empty)
     const cachedResList = this.cacheService.getResidentialList();
-    if (cachedResList) {
+    if (cachedResList && cachedResList.length > 0) {
       this.residentialList = cachedResList;
     }
     const cachedComList = this.cacheService.getCommercialList();
-    if (cachedComList) {
+    if (cachedComList && cachedComList.length > 0) {
       this.commercialList = cachedComList;
     }
   }
@@ -78,8 +78,8 @@ export class ProjectService {
   // ============ PUBLIC API - Instant cached reads ============
 
   getResidentialProjects(): Observable<ProjectListItem[]> {
-    // Return from memory immediately
-    if (this.residentialList) {
+    // Return from memory immediately (only if we have actual data)
+    if (this.residentialList && this.residentialList.length > 0) {
       return of(this.residentialList);
     }
 
@@ -104,7 +104,8 @@ export class ProjectService {
   }
 
   getCommercialProjects(): Observable<ProjectListItem[]> {
-    if (this.commercialList) {
+    // Return from memory immediately (only if we have actual data)
+    if (this.commercialList && this.commercialList.length > 0) {
       return of(this.commercialList);
     }
 
