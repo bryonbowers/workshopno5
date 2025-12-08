@@ -1,0 +1,97 @@
+<nav class="navbar fixed-top navbar-expand-md navbar-dark navbar-sharp"
+     [class.navbar-scrolled]="isScrolled"
+     [class.navbar-transparent]="!isScrolled && currentUrl === '/'">
+  <div class="container-fluid navbar-container">
+    <a class="navbar-brand" [routerLink]="['']">
+      <img class="noTextLogo" src="../assets/logo/workshopno5_brandmark-light.svg" alt="Workshop No. 5">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+            [attr.aria-expanded]="isNavbarOpen"
+            (click)="toggleNavbar()">
+      <span class="toggler-bar"></span>
+      <span class="toggler-bar"></span>
+      <span class="toggler-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" [class.show]="isNavbarOpen">
+      <ul class="navbar-nav pt-2 pt-md-0 mx-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Portfolio
+            <svg class="dropdown-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu dropdown-menu-sharp" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" [routerLink]="['/residential']" (click)="closeNavbar()">
+              <span class="dropdown-item-indicator"></span>
+              Residential
+            </a>
+            <a class="dropdown-item" [routerLink]="['/commercial']" (click)="closeNavbar()">
+              <span class="dropdown-item-indicator"></span>
+              Commercial
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/services" routerLinkActive="active" (click)="closeNavbar()">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="closeNavbar()">About</a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin$ | async">
+          <a class="nav-link" routerLink="/admin" routerLinkActive="active" (click)="closeNavbar()">Admin</a>
+        </li>
+        <li class="nav-item d-md-none">
+          <a class="nav-link nav-link-md-btn" routerLink="/contact" routerLinkActive="active" (click)="closeNavbar()">Contact Us</a>
+        </li>
+        <li class="nav-item d-md-none" *ngIf="isAdmin$ | async">
+          <a class="nav-link" routerLink="/admin" routerLinkActive="active" (click)="closeNavbar()">Admin</a>
+        </li>
+        <li class="nav-item d-md-none">
+          <ng-container *ngIf="user$ | async as user; else mobileLoginLink">
+            <a class="nav-link" (click)="signOut()" style="cursor: pointer;">Sign Out</a>
+          </ng-container>
+          <ng-template #mobileLoginLink>
+            <a class="nav-link" routerLink="/login" routerLinkActive="active" (click)="closeNavbar()">Sign In</a>
+          </ng-template>
+        </li>
+      </ul>
+      <div class="d-none d-md-flex align-items-center nav-actions">
+        <ng-container *ngIf="user$ | async as user; else desktopLoginBtn">
+          <div class="dropdown user-dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown"
+               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="user-avatar">
+                <img *ngIf="user.photoURL" [src]="user.photoURL" alt="Profile">
+                <span *ngIf="!user.photoURL" class="avatar-placeholder">{{ (user.displayName || user.email || '?')[0] | uppercase }}</span>
+              </div>
+              <span class="user-name">{{ user.displayName || user.email }}</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end dropdown-menu-sharp" aria-labelledby="userDropdown">
+              <a class="dropdown-item" routerLink="/admin" *ngIf="isAdmin$ | async">
+                <span class="dropdown-item-indicator"></span>
+                Admin Dashboard
+              </a>
+              <a class="dropdown-item" routerLink="/login">
+                <span class="dropdown-item-indicator"></span>
+                My Account
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" (click)="signOut()" style="cursor: pointer;">
+                <span class="dropdown-item-indicator"></span>
+                Sign Out
+              </a>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #desktopLoginBtn>
+          <a class="btn btn-nav-sharp btn-nav-ghost" routerLink="/login">Sign In</a>
+        </ng-template>
+        <a class="btn btn-nav-sharp btn-nav-solid" routerLink="/contact" routerLinkActive="active">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>

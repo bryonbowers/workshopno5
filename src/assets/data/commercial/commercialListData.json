@@ -1,0 +1,96 @@
+{
+  "commercialComponent" : [
+    {
+      "id" : 13,
+      "url" : "../assets/commercial/austin-plastic-surgeon/austin-plastic-surgeon-front.png",
+      "name" : "Austin Plastic Surgeon",
+      "summary" : "803 sf addition to a clinic, with an eye-catching new facade",
+      "photos_soon" : true,
+      "show" : false
+    },
+    {
+      "id" : 5,
+      "url" : "../assets/commercial/Karisha/1_KARISHA.png",
+      "name" : "Karisha",
+      "summary" : "Healthcare Facility meets nature",
+      "show" : false
+    },
+    {
+      "id" : 11,
+      "url" : "../assets/commercial/WindingOaks/WindingOaks_Web_01.jpg",
+      "name" : "Winding Oaks",
+      "summary" : "Amenity Center",
+      "show" : false
+    },
+    {
+      "id" : 12,
+      "url" : "../assets/commercial/oxbow/image1.jpg",
+      "name" : "Oxbow",
+      "summary" : "",
+      "show" : false
+    },
+    {
+      "id" : 6,
+      "url" : "../assets/commercial/image6.jpg",
+      "name" : "Little Deli",
+      "summary" : "Restaurant Remodel",
+      "show" : false
+    },
+    {
+      "id" : 9,
+      "url" : "../assets/commercial/image9.jpg",
+      "name" : "Holcomb",
+      "summary" : "Yoga studio and therapy offices",
+      "show" : false
+    },
+    {
+      "id" : 10,
+      "url" : "../assets/commercial/image10.jpg",
+      "name" : "Trails at Leander",
+      "summary" : "Amenity center ",
+      "show" : false
+    },
+    {
+      "id" : 4,
+      "url" : "../assets/commercial/image4.jpg",
+      "name" : "Met Retail",
+      "summary" : "Small but mighty retail building",
+      "show" : false
+    },
+    {
+      "id" : 1,
+      "url" : "../assets/commercial/image1.jpg",
+      "name" : "Ella Wooten",
+      "summary" : "Mueller Amenity Center",
+      "show" : false
+    },
+    {
+      "id" : 2,
+      "url" : "../assets/commercial/image2.jpg",
+      "name" : "Central Texas Food Bank",
+      "summary" : "Office warehouse building",
+      "show" : false
+    },
+    {
+      "id" : 8,
+      "url" : "../assets/commercial/image8.jpg",
+      "name" : "Estancia",
+      "summary" : "Restaurant remodel",
+      "show" : false
+    },
+    {
+      "id" : 7,
+      "url" : "../assets/commercial/image7.jpg",
+      "name" : "Riata Vista",
+      "summary" : "Office campus masterplan",
+      "show" : false
+    },
+    {
+      "id" : 3,
+      "url" : "../assets/commercial/image3.jpg",
+      "name" : "Rackspace",
+      "summary" : "Rehabilitation of Windsor Park Mall",
+      "show" : false
+    }
+  ]
+}

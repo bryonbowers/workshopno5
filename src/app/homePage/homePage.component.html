@@ -1,0 +1,329 @@
+<!-- Cinematic Full-Screen Hero with Auto-Rotating Images -->
+<section class="cinematic-hero noise-overlay">
+  <div class="hero-slideshow">
+    <div class="slide" *ngFor="let slide of heroSlides; let i = index"
+         [class.active]="i === currentSlide"
+         [class.prev]="i === prevSlide">
+      <img [src]="slide.image" [alt]="slide.title">
+    </div>
+    <div class="hero-gradient"></div>
+  </div>
+
+  <div class="hero-content-wrapper">
+    <div class="hero-text-content">
+      <div class="hero-tagline" data-animate="fade-up">
+        <span class="tagline-line"></span>
+        <span class="tagline-text">Architecture & Interior Design</span>
+      </div>
+      <h1 class="hero-headline">
+        <span class="headline-word" *ngFor="let word of ['Craft', 'Your', 'Story']; let i = index"
+              [style.animation-delay]="(i * 0.15) + 's'">{{word}}</span>
+      </h1>
+      <p class="hero-description" data-animate="fade-up">Award-winning design studio creating spaces that inspire and endure.</p>
+    </div>
+
+    <div class="hero-project-indicator glass-dark">
+      <div class="project-info" *ngIf="heroSlides[currentSlide]">
+        <span class="project-label">Featured Project</span>
+        <span class="project-name">{{heroSlides[currentSlide].title}}</span>
+      </div>
+      <div class="slide-progress">
+        <div class="progress-bar gradient-animate" [style.width.%]="slideProgress"></div>
+      </div>
+      <div class="slide-controls">
+        <button class="slide-btn prev" (click)="prevHeroSlide()" aria-label="Previous slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <span class="slide-counter">{{currentSlide + 1}} / {{heroSlides.length}}</span>
+        <button class="slide-btn next" (click)="nextHeroSlide()" aria-label="Next slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span class="scroll-text">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- Portfolio Categories - Split Screen with Reveal -->
+<section class="portfolio-split">
+  <a [routerLink]="['/residential']" class="split-panel residential image-reveal" data-animate="slide-left">
+    <div class="panel-image ken-burns">
+      <img src="./assets/residential/burney/1_Burney.jpg" alt="Residential Portfolio">
+    </div>
+    <div class="panel-content">
+      <span class="panel-number">01</span>
+      <h2 class="panel-title">Residential</h2>
+      <p class="panel-subtitle">Homes crafted for living</p>
+      <span class="panel-cta link-underline">
+        View Projects
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </span>
+    </div>
+  </a>
+  <a [routerLink]="['/commercial']" class="split-panel commercial image-reveal" data-animate="slide-right">
+    <div class="panel-image ken-burns">
+      <img src="./assets/commercial/WindingOaks/WindingOaks_Web_19.jpg" alt="Commercial Portfolio">
+    </div>
+    <div class="panel-content">
+      <span class="panel-number">02</span>
+      <h2 class="panel-title">Commercial</h2>
+      <p class="panel-subtitle">Spaces that inspire work</p>
+      <span class="panel-cta link-underline">
+        View Projects
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </span>
+    </div>
+  </a>
+</section>
+
+<!-- Philosophy Statement - Full Width -->
+<section class="philosophy-section">
+  <div class="philosophy-container">
+    <div class="philosophy-content" data-animate="fade-up">
+      <span class="philosophy-eyebrow">Our Philosophy</span>
+      <h2 class="philosophy-statement">
+        We believe architecture should tell a story — <em>your story</em>.
+        Every space we design begins with listening, understanding how you live,
+        and crafting environments that elevate the everyday into something extraordinary.
+      </h2>
+      <a [routerLink]="['/about']" class="philosophy-link btn-magnetic">
+        <span class="btn-text">About Our Studio</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects Grid with Stagger Animation -->
+<section class="featured-projects">
+  <div class="section-header" data-animate="fade-up">
+    <span class="section-eyebrow">Selected Work</span>
+    <h2 class="section-headline">Featured Projects</h2>
+  </div>
+
+  <div class="projects-masonry stagger-children">
+    <a [routerLink]="['/productDetails']" [queryParams]="{id: 24, page: 'residential'}" class="project-item large premium-card">
+      <div class="project-image image-reveal">
+        <img src="./assets/residential/burney/2_Burney.jpg" alt="Burney Residence" loading="lazy">
+      </div>
+      <div class="project-overlay">
+        <div class="project-info">
+          <span class="project-category">Residential</span>
+          <h3 class="project-title">Burney Residence</h3>
+          <span class="project-location">Austin, Texas</span>
+        </div>
+      </div>
+    </a>
+
+    <a [routerLink]="['/productDetails']" [queryParams]="{id: 29, page: 'residential'}" class="project-item premium-card">
+      <div class="project-image image-reveal">
+        <img src="./assets/residential/venado-2/DSC03855.jpg" alt="Venado Residence" loading="lazy">
+      </div>
+      <div class="project-overlay">
+        <div class="project-info">
+          <span class="project-category">Residential</span>
+          <h3 class="project-title">Venado Residence</h3>
+          <span class="project-location">Hill Country</span>
+        </div>
+      </div>
+    </a>
+
+    <a [routerLink]="['/productDetails']" [queryParams]="{id: 5, page: 'commercial'}" class="project-item premium-card">
+      <div class="project-image image-reveal">
+        <img src="./assets/commercial/WindingOaks/WindingOaks_Web_01.jpg" alt="Winding Oaks" loading="lazy">
+      </div>
+      <div class="project-overlay">
+        <div class="project-info">
+          <span class="project-category">Commercial</span>
+          <h3 class="project-title">Winding Oaks</h3>
+          <span class="project-location">Austin, Texas</span>
+        </div>
+      </div>
+    </a>
+
+    <a [routerLink]="['/productDetails']" [queryParams]="{id: 25, page: 'residential'}" class="project-item tall premium-card">
+      <div class="project-image image-reveal">
+        <img src="./assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_.jpg" alt="Loma Linda" loading="lazy">
+      </div>
+      <div class="project-overlay">
+        <div class="project-info">
+          <span class="project-category">Residential</span>
+          <h3 class="project-title">Loma Linda</h3>
+          <span class="project-location">Austin, Texas</span>
+        </div>
+      </div>
+    </a>
+
+    <a [routerLink]="['/productDetails']" [queryParams]="{id: 2, page: 'commercial'}" class="project-item wide premium-card">
+      <div class="project-image image-reveal">
+        <img src="./assets/commercial/EllaWooten/image4.jpg" alt="Ella Wooten Center" loading="lazy">
+      </div>
+      <div class="project-overlay">
+        <div class="project-info">
+          <span class="project-category">Commercial</span>
+          <h3 class="project-title">Ella Wooten Center</h3>
+          <span class="project-location">Austin, Texas</span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="projects-cta" data-animate="fade-up">
+    <a [routerLink]="['/residential']" class="view-all-link btn-magnetic circle-hover">
+      <span class="btn-text">View All Projects</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- Image Parallax Break -->
+<section class="parallax-break parallax-container" style="background-image: url('./assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_%209.jpg')">
+  <div class="parallax-content glass">
+    <blockquote class="parallax-quote">
+      "Architecture is the thoughtful making of space."
+      <cite>— Louis Kahn</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- Services Preview with Stagger -->
+<section class="services-preview">
+  <div class="services-container">
+    <div class="services-intro" data-animate="fade-up">
+      <span class="section-eyebrow">What We Do</span>
+      <h2 class="services-headline">Our Services</h2>
+      <p class="services-description">From concept to completion, we guide you through every phase of the design process.</p>
+    </div>
+
+    <div class="services-list stagger-children">
+      <a [routerLink]="['/services']" class="service-item">
+        <span class="service-number">01</span>
+        <div class="service-content">
+          <h3 class="service-title">Architecture</h3>
+          <p class="service-desc">Full-service architectural design for residential and commercial projects.</p>
+        </div>
+        <svg class="service-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <a [routerLink]="['/services']" class="service-item">
+        <span class="service-number">02</span>
+        <div class="service-content">
+          <h3 class="service-title">Interior Design</h3>
+          <p class="service-desc">Thoughtful interiors that reflect your lifestyle and aesthetic vision.</p>
+        </div>
+        <svg class="service-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <a [routerLink]="['/services']" class="service-item">
+        <span class="service-number">03</span>
+        <div class="service-content">
+          <h3 class="service-title">Project Management</h3>
+          <p class="service-desc">Seamless coordination from design development through construction.</p>
+        </div>
+        <svg class="service-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Team Teaser with Image Reveal -->
+<section class="team-teaser">
+  <div class="team-image-col image-reveal" data-animate="slide-left">
+    <img src="./assets/aboutUs/team.jpg" alt="Workshop No. 5 Team">
+  </div>
+  <div class="team-content-col" data-animate="slide-right">
+    <span class="section-eyebrow">Our Team</span>
+    <h2 class="team-headline">All-Women Leadership</h2>
+    <p class="team-description">
+      Founded by visionary architect Vani Singal, Workshop No. 5 embraces the strength,
+      creativity, and diversity of our all-women team. We design with a deep understanding
+      and respect for the dynamics of real lives.
+    </p>
+    <a [routerLink]="['/about']" class="team-link btn-magnetic">
+      <span class="btn-text">Meet the Team</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- Awards Marquee -->
+<section class="awards-marquee">
+  <div class="marquee-track marquee">
+    <div class="marquee-content">
+      <span class="award-item">AIA Austin Design Award</span>
+      <span class="award-divider">•</span>
+      <span class="award-item">Texas Society of Architects</span>
+      <span class="award-divider">•</span>
+      <span class="award-item">Austin Modern Home Tour</span>
+      <span class="award-divider">•</span>
+      <span class="award-item">Houzz Design Award</span>
+      <span class="award-divider">•</span>
+    </div>
+    <div class="marquee-content" aria-hidden="true">
+      <span class="award-item">AIA Austin Design Award</span>
+      <span class="award-divider">•</span>
+      <span class="award-item">Texas Society of Architects</span>
+      <span class="award-divider">•</span>
+      <span class="award-item">Austin Modern Home Tour</span>
+      <span class="award-divider">•</span>
+      <span class="award-item">Houzz Design Award</span>
+      <span class="award-divider">•</span>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial Feature with Glass Effect -->
+<section class="testimonial-feature" *ngIf="quoteCollection && quoteCollection.length > 0">
+  <div class="testimonial-container glass-card" data-animate="scale-up">
+    <div class="testimonial-icon float">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+      </svg>
+    </div>
+    <blockquote class="testimonial-quote">
+      {{quoteCollection[0].quote}}
+    </blockquote>
+    <div class="testimonial-attribution">
+      <span class="testimonial-name">{{quoteCollection[0].name}}</span>
+      <span class="testimonial-byline">{{quoteCollection[0].byline}}</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA with Gradient Animation -->
+<section class="contact-cta gradient-animate">
+  <div class="cta-content" data-animate="fade-up">
+    <h2 class="cta-headline text-glow">Ready to Start Your Project?</h2>
+    <p class="cta-subtext">Let's create something extraordinary together.</p>
+    <a [routerLink]="['/contact']" class="cta-button btn-magnetic glow-hover">
+      <span class="btn-text">Get in Touch</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</section>

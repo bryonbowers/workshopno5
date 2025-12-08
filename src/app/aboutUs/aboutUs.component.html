@@ -1,0 +1,106 @@
+<!-- About Hero Section -->
+<section class="about-hero noise-overlay">
+  <div class="about-hero-bg parallax-container">
+    <img src="assets/aboutUs/team.jpg" alt="Workshop No. 5 Team" class="about-hero-image ken-burns">
+  </div>
+  <div class="about-hero-overlay"></div>
+  <div class="about-hero-content">
+    <div class="container">
+      <div class="row align-items-center min-vh-60">
+        <div class="col-lg-8">
+          <span class="section-eyebrow text-white-50" data-animate="fade-up">Our Story</span>
+          <h1 class="about-hero-title text-reveal" data-animate="fade-up">About Us</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Philosophy Section -->
+<section class="about-philosophy py-5">
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="philosophy-block" data-animate="fade-up">
+          <p class="lead philosophy-text">
+            Workshop No. 5 was founded on a commitment to craftsmanship and sustainable design. We create spaces that are both
+            beautiful and functional, inspired by real-life needs and the use of natural materials. Our approach focuses on
+            rethinking traditional architecture.
+          </p>
+          <p class="lead philosophy-text" data-animate="fade-up">
+            While we draw on modern design ideas, our work is timeless. Every project is shaped by collaboration and a clear
+            understanding of our clients' needs, delivering spaces that truly exceed expectations.
+          </p>
+          <blockquote class="philosophy-quote glass-card" data-animate="scale-up">
+            <p class="mb-0">
+              <em>Workshop No. 5 is dedicated to supporting women in architecture. We aspire to be a guiding light, inspiring future
+              generations of women to break barriers, challenge norms, and pave their path to leadership in all areas of design.</em>
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Meet the Team Section -->
+<section class="team-section py-5">
+  <div class="container pb-4 pb-md-5">
+    <div class="section-header text-center mb-5" data-animate="fade-up">
+      <span class="section-eyebrow">Our People</span>
+      <h2 class="display-4">Meet the Team</h2>
+    </div>
+
+    <div *ngFor="let person of staffCollection; let i = index"
+         (deferLoad)="person.show = true"
+         class="team-member-row row pb-5 mb-5 align-items-center"
+         [class.flex-row-reverse]="i % 2 === 1">
+      <ng-container *ngIf="person.show">
+        <div class="col-md-5 col-lg-4 mb-4 mb-md-0" data-animate="slide-left" [attr.data-animate]="i % 2 === 0 ? 'slide-left' : 'slide-right'">
+          <div class="profile-photo-wrapper image-reveal">
+            <div class="position-relative profile-photo-container">
+              <img [src]="person.url" [alt]="person.name" class="profile-photo">
+              <img [src]="person.overlay_url" aria-hidden="true" class="overlay-photo">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8 pl-md-4" [attr.data-animate]="i % 2 === 0 ? 'slide-right' : 'slide-left'">
+          <div class="team-member-content">
+            <header class="mb-3 team-member-header">
+              <h3 class="h1 mb-2 team-member-name">{{person.name}}</h3>
+              <p class="font-weight-bold font-sans mb-2 team-member-title" *ngIf="person.title">{{person.title}}</p>
+              <p class="mb-0 font-sans text-muted" *ngIf="person.orgs">{{person.orgs}}</p>
+            </header>
+            <p class="lead mb-0 team-member-bio" [innerHTML]="person.description"></p>
+
+            <div class="mt-4 team-member-quote glass" *ngIf="person.quote">
+              <svg class="quote-icon float" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <p class="font-italic lead mb-2">
+                &ldquo;<span [innerHTML]="person.quote"></span>&rdquo;
+              </p>
+              <p class="mb-0 quote-attribution">
+                &mdash; {{person.quoteBy}}<span *ngIf="person.quoteByTitle">, <span class="font-italic" [innerHTML]="person.quoteByTitle"></span></span>
+              </p>
+            </div>
+            <p *ngIf="person.additionalDescription" [innerHTML]="person.additionalDescription" class="mt-3"></p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<!-- Awards Section -->
+<section class="awards-section py-5 bg-dark">
+  <div class="container py-4">
+    <app-awards-component></app-awards-component>
+  </div>
+</section>
+
+<!-- Portfolio Preview -->
+<app-portfolio-component></app-portfolio-component>
+
+<!-- Contact Section -->
+<app-contactinfo-component></app-contactinfo-component>

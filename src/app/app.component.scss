@@ -1,0 +1,61 @@
+/*.sidenav {*/
+    /*height: 100%;*/
+    /*width: 0;*/
+    /*position: fixed;*/
+    /*z-index: 1;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*background-color:rgba(0, 0, 0, 0.7);;*/
+    /*overflow-x: hidden;*/
+    /*transition: 0.5s;*/
+    /*padding-top: 100px;*/
+/*}*/
+
+/*.sidenav a {*/
+    /*padding: 8px 8px 8px 60px;*/
+    /*text-decoration: none;*/
+    /*font-size: 30px;*/
+    /*font-weight: bold;*/
+    /*color: #ffffff;*/
+    /*display: block;*/
+    /*transition: 0.3s;*/
+/*}*/
+
+/*.sidenav a:hover {*/
+  /*font-size: 25px;*/
+    /*color: #c0bbb7;*/
+/*}*/
+
+/*.sidenav .closebtn {*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 25px;*/
+    /*font-size: 36px;*/
+    /*margin-left: 50px;*/
+/*}*/
+
+
+/*@media screen and (max-height: 450px) {*/
+  /*.overlay a {font-size: 20px}*/
+  /*.overlay .closebtn {*/
+    /*font-size: 40px;*/
+    /*top: 15px;*/
+    /*right: 35px;*/
+  /*}*/
+/*}*/
+
+.margin-large {
+  margin-top: 80px;
+}
+
+/* Main content wrapper for route animations */
+.main-content {
+  position: relative;
+  min-height: calc(100vh - 5rem);
+  overflow-x: hidden;
+}
+
+/* test CSS */
+ .testClass1 div {
+    border: 1px solid #000;
+}

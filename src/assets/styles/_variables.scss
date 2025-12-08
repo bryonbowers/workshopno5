@@ -1,0 +1,105 @@
+// Modern color palette
+$primary: #C41E24;
+$primary-dark: #9A171C;
+$primary-light: #E8353C;
+$success: #10B981;
+$dark: #1A1A2E;
+$light: #F8F9FC;
+$gray-100: #F8F9FC;
+$gray-200: #E9ECF2;
+$gray-300: #D1D5E0;
+$gray-600: #6B7280;
+$gray-800: #1F2937;
+
+// Modern typography
+$font-family-sans-serif: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;
+$font-family-serif: 'Playfair Display', 'Cardo', Georgia, serif;
+
+$headings-font-family: $font-family-serif;
+$headings-line-height: 1.15;
+$headings-font-weight: 600;
+
+$font-family-base: $font-family-sans-serif;
+$font-weight-bold: 600;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+$lead-font-size: 1.25rem;
+$lead-size-lg: 1.375rem;
+$lead-font-weight: $font-weight-normal;
+
+// Modern navbar
+$navbar-brand-height: 3.5rem;
+$navbar-brand-padding-y: 0;
+$navbar-dark-color: rgba(white, 0.95);
+$navbar-dark-active-color: rgba(white, 0.7);
+$navbar-padding-y: 0.75rem;
+
+// Modern border radius
+$border-radius: 8px;
+$border-radius-lg: 12px;
+$border-radius-sm: 6px;
+$border-radius-xl: 16px;
+
+// Modern shadows
+$box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$box-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+// Transitions
+$transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+$grid-gutter-width: 40px;
+
+$fa-font-path: "/webfonts";
+
+// Bootstrap 5 display sizes
+$display1-size: 5rem;
+$display2-size: 4.5rem;
+$display3-size: 4rem;
+$display4-size: 3rem;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 520px,
+  md: 780px,
+  lg: 960px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+$container-max-widths: (
+  sm: 520px,
+  md: 780px,
+  lg: 960px,
+  xl: 1200px,
+  xxl: 1320px
+) !default;
+
+$form-feedback-valid-color: $success;
+$form-feedback-invalid-color: $primary;
+
+$form-validation-states: (
+  "valid": (
+    "color": $form-feedback-valid-color,
+    "icon": ''
+  ),
+  "invalid": (
+    "color": $form-feedback-invalid-color,
+    "icon": ''
+  )
+);
+
+// Button styles
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 1.5rem;
+$btn-font-weight: 500;
+$btn-border-radius: $border-radius;
+
+// Input styles
+$input-padding-y: 0.75rem;
+$input-padding-x: 1rem;
+$input-border-radius: $border-radius;
+$input-focus-border-color: $primary-light;
+$input-focus-box-shadow: 0 0 0 3px rgba($primary, 0.15);

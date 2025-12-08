@@ -1,0 +1,58 @@
+<div class="container-fluid py-4">
+  <div class="row align-items-center">
+    <div class="col-md-6 order-md-last mb-3 mb-md-0">
+      <img class="w-100" style="" src="../assets/residential/headerImage.jpg" alt="Residential Architecture & Interior Design">
+    </div>
+    <div class="col-md-6 text-lg-center">
+      <div class="d-lg-inline-block text-left p-md-5">
+        <h1 class="display-4-md">Residential Archives</h1>
+        <h4 class="mb-0">Archived Residential Architecture Projects</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid pb-4">
+  <div class="row align-items-stretch slim-gutters">
+    <ng-container *ngFor="let image of imageCollection">
+      <div class="col-sm-6 col-lg-4 pb-4" (deferLoad)="image.show = true" *ngIf="image.archive">
+        <ng-container *ngIf="image.show">
+          <div>
+            <a href="#" (click)="$event.preventDefault();goToProject(image.id)" class="cursor-pointer d-block project-image-wrapper">
+              <img [src]="image.url">
+              <span class="archive-badge badge badge-primary">Archived</span>
+            </a>
+            <h3 class="h6 h5-md font-sans mt-3 custom-border portfolio-label mb-0"><a href="#" class="cursor-pointer no-link-style" (click)="$event.preventDefault();goToProject(image.id)">{{image.name}}</a>
+            </h3>
+            <p class="mb-0 mt-2" ng-if="image.subtitle">{{image.subtitle}}</p>
+            <p class="mb-0" [ngClass]="{'mt-2' : !image.subtitle}" ng-if="image.summary">{{image.summary}}</p>
+            <p class="mb-0">
+              <a href="#" (click)="$event.preventDefault();goToProject(image.id)" class="cursor-pointer">See More...</a>
+            </p>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+    <div class="col-sm-6 col-lg-4 pb-4">
+      <a [routerLink]="['/residential']" class="bg-light archive-link-block">
+        <span class="archive-link-text d-flex align-items-center justify-content-center"><span>View Current Projects <span class="fas fa-angle-right"></span></span></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="py-5 bg-light">
+  <div class="container py-4 py-lg-5 text-center">
+    <h3 class="h1">See more of our work.</h3>
+    <p class="mb-0">
+      <a [routerLink]="['/commercial']" class="btn btn-lg btn-primary">
+        View Commercial Portfolio
+      </a>
+    </p>
+  </div>
+</div>
+
+
+<app-consultation-component></app-consultation-component>
+
+<app-contactinfo-component></app-contactinfo-component>

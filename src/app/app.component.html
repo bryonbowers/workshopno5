@@ -1,0 +1,26 @@
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" [style.width.%]="scrollProgress"></div>
+
+<app-header [currentUrl]="currentUrl"></app-header>
+<header></header>
+<ngx-spinner
+  bdColor="rgba(26,26,46,0.95)"
+  size="medium"
+  color="#C41E24"
+  type="ball-scale-multiple" style="overflow: visible">
+  <p class="text-white lead mt-3" style="font-family: 'Playfair Display', serif; letter-spacing: 0.1em;">Loading...</p>
+</ngx-spinner>
+
+<main class="main-content" [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
+<app-footer></app-footer>
+
+<!-- Back to Top Button -->
+<button
+  class="back-to-top"
+  [class.visible]="showBackToTop"
+  (click)="scrollToTop()"
+  aria-label="Scroll to top">
+  <i class="fas fa-chevron-up"></i>
+</button>

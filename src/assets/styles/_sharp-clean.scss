@@ -1,0 +1,2303 @@
+// ============================================
+// SHARP & CLEAN REFINEMENTS
+// Modern, minimal, high-contrast design
+// ============================================
+
+// ============================================
+// TYPOGRAPHY REFINEMENTS
+// ============================================
+
+body {
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// Sharper headings
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+// Refined paragraph text
+p.lead {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.7;
+}
+
+// ============================================
+// SECTION EYEBROW (Consistent across site)
+// ============================================
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: $primary;
+  margin-bottom: 0.75rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: currentColor;
+    margin-right: 12px;
+    vertical-align: middle;
+  }
+}
+
+// ============================================
+// SHARP BUTTON STYLES
+// ============================================
+
+.btn {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+  }
+
+  &:active::after {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.btn-primary {
+  background: $primary;
+  border-color: $primary;
+  box-shadow: 0 2px 8px rgba($primary, 0.25);
+
+  &:hover, &:focus {
+    background: darken($primary, 8%);
+    border-color: darken($primary, 8%);
+    box-shadow: 0 4px 16px rgba($primary, 0.35);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba($primary, 0.25);
+  }
+}
+
+.btn-outline-primary {
+  border-width: 2px;
+  background: transparent;
+
+  &:hover, &:focus {
+    background: $primary;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba($primary, 0.25);
+  }
+}
+
+.btn-light {
+  background: white;
+  border-color: white;
+  color: $dark;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover, &:focus {
+    background: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+}
+
+// ============================================
+// SHARP CARD STYLES
+// ============================================
+
+.sharp-card {
+  background: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+  }
+}
+
+// ============================================
+// REFINED PORTFOLIO CARDS
+// ============================================
+
+.portfolio-card {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+
+  &:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .portfolio-card-image {
+    border-radius: 8px 8px 0 0;
+
+    img {
+      border-radius: 8px 8px 0 0;
+    }
+  }
+
+  .portfolio-card-content {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .portfolio-card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+  }
+
+  .portfolio-card-subtitle {
+    font-size: 0.8125rem;
+    color: #888;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio-card-summary {
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+}
+
+// ============================================
+// CLEAN FORM INPUTS
+// ============================================
+
+.form-control {
+  border: 2px solid #E5E7EB;
+  border-radius: 6px;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: white;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #9CA3AF;
+  }
+}
+
+.form-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+// ============================================
+// SHARP DIVIDERS
+// ============================================
+
+.sharp-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+  margin: 3rem 0;
+}
+
+.sharp-divider-thick {
+  height: 4px;
+  width: 60px;
+  background: $primary;
+  margin: 1.5rem 0;
+}
+
+// ============================================
+// CLEAN SPACING UTILITIES
+// ============================================
+
+.section-padding {
+  padding: 5rem 0;
+
+  @media (max-width: 767px) {
+    padding: 3rem 0;
+  }
+}
+
+.section-padding-lg {
+  padding: 7rem 0;
+
+  @media (max-width: 767px) {
+    padding: 4rem 0;
+  }
+}
+
+// ============================================
+// REFINED HERO SECTIONS
+// ============================================
+
+.hero-minimal {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background: $dark;
+  overflow: hidden;
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 200;
+    color: white;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: rgba(white, 0.7);
+    max-width: 500px;
+    line-height: 1.7;
+  }
+}
+
+// ============================================
+// SHARP IMAGE TREATMENTS
+// ============================================
+
+.img-sharp {
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.img-sharp-lg {
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+// Image container with aspect ratio
+.img-container {
+  position: relative;
+  overflow: hidden;
+  background: #F3F4F6;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: 66.67%; // 3:2 aspect ratio
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &.ratio-4-3::before {
+    padding-bottom: 75%;
+  }
+
+  &.ratio-16-9::before {
+    padding-bottom: 56.25%;
+  }
+
+  &.ratio-1-1::before {
+    padding-bottom: 100%;
+  }
+}
+
+// ============================================
+// CLEAN LIST STYLES
+// ============================================
+
+.list-clean {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    position: relative;
+    padding: 0.75rem 0 0.75rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: $primary;
+      border-radius: 50%;
+    }
+  }
+}
+
+// ============================================
+// REFINED BADGES
+// ============================================
+
+.badge-clean {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.875rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  background: rgba($primary, 0.1);
+  color: $primary;
+}
+
+// ============================================
+// SHARP NAVIGATION REFINEMENTS
+// ============================================
+
+.navbar {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.navbar-scrolled {
+  background: rgba($primary, 0.98) !important;
+}
+
+// ============================================
+// REFINED BACK TO TOP BUTTON
+// ============================================
+
+.back-to-top {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: $dark;
+  border: none;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  cursor: pointer;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    background: $primary;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba($primary, 0.3);
+  }
+
+  i {
+    font-size: 1rem;
+  }
+}
+
+// ============================================
+// CLEAN SCROLL PROGRESS
+// ============================================
+
+.scroll-progress {
+  height: 3px;
+  background: linear-gradient(90deg, $primary, lighten($primary, 15%));
+  box-shadow: 0 0 10px rgba($primary, 0.5);
+}
+
+// ============================================
+// REFINED TESTIMONIALS
+// ============================================
+
+.testimonial-clean {
+  position: relative;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+  .testimonial-quote {
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 1.5rem;
+
+    &::before {
+      content: '"';
+      font-size: 3rem;
+      font-family: Georgia, serif;
+      color: $primary;
+      opacity: 0.3;
+      line-height: 0;
+      position: relative;
+      top: 0.5rem;
+      margin-right: 0.25rem;
+    }
+  }
+
+  .testimonial-author {
+    font-weight: 600;
+    color: $dark;
+  }
+
+  .testimonial-role {
+    font-size: 0.875rem;
+    color: #6B7280;
+  }
+}
+
+// ============================================
+// SUBTLE ANIMATIONS
+// ============================================
+
+@keyframes subtlePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-pulse-subtle {
+  animation: subtlePulse 2s ease-in-out infinite;
+}
+
+.animate-float-subtle {
+  animation: subtleFloat 4s ease-in-out infinite;
+}
+
+// ============================================
+// LOADING SKELETON REFINEMENTS
+// ============================================
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #F3F4F6 25%,
+    #E5E7EB 50%,
+    #F3F4F6 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.2s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+// ============================================
+// FOCUS STATES (Accessibility)
+// ============================================
+
+*:focus-visible {
+  outline: 2px solid $primary;
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid $primary;
+  outline-offset: 2px;
+}
+
+// ============================================
+// SELECTION STYLING
+// ============================================
+
+::selection {
+  background: rgba($primary, 0.2);
+  color: $dark;
+}
+
+::-moz-selection {
+  background: rgba($primary, 0.2);
+  color: $dark;
+}
+
+// ============================================
+// SMOOTH SCROLL BEHAVIOR
+// ============================================
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// ============================================
+// SHARP NAVBAR STYLES
+// ============================================
+
+.navbar-sharp {
+  background: $primary;
+  box-shadow: none;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  .navbar-container {
+    padding: 0.75rem 1.5rem;
+
+    @media (min-width: 992px) {
+      padding: 0.75rem 2.5rem;
+    }
+  }
+
+  .navbar-brand img {
+    height: 2.5rem;
+    transition: all 0.3s ease;
+
+    @media (min-width: 768px) {
+      height: 2.75rem;
+    }
+  }
+
+  &.navbar-scrolled {
+    background: $primary;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+
+    .navbar-container {
+      padding: 0.5rem 1.5rem;
+
+      @media (min-width: 992px) {
+        padding: 0.5rem 2.5rem;
+      }
+    }
+
+    .navbar-brand img {
+      height: 2.25rem;
+
+      @media (min-width: 768px) {
+        height: 2.5rem;
+      }
+    }
+  }
+
+  .nav-link {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(white, 0.9);
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.2s ease;
+
+    &:hover, &.active {
+      color: white;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: white;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after,
+    &.active::after {
+      width: 100%;
+    }
+  }
+
+  .dropdown-chevron {
+    margin-left: 0.375rem;
+    transition: transform 0.2s ease;
+    opacity: 0.7;
+  }
+
+  .dropdown:hover .dropdown-chevron {
+    transform: rotate(180deg);
+  }
+
+  @media (min-width: 768px) {
+    .nav-item + .nav-item {
+      margin-left: 2rem;
+    }
+  }
+}
+
+// Sharp dropdown menu
+.dropdown-menu-sharp {
+  background: white;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  margin-top: 0.75rem;
+  min-width: 180px;
+  animation: dropdownFadeIn 0.2s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 24px;
+    width: 12px;
+    height: 12px;
+    background: white;
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.03);
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $dark;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+
+    .dropdown-item-indicator {
+      width: 4px;
+      height: 4px;
+      background: $primary;
+      border-radius: 50%;
+      margin-right: 0.75rem;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    &:hover, &:focus {
+      background: rgba($primary, 0.06);
+      color: $primary;
+      padding-left: 1.25rem;
+
+      .dropdown-item-indicator {
+        opacity: 1;
+      }
+    }
+  }
+
+  .dropdown-divider {
+    margin: 0.5rem 0;
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Sharp nav buttons
+.btn-nav-sharp {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.625rem 1.25rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &.btn-nav-ghost {
+    background: transparent;
+    border: 1px solid rgba(white, 0.4);
+    color: white;
+
+    &:hover {
+      background: rgba(white, 0.1);
+      border-color: white;
+    }
+  }
+
+  &.btn-nav-solid {
+    background: white;
+    border: 1px solid white;
+    color: $primary;
+
+    &:hover {
+      background: rgba(white, 0.9);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.nav-actions {
+  gap: 0.75rem;
+}
+
+// Mobile nav sharp
+@media (max-width: 767px) {
+  .navbar-sharp {
+    .navbar-collapse {
+      background: darken($primary, 5%);
+      margin: 0.5rem -1.5rem -0.75rem;
+      padding: 1rem 1.5rem;
+      border-radius: 0;
+
+      .nav-link::after {
+        display: none;
+      }
+
+      .dropdown-menu-sharp {
+        position: static;
+        background: rgba(0, 0, 0, 0.1);
+        box-shadow: none;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+
+        &::before {
+          display: none;
+        }
+
+        .dropdown-item {
+          color: rgba(white, 0.9);
+
+          &:hover {
+            background: rgba(white, 0.1);
+            color: white;
+          }
+
+          .dropdown-item-indicator {
+            background: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// SHARP SERVICES PAGE
+// ============================================
+
+.services-hero {
+  .services-hero-title {
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-weight: 200;
+    letter-spacing: -0.04em;
+  }
+
+  .services-hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    opacity: 0.85;
+  }
+}
+
+.services-overview {
+  background: #FAFAFA;
+
+  .services-section-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-category {
+  padding: 2rem;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    border-color: transparent;
+  }
+
+  .service-category-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-category-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $primary;
+    letter-spacing: 0.05em;
+    padding: 0.375rem 0.625rem;
+    background: rgba($primary, 0.08);
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .service-category-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: $dark;
+  }
+
+  .service-category-desc {
+    font-size: 0.9375rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      position: relative;
+      padding: 0.5rem 0 0.5rem 1.25rem;
+      font-size: 0.9375rem;
+      color: #555;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 1rem;
+        width: 5px;
+        height: 5px;
+        background: $primary;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+// Process section
+.process-intro {
+  .process-intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba($primary, 0.04) 0%, rgba($primary, 0.02) 100%);
+    border: 1px solid rgba($primary, 0.08);
+  }
+
+  .process-intro-title {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+}
+
+.process-steps {
+  .process-step {
+    padding: 3rem 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  .process-step-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+
+    img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:hover img {
+      transform: scale(1.03);
+    }
+  }
+
+  .process-step-number {
+    font-size: 3.5rem;
+    font-weight: 200;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .process-step-title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+}
+
+// Collaboration CTA
+.collaboration-cta {
+  .collaboration-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+
+  .collaboration-subtitle {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+}
+
+// ============================================
+// SHARP ABOUT PAGE
+// ============================================
+
+.about-hero {
+  .about-hero-title {
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-weight: 200;
+    letter-spacing: -0.04em;
+  }
+}
+
+.about-philosophy {
+  .philosophy-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 1.5rem;
+  }
+
+  .philosophy-quote {
+    padding: 2.5rem;
+    border-left: 4px solid $primary;
+    margin: 2.5rem 0;
+    background: linear-gradient(135deg, rgba($primary, 0.03) 0%, transparent 100%);
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: #555;
+    }
+  }
+}
+
+.team-section {
+  background: #FAFAFA;
+
+  .section-header {
+    .display-4 {
+      font-size: 2.75rem;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+    }
+  }
+
+  .team-member-row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 4rem;
+    margin-bottom: 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .profile-photo-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .profile-photo-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+
+    .profile-photo {
+      width: 100%;
+      display: block;
+      transition: opacity 0.5s ease;
+    }
+
+    .overlay-photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    &:hover {
+      .profile-photo {
+        opacity: 0;
+      }
+      .overlay-photo {
+        opacity: 1;
+      }
+    }
+  }
+
+  .team-member-name {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .team-member-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $primary;
+  }
+
+  .team-member-bio {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .team-member-quote {
+    position: relative;
+    padding: 1.75rem;
+    border-radius: 8px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+
+    .quote-icon {
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      color: $primary;
+      opacity: 0.15;
+    }
+
+    .quote-attribution {
+      font-size: 0.875rem;
+      color: #888;
+    }
+  }
+}
+
+// Awards section
+.awards-section {
+  background: $dark;
+}
+
+// ============================================
+// SHARP CONTACT PAGE
+// ============================================
+
+.contact-hero {
+  position: relative;
+  height: 40vh;
+  min-height: 300px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .contact-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba($dark, 0.5) 0%, rgba($dark, 0.7) 100%);
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-hero-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 200;
+    letter-spacing: -0.03em;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-hero-subtitle {
+    font-size: 1.125rem;
+    color: rgba(white, 0.8);
+    margin: 0;
+  }
+}
+
+.contact-section-title {
+  font-size: 2.25rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.contact-info-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .contact-info-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($primary, 0.08);
+    color: $primary;
+    border-radius: 8px;
+    flex-shrink: 0;
+
+    i {
+      font-size: 1.125rem;
+    }
+  }
+
+  .contact-info-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-info-value {
+    font-size: 1rem;
+    color: $dark;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+// Contact form
+.contact-form {
+  background: white;
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+
+  label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #374151;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-control {
+    border: 2px solid #E5E7EB;
+    border-radius: 6px;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: #FAFAFA;
+
+    &:focus {
+      background: white;
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba($primary, 0.1);
+    }
+
+    &.is-valid {
+      border-color: #10B981;
+      background-image: none;
+    }
+
+    &.is-invalid {
+      border-color: #EF4444;
+      background-image: none;
+    }
+  }
+
+  .custom-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 6px;
+    background: $primary;
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background: darken($primary, 8%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba($primary, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    &.is-loading {
+      pointer-events: none;
+    }
+  }
+}
+
+// Form success state
+.form-success {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+
+    i {
+      font-size: 2rem;
+      color: white;
+    }
+  }
+
+  .success-title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+
+  .success-message {
+    color: #666;
+    margin-bottom: 2rem;
+  }
+}
+
+// Map section
+.map-section {
+  iframe {
+    display: block;
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: grayscale(0%) contrast(1);
+    }
+  }
+}
+
+// ============================================
+// SHARP LOGIN PAGE
+// ============================================
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%);
+  padding: 2rem;
+}
+
+.login-card {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    color: $dark;
+  }
+
+  .login-description {
+    color: #6B7280;
+    margin-bottom: 2rem;
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #F9FAFB;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: left;
+
+  .profile-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .user-details {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .user-name {
+    font-weight: 600;
+    color: $dark;
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .user-email {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background: white;
+  border: 2px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: $dark;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  .google-icon {
+    flex-shrink: 0;
+  }
+
+  &:hover:not(:disabled) {
+    background: #F9FAFB;
+    border-color: #D1D5DB;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.btn-signout {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background: #EF4444;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: #DC2626;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.error-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 8px;
+  color: #DC2626;
+  font-size: 0.875rem;
+}
+
+// ============================================
+// SHARP TOGGLER BARS (Hamburger Menu)
+// ============================================
+
+.navbar-toggler {
+  position: relative;
+  width: 32px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.toggler-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  margin-bottom: 6px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Animated hamburger
+[aria-expanded="true"] {
+  .toggler-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .toggler-bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .toggler-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+// ============================================
+// USER DROPDOWN (Desktop)
+// ============================================
+
+.user-dropdown {
+  .nav-link {
+    padding: 0.375rem 0.75rem !important;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: rgba(white, 0.1);
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 0.625rem;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .avatar-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(white, 0.2);
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+  }
+
+  .user-name {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+// ============================================
+// SHARP PORTFOLIO PAGES
+// ============================================
+
+.portfolio-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .portfolio-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba($dark, 0.7) 0%, rgba($dark, 0.4) 100%);
+    }
+  }
+
+  .portfolio-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .portfolio-hero-title {
+    font-size: clamp(3rem, 12vw, 6rem);
+    font-weight: 200;
+    letter-spacing: -0.04em;
+    color: white;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: rgba(white, 0.8);
+    max-width: 450px;
+    line-height: 1.6;
+  }
+}
+
+.portfolio-grid-section {
+  background: #FAFAFA;
+}
+
+// Portfolio cards with sharp refinement
+.portfolio-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+
+    .portfolio-card-image img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-card-overlay {
+      opacity: 1;
+    }
+
+    .view-project {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .portfolio-card-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  .portfolio-card-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  .portfolio-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($dark, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .view-project {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 56px;
+    height: 56px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $dark;
+    font-size: 1rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .portfolio-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.375rem 0.75rem;
+    background: rgba($dark, 0.8);
+    color: white;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
+  }
+
+  .portfolio-card-content {
+    padding: 1.5rem;
+  }
+
+  .portfolio-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.375rem;
+
+    a {
+      color: $dark;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .portfolio-card-subtitle {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $primary;
+    margin: 0 0 0.75rem;
+  }
+
+  .portfolio-card-summary {
+    font-size: 0.9375rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+// Archive card
+.archive-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 280px;
+  background: linear-gradient(135deg, rgba($primary, 0.04) 0%, rgba($primary, 0.08) 100%);
+  border: 2px dashed rgba($primary, 0.2);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, rgba($primary, 0.08) 0%, rgba($primary, 0.12) 100%);
+    border-color: $primary;
+    transform: translateY(-4px);
+
+    .archive-card-content i:last-child {
+      transform: translateX(4px);
+    }
+  }
+
+  .archive-card-content {
+    text-align: center;
+    color: $primary;
+
+    i:first-child {
+      font-size: 2rem;
+      opacity: 0.5;
+    }
+
+    i:last-child {
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .archive-card-text {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.75rem 0;
+  }
+}
+
+// Portfolio CTA section
+.portfolio-cta {
+  background: white;
+
+  .cta-title {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+}
+
+// ============================================
+// SHARP HOMEPAGE
+// ============================================
+
+// Cinematic hero
+.cinematic-hero {
+  .hero-headline {
+    .headline-word {
+      font-weight: 200;
+      letter-spacing: -0.04em;
+    }
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.85;
+  }
+
+  .hero-tagline {
+    .tagline-text {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+  }
+}
+
+// Portfolio split section
+.portfolio-split {
+  .split-panel {
+    .panel-number {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      opacity: 0.7;
+    }
+
+    .panel-title {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 200;
+      letter-spacing: -0.03em;
+    }
+
+    .panel-subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      opacity: 0.8;
+    }
+
+    .panel-cta {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+  }
+}
+
+// Philosophy section
+.philosophy-section {
+  .philosophy-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: $primary;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .philosophy-statement {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: $dark;
+
+    em {
+      font-style: italic;
+      color: $primary;
+    }
+  }
+
+  .philosophy-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $primary;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: gap 0.3s ease;
+
+    &:hover {
+      gap: 1rem;
+    }
+  }
+}
+
+// Featured projects
+.featured-projects {
+  .section-headline {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+  }
+
+  .project-item {
+    .project-category {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.8;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .project-location {
+      font-size: 0.875rem;
+      font-weight: 300;
+      opacity: 0.7;
+    }
+  }
+
+  .view-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $dark;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 2px solid rgba($dark, 0.2);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $dark;
+      border-color: $dark;
+      color: white;
+      gap: 1rem;
+    }
+  }
+}
+
+// Parallax break
+.parallax-break {
+  .parallax-quote {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    line-height: 1.6;
+
+    cite {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      font-style: normal;
+      margin-top: 1rem;
+      opacity: 0.7;
+    }
+  }
+}
+
+// Services preview
+.services-preview {
+  .services-headline {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+  }
+
+  .services-description {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: #666;
+    line-height: 1.7;
+  }
+
+  .service-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+
+    &:hover {
+      padding-left: 1rem;
+
+      .service-arrow {
+        transform: translateX(4px);
+        opacity: 1;
+      }
+
+      .service-title {
+        color: $primary;
+      }
+    }
+
+    .service-number {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $primary;
+      min-width: 2rem;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+      transition: color 0.2s ease;
+    }
+
+    .service-desc {
+      font-size: 0.9375rem;
+      color: #666;
+      margin: 0;
+    }
+
+    .service-arrow {
+      margin-left: auto;
+      opacity: 0.3;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+// Team teaser
+.team-teaser {
+  .team-headline {
+    font-size: 2.25rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  .team-description {
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #555;
+  }
+
+  .team-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $dark;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    transition: gap 0.3s ease;
+
+    &:hover {
+      gap: 1rem;
+      color: $primary;
+    }
+  }
+}
+
+// Awards marquee
+.awards-marquee {
+  .award-item {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+}
+
+// Testimonial feature
+.testimonial-feature {
+  .testimonial-quote {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+  }
+
+  .testimonial-name {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .testimonial-byline {
+    font-size: 0.875rem;
+    color: #888;
+  }
+}
+
+// Contact CTA
+.contact-cta {
+  .cta-headline {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-subtext {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.9;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.125rem 2.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: white;
+    color: $dark;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      gap: 1rem;
+    }
+  }
+}
+
+// ============================================
+// SKELETON LOADING
+// ============================================
+
+.skeleton-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0;
+
+  .skeleton-image {
+    aspect-ratio: 4/3;
+    border-radius: 0;
+  }
+
+  .skeleton-title {
+    height: 1.5rem;
+    margin: 1.5rem 1.5rem 0.75rem;
+    width: 60%;
+  }
+
+  .skeleton-subtitle {
+    height: 0.875rem;
+    margin: 0 1.5rem 0.75rem;
+    width: 40%;
+  }
+
+  .skeleton-line {
+    height: 1rem;
+    margin: 0 1.5rem 1.5rem;
+    width: 80%;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

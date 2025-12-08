@@ -1,0 +1,42 @@
+<div class="container">
+
+  <section>
+    <div class="row">
+      <div class="col-md-5 col-lg-5 m-auto font-cardo">
+        <h1 class="display-3">Play</h1>
+        <h4 class="font-weight-normal mt-4">We build spaces to support our community. Playful, functional,and expressive, the recreational areas we design are deliberately resilient and undeniably captivating.</h4>
+      </div>
+      <div class="col-md-6 col-lg-6 offset-lg-1">
+        <img class="w-100" src="../assets/play/page-header.jpg">
+      </div>
+    </div>
+    <div class="row mt-5 col-lg-11 m-auto px-xs-0 px-md-3">
+      <div *ngFor="let image of imageCollection" (deferLoad)="image.show = true" class="col-md-6 col-lg-6 my-5 px-xs-0 px-md-3">
+        <ng-container *ngIf="image.show">
+          <div>
+            <a (click)="goToProject(image.id)"><img class="w-100" [src]="image.url"></a>
+            <h4 class="mt-4 custom-border font-weight-bold">{{image.name}}</h4>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+  <section class="my-5 mx-md-5 card bg-light border-0">
+    <div class="row">
+      <div class="col-sm-6 col-md-7 col-lg-7">
+        <img class="w-100" src="../assets/live/image11.jpg">
+      </div>
+      <div class="col-sm-5 col-md-5 col-lg-5 m-auto font-cardo pl-lg-5">
+
+        <h4 class="m-sm-0 my-xs-1 pt-2"> <a [routerLink]="['/residential']" class="text-dark">Live <i class="fa fa-long-arrow-right ml-4 text-danger" style="vertical-align: middle; transform: scale(1.9,1);"></i></a></h4>
+
+        <div class="dropdown-divider mr-4 my-md-4"></div>
+        <h4 class="m-0"> <a [routerLink]="['/commercial']" class="text-dark">Work <i class="fa fa-long-arrow-right  ml-4 text-danger" style="vertical-align: middle; transform: scale(1.9,1);"></i></a></h4>
+        <div class="dropdown-divider mr-4 my-md-4"></div>
+        <h4 class="m-0"> <a class="text-dark" [routerLink]="['/services']">Our Process <i class="fa fa-long-arrow-right ml-lg-4 ml-sm-2 ml-4 text-danger" style="vertical-align: middle; transform: scale(1.9,1);"></i></a></h4>
+      </div>
+    </div>
+  </section>
+
+</div>
+<app-contactinfo-component></app-contactinfo-component>

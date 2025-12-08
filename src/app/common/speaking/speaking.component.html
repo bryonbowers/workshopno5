@@ -1,0 +1,28 @@
+<div>
+  <h2 class="mb-4">Speaking &amp; Media</h2>
+  <div class="speaking-grid mb-5">
+    <div
+      class="speaking-item"
+      *ngFor="let event of speakingCollection; let i = index"
+    >
+      <a
+        [href]="event.url"
+        class="d-block no-link-style"
+        target="_blank"
+      >
+        <img
+          [src]="event.image"
+          [alt]="event.alt"
+          class="speaking-img mb-2"
+        />
+        <div class="speaking-content">
+          <h4 class="h6 font-weight-bold mb-0" [innerHTML]="event.title"></h4>
+          <p
+            class="mb-0 text-muted text-sm speaking-description"
+            [innerHTML]="event.description"
+          ></p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

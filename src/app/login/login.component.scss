@@ -1,0 +1,113 @@
+.login-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-card {
+  background: #fff;
+  padding: 3rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-family: 'Cardo', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+}
+
+.login-description {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.btn-google {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+
+  &:hover:not(:disabled) {
+    background: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .google-icon {
+    margin-right: 0.75rem;
+  }
+}
+
+.btn-signout {
+  background: #333;
+  color: #fff;
+  margin-top: 1.5rem;
+
+  &:hover:not(:disabled) {
+    background: #555;
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.user-details {
+  text-align: left;
+}
+
+.user-name {
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.user-email {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+.error-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 4px;
+  color: #c00;
+  font-size: 0.875rem;
+}

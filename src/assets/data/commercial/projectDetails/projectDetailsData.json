@@ -1,0 +1,616 @@
+{
+  "projectData": [
+    {
+      "id": "1",
+      "projectName": "Ella Wooten",
+      "projectdescription": [
+        "Timeless Inspiration",
+        "Park with pool house, which contains a staff office, open air changing areas, vending, and restroom facilities",
+        "Open air",
+        "AGBP 4-star rating"
+      ],
+      "mainImageUrl": "../../assets/commercial/EllaWooten/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Studio 8",
+          "position": "Architect of Record"
+        },
+        {
+          "name": "Bhavani Singal",
+          "position": "Project Manager and Designer"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/commercial/EllaWooten/image1.jpg",
+          "name": "ENFIELD RD.",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/EllaWooten/image2.jpg",
+          "name": "Ella Wooten",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/EllaWooten/image3.jpg",
+          "name": "WEST 9TH ST.",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/EllaWooten/image4.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/EllaWooten/image5.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/EllaWooten/image6.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/EllaWooten/image7.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/EllaWooten/image8.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/EllaWooten/image9.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/EllaWooten/image10.jpg",
+          "name": "Venado",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "projectName": "Central Texas Food Bank",
+      "projectdescription": [
+        "Distribution and outreach center for hunger relief",
+        "135,000 sf",
+        "Colorful and bright design reflects the positive spirit and powerful message of the organization."
+      ],
+      "mainImageUrl": "../../assets/commercial/CentralFoodBank/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Studio 8",
+          "position": "Architect of Record"
+        },
+        {
+          "name": "Bhavani Singal",
+          "position": "Project Manager and Designer"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image1.jpg",
+          "name": "ENFIELD RD.",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image2.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image3.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image4.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image5.jpg",
+          "name": "Central Food Bank",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image6.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image7.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image8.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image9.jpg",
+          "name": "Central Food Bank",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image10.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image11.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image12.jpg",
+          "name": "Venado",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/CentralFoodBank/image13.jpg",
+          "name": "Venado",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "projectName": "Rackspace",
+      "projectdescription": [
+        "Remodel",
+        "346,400 sf",
+        "Strong rehab and reuse project",
+        "Transformed an old mall into a tech office"
+      ],
+      "mainImageUrl": "../../assets/commercial/Rackspace/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Studio 8",
+          "position": "Architect of Record"
+        },
+        {
+          "name": "Bhavani Singal",
+          "position": "Team Member"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/commercial/Rackspace/image1.jpg",
+          "name": "Alegeria",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Rackspace/image2.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Rackspace/image3.jpg",
+          "name": "ENFIELD RD.",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Rackspace/image4.jpg",
+          "name": "Rackspace",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Rackspace/image5.jpg",
+          "name": "KNOLLWOOD COVE RD.",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "projectName": "Met Retail",
+      "projectdescription": [
+        "Blast wall to protect neighboring buildings",
+        "5,757 sf",
+        "Creative design solution"
+      ],
+      "mainImageUrl": "../../assets/commercial/MetRetail/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Studio 8",
+          "position": "Architect of Record"
+        },
+        {
+          "name": "Bhavani Singal",
+          "position": " Project Manager and Designer"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/commercial/MetRetail/image1.jpg",
+          "name": "ENFIELD RD.",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/MetRetail/image2.jpg",
+          "name": "Met Retail 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/MetRetail/image3.jpg",
+          "name": "WEST 9TH ST.",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/MetRetail/image4.jpg",
+          "name": "Venado",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "projectName": "Karisha Community",
+      "projectdescription": [
+        "Modern Architecture meets Mature Forest",
+        "14,000 sf facility providing primary care, urgent care, mental health treatment, and alternative healing strategies",
+        "Integrated Healing"
+      ],
+      "mainImageUrl": "../../assets/commercial/Karisha/1_KARISHA.png",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interior Designer"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/commercial/Karisha/2_KARISHA.png",
+          "name": "Karisha Community Architecture 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Karisha/3_KARISHA.png",
+          "name": "Karisha Community Architecture 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Karisha/4_KARISHA.png",
+          "name": "Karisha Community Architecture 4",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Karisha/5_KARISHA.png",
+          "name": "Karisha Community Architecture 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Karisha/6_KARISHA.png",
+          "name": "Karisha Community Architecture 6",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Karisha/7_KARISHA.png",
+          "name": "Karisha Community Architecture 7",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Karisha/8_KARISHA.png",
+          "name": "Karisha Community Architecture 8",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Karisha/9_KARISHA.png",
+          "name": "Karisha Community Architecture 9",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Karisha/10_KARISHA.png",
+          "name": "Karisha Community Architecture 10",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "projectName": "Little Deli East",
+      "projectdescription": [
+        "Renovation",
+        "3,840 sf",
+        "Transformed existing restaurant and church into new restaurant space",
+        "East Coast inspired treats"
+      ],
+      "mainImageUrl": "../../assets/commercial/Rocco/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interior Designer"
+        },
+        {
+          "name": "Villani + Graham Construction",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/commercial/Rocco/image1.jpg",
+          "name": "Finley",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "projectName": "Riata Vista",
+      "projectdescription": [
+        "Parking Garage on a large corporate campus"
+      ],
+      "mainImageUrl": "../../assets/commercial/RiataVista/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Studio 8",
+          "position": "Architect of Record"
+        },
+        {
+          "name": "Bhavani Singal",
+          "position": "Team Member"
+        }
+      ],
+      "projectDetails": []
+    },
+
+
+    {
+      "id": "8",
+      "projectName": "Estancia Churrascaria",
+      "projectdescription": [
+        "Rehabilitation of existing restaurant",
+        "Facelift",
+        "Wine Bar"
+      ],
+      "mainImageUrl": "../../assets/commercial/Estancia/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Studio 8",
+          "position": "Architect of Record"
+        },
+        {
+          "name": "Bhavani Singal",
+          "position": "Project Manager and Designer"
+        }
+      ],
+      "projectDetails": [
+
+        {
+          "url": "../../assets/commercial/Estancia/image2.jpg",
+          "name": "Finley",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Estancia/image3.jpg",
+          "name": "Finley",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Estancia/image1.jpg",
+          "name": "Finley",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Estancia/image4.jpg",
+          "name": "Finley",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/Estancia/image5.jpg",
+          "name": "Finley",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "projectName": "Holcomb Yoga and Counseling",
+      "projectdescription": [
+        "Contemporary Architecture",
+        "1,000 sf Yoga studio, six counselling practitioner offices",
+        "Zen garden",
+        "Self-improvement"
+      ],
+      "mainImageUrl": "../../assets/commercial/Holcomb/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interior Designer"
+        }
+      ],
+      "projectDetails": []
+    },
+    {
+      "id": "10",
+      "projectName": "Trails @ Leander Amenity",
+      "projectdescription": [
+        "Timeless Design",
+        "Amenity Center for residential community includes a pool, pool house with bathrooms, an open-air pavilion for grilling and movies, and a playscape"
+      ],
+      "mainImageUrl": "../../assets/commercial/TrailsLeander/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Pharis Design",
+          "position": "Landscape Architect"
+        },
+        {
+          "name": "Joe Copeland",
+          "position": "Contractor"
+        },
+        {
+          "name": "Liquid Assets",
+          "position": "Pool"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/commercial/TrailsLeander/image1.jpg",
+          "name": "Trails Leander Amenity 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/TrailsLeander/image2.jpg",
+          "name": "Trails Leander Amenity 2",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "projectName": "Winding Oaks Amenity Center",
+      "projectdescription": [
+        "Contemporary Architecture",
+        "Amenity Center for residential community includes a pool, pool house with bathrooms, a screened community center, and a playscape"
+      ],
+      "mainImageUrl": "../../assets/commercial/WindingOaks/WindingOaks_Web_01.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Pharis Design",
+          "position": "Landscape Architect"
+        },
+        {
+          "name": "Latigo Construction",
+          "position": "Contractor"
+        },
+        {
+          "name": "Liquid Assets",
+          "position": "Pool"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/commercial/WindingOaks/WindingOaks_Web_02.jpg",
+          "name": "Winding Oaks Commercial Architecture 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/WindingOaks/WindingOaks_Web_04.jpg",
+          "name": "Winding Oaks Commercial Architecture 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/WindingOaks/WindingOaks_Web_10.jpg",
+          "name": "Winding Oaks Commercial Architecture 4",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/WindingOaks/WindingOaks_Web_13.jpg",
+          "name": "Winding Oaks Commercial Architecture 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/WindingOaks/WindingOaks_Web_18.jpg",
+          "name": "Winding Oaks Commercial Architecture 6",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/WindingOaks/WindingOaks_Web_19.jpg",
+          "name": "Winding Oaks Commercial Architecture 7",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "projectName": "Oxbow",
+      "projectdescription": [
+        "Contemporary Architecture"
+      ],
+      "mainImageUrl": "../../assets/commercial/oxbow/image1.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Pharis Design",
+          "position": "Landscape Architect"
+        },
+        {
+          "name": "Liquid Assets",
+          "position": "Pool"
+        },
+        {
+          "name": "David Mills Custom Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/commercial/oxbow/image2.jpg",
+          "name": "Oxbow Commercial Architecture 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/oxbow/image3.jpg",
+          "name": "Oxbow Commercial Architecture 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/oxbow/image4.jpg",
+          "name": "Oxbow Commercial Architecture 4",
+          "show": false
+        },
+        {
+          "url": "../../assets/commercial/oxbow/oxbow-entry.jpg",
+          "name": "Oxbow Commercial Architecture 5",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "projectName": "Austin Plastic Surgeon",
+      "projectdescription": [
+        "Expansion",
+        "803 sf addition to a clinic, with an eye-catching new facade"
+      ],
+      "mainImageUrl": "../../assets/commercial/austin-plastic-surgeon/austin-plastic-surgeon-front.png",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interiors"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/commercial/austin-plastic-surgeon/austin-plastic-surgeon-back.png",
+          "name": "Austin Plastic Surgeon",
+          "show": false
+        }
+      ]
+    }
+  ]
+}

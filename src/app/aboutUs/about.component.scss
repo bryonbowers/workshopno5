@@ -1,0 +1,298 @@
+// About Page Ultra Sexy Styles
+$primary: #C41E24;
+$dark: #1A1A2E;
+$light: #F8F9FC;
+
+// About Hero
+.about-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .about-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    .about-hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .about-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba($dark, 0.85) 0%,
+      rgba($dark, 0.6) 50%,
+      rgba($dark, 0.4) 100%
+    );
+    z-index: 1;
+  }
+
+  .about-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 2rem 0;
+  }
+
+  .about-hero-title {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 300;
+    color: white;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+    line-height: 1.1;
+  }
+}
+
+.min-vh-60 {
+  min-height: 60vh;
+}
+
+// Philosophy Section
+.about-philosophy {
+  background: $light;
+
+  .philosophy-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+
+  .philosophy-quote {
+    margin: 3rem 0 0;
+    padding: 2.5rem;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    border-left: 4px solid $primary;
+    color: #555;
+
+    em {
+      font-style: italic;
+    }
+  }
+}
+
+// Team Section
+.team-section {
+  background: white;
+}
+
+.team-member-row {
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  &:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.profile-photo-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+  }
+
+  .profile-photo-container {
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  .profile-photo {
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .overlay-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover .profile-photo {
+    transform: scale(1.05);
+  }
+
+  &:hover .overlay-photo {
+    opacity: 1;
+  }
+}
+
+.team-member-content {
+  padding: 1rem 0;
+}
+
+.team-member-header {
+  border-bottom: 2px solid $primary;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.team-member-name {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: $dark;
+  letter-spacing: -0.02em;
+}
+
+.team-member-title {
+  color: $primary;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.team-member-bio {
+  color: #555;
+  line-height: 1.8;
+}
+
+.team-member-quote {
+  position: relative;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+
+  .quote-icon {
+    position: absolute;
+    top: -16px;
+    left: 20px;
+    color: $primary;
+  }
+
+  .quote-attribution {
+    color: #888;
+    font-size: 0.9rem;
+  }
+}
+
+// Awards Section
+.awards-section {
+  background: linear-gradient(135deg, $dark 0%, #16213E 100%);
+
+  :host ::ng-deep {
+    h2, h3, h4, p, span {
+      color: white;
+    }
+  }
+}
+
+// Section Header
+.section-header {
+  margin-bottom: 4rem;
+
+  .display-4 {
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: $dark;
+  }
+}
+
+// Legacy styles for backwards compatibility
+.negative-margin {
+  margin-left: -14.33%;
+  margin-right: -14.33%;
+}
+
+@media screen and (max-width: 1700px) and (min-width: 1500px) {
+  .negative-y-margin {
+    margin-top: -5%;
+    margin-bottom: -5%;
+  }
+}
+
+@media screen and (max-width: 1500px) and (min-width: 1137px) {
+  .negative-y-margin {
+    margin-top: -10%;
+    margin-bottom: -10%;
+  }
+}
+
+@media screen and (max-width: 1136px) and (min-width: 928px) {
+  .negative-y-margin {
+    margin-top: -25%;
+    margin-bottom: -25%;
+  }
+}
+
+@media screen and (max-width: 927px) and (min-width: 728px) {
+  .negative-y-margin {
+    margin-top: -34%;
+    margin-bottom: -34%;
+  }
+}
+
+@media screen and (max-width: 728px) and (min-width: 598px) {
+  .negative-y-margin {
+    margin-top: -52%;
+    margin-bottom: -47%;
+  }
+}
+
+@media screen and (max-width: 598px) and (min-width: 532px) {
+  .negative-y-margin {
+    margin-top: -75%;
+    margin-bottom: -68%;
+  }
+}
+
+@media screen and (max-width: 532px) {
+  .negative-y-margin {
+    margin-top: -88%;
+    margin-bottom: -85%;
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 767px) {
+  .about-hero {
+    min-height: 50vh;
+
+    .about-hero-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .team-member-name {
+    font-size: 1.75rem;
+  }
+
+  .team-member-row {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .profile-photo-wrapper {
+    margin-bottom: 2rem;
+  }
+}

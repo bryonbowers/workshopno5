@@ -1,0 +1,19 @@
+.btn-lg {
+	@include media-breakpoint-up(lg) {
+		font-size: $lead-size-lg;	
+	}
+}
+
+.btn-cta {
+	min-width: 12rem;
+}
+
+.btn-xs-block {
+	@include media-breakpoint-down(xs) {
+		display: block;
+		width: 100%;
+		&+.btn-xs-block {
+			margin-top: $spacer * 0.5;
+		}
+	}
+}

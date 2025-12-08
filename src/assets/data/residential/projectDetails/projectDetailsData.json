@@ -1,0 +1,2572 @@
+{
+  "projectData": [
+    {
+      "id": "39",
+      "projectName": "Heritage Way",
+      "projectdescription": [
+        "Remodel/Addition",
+        "4 bedrooms, 4.5 bathrooms, 2,901 sf",
+        "Transitional home with bonus attic space and roof deck"
+      ],
+      "mainImageUrl" : "../assets/residential/heritage-way/heritage-way-12.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Designer"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../assets/residential/heritage-way/heritage-way-2.jpg",
+          "name": "Heritage Way 2",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/heritage-way/heritage-way-3.jpg",
+          "name": "Heritage Way 3",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/heritage-way/heritage-way-4.jpg",
+          "name": "Heritage Way 4",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/heritage-way/heritage-way-5.jpg",
+          "name": "Heritage Way 5",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/heritage-way/heritage-way-6.jpg",
+          "name": "Heritage Way 6",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/heritage-way/heritage-way-7.jpg",
+          "name": "Heritage Way 7",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/heritage-way/heritage-way-9.jpg",
+          "name": "Heritage Way 9",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/heritage-way/heritage-way-11.jpg",
+          "name": "Heritage Way 11",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/heritage-way/heritage-way-1.jpg",
+          "name": "Heritage Way 1",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "41",
+      "projectName": "W. 55th Street",
+      "projectdescription": [
+        "Remodel and addition",
+        "3 bedrooms, 2.5 bathrooms, 2,130 sf",
+        "Remodel of a cozy cottage with an addition, modern refresh with vibrant colors"
+      ],
+      "mainImageUrl" : "../assets/residential/w55th/1907KENWOOD-1-cover.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No.5",
+          "position": "Interior Design"
+        },
+        {
+          "name": "Streamline",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../assets/residential/w55th/1907KENWOOD-2.jpg",
+          "name": "W. 55th Street 2",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/w55th/1907KENWOOD-3.jpg",
+          "name": "W. 55th Street 3",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/w55th/1907KENWOOD-4.jpg",
+          "name": "W. 55th Street 4",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/w55th/1907KENWOOD-5.jpg",
+          "name": "W. 55th Street 5",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/w55th/1907KENWOOD-6.jpg",
+          "name": "W. 55th Street 6",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/w55th/1907KENWOOD-8.jpg",
+          "name": "W. 55th Street 8",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "projectName": "Round Up",
+      "projectdescription": [
+        "Remodel and Addition",
+        "5 bedrooms, 3 bathrooms, 2,569 sf",
+        "Remodel of a Midcentury home with a new connection to the outdoor living"
+      ],
+      "mainImageUrl" : "../assets/residential/round-up/round-up-front.png",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No.5",
+          "position": "Interiors"
+        },
+        {
+          "name": "Build Native",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        { 
+          "url": "../assets/residential/round-up/round-up-back.png",
+          "name": "Round Up Back",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "43",
+      "projectName": "Nasco",
+      "projectdescription": [
+        "New Construction",
+        "4 bedrooms, 4.5 bathrooms, 4,850 sf",
+        "A contemporary take on Mid-century architecture, designed for accessibility."
+      ],
+      "mainImageUrl" : "../assets/residential/nasco/Rendering_Front.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interiors"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../assets/residential/nasco/Rendering_Back.jpg",
+          "name": "Nasco Back",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "44",
+      "projectName": "Pebble Path",
+      "projectdescription": [
+        "Remodel and Addition",
+        "5 bedrooms, 6.5 bathrooms, 5,222 sf",
+        "Transitional architecture as a home for a growing family"
+      ],
+      "mainImageUrl" : "../assets/residential/pebble-path/pebble-path-front.png",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../assets/residential/pebble-path/pebble-path-back.png",
+          "name": "Pebble Path Back",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "45",
+      "projectName": "La Casa",
+      "projectdescription": [
+        "New Construction",
+        "3 buildings with 3 bedrooms, 3.5 bathrooms, 1900 sf each ",
+        "3-unit residential project with a central drive court and unique yard spaces"
+      ],
+      "mainImageUrl" : "../assets/residential/la-casa/la-casa-side.png",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No.5",
+          "position": "Interiors"
+        },
+        {
+          "name": "Build Native",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+      ]
+    },
+    {
+      "id": "46",
+      "projectName": "Pasadena",
+      "photos_soon": true,
+      "mainImageUrl": "../../assets/residential/pasadena/pasadena-render.png",
+      "projectdescription": [
+        "New Construction",
+        "4 bedrooms, 4.5 bathrooms, 3,696 sf main house, 544 sf casita",
+        "Contemporary home with an art deco flair, casita guest house with a covered walkway"
+      ],
+      "projectDetails": [
+      ],
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interiors"
+        },
+        {
+          "name": "Streamline",
+          "position": "Contractor"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "projectName": "Oxford Avenue",
+      "projectdescription": [
+        "New Construction",
+        "4 beds, 4 baths, bonus room, 3,272 sf",
+        "Urban Infill",
+        "Habitable attic w/ dormers",
+        "Contemporary architecture"
+      ],
+      "mainImageUrl" : "../assets/residential/Oxford/01_Oxford.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No.5",
+          "position": "Interior Design"
+        },
+        {
+          "name": "Streamline",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../assets/residential/Oxford/02_Oxford.jpg",
+          "name": "Oxford Avenue Residence 2",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/Oxford/03_Oxford.jpg",
+          "name": "Oxford Avenue Residence 3",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/Oxford/04_Oxford.jpg",
+          "name": "Oxford Avenue Residence 4",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/Oxford/05_Oxford.jpg",
+          "name": "Oxford Avenue Residence 5",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/Oxford/06_Oxford.jpg",
+          "name": "Oxford Avenue Residence 6",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "projectName": "Winflo Residence",
+      "projectdescription": [
+        "New construction",
+        "3 bedrooms, 3.5 baths, 3000 sf",
+        "Modern home in Clarksville celebrating indoor/outdoor living",
+        "Beautiful downtown views from the second level",
+        "Lots of cantilevers "
+      ],
+      "mainImageUrl" : "../../assets/residential/winflo/20211201_WorkshopNo5_Winflo_Web_1.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Designer"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/winflo/20211201_WorkshopNo5_Winflo_Web_6.jpg",
+          "name": "Winflo Residence 10",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/winflo/20211201_WorkshopNo5_Winflo_Web_8.jpg",
+          "name": "Winflo Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/winflo/20211201_WorkshopNo5_Winflo_Web_9.jpg",
+          "name": "Winflo Residence 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/winflo/20211201_WorkshopNo5_Winflo_Web_11.jpg",
+          "name": "Winflo Residence 4",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/winflo/20211201_WorkshopNo5_Winflo_Web_18.jpg",
+          "name": "Winflo Residence 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/winflo/20211201_WorkshopNo5_Winflo_Web_20.jpg",
+          "name": "Winflo Residence 6",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/winflo/20211201_WorkshopNo5_Winflo_Web_21.jpg",
+          "name": "Winflo Residence 7",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/winflo/20211201_WorkshopNo5_Winflo_Web_25.jpg",
+          "name": "Winflo Residence 8",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/winflo/20211201_WorkshopNo5_Winflo_Web_26.jpg",
+          "name": "Winflo Residence 9",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "projectName": "Woodrow Kitchen",
+      "projectdescription": [
+        "Modern kitchen remodel",
+        "Interior remodel of 900 sf of living space"
+      ],
+      "mainImageUrl" : "../../assets/residential/woodrow/WorkshopNo5_WoodrowKitchen_Web_03.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Interior Designer"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/woodrow/WorkshopNo5_WoodrowKitchen_Web_01.jpg",
+          "name": "Woodrow Remodel 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/woodrow/WorkshopNo5_WoodrowKitchen_Web_05.jpg",
+          "name": "Woodrow Remodel 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/woodrow/WorkshopNo5_WoodrowKitchen_Web_10.jpg",
+          "name": "Woodrow Remodel 4",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "projectName": "Jewell",
+      "projectdescription": [
+        "New Construction",
+        "3 bedroom, 2.5 bath, 2500 sf",
+        "Modern treehouse",
+        "Contemporary architecture on a lot with several heritage pecan trees"
+      ],
+      "mainImageUrl" : "../../assets/residential/jewell/1_JEWELLST.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Montebella",
+          "position": "Interiors"
+        },
+        {
+          "name": "Montebella",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/jewell/2_JEWELLST.jpg",
+          "name": "Jewell Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/jewell/3_JEWELLST.jpg",
+          "name": "Jewell Residence 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/jewell/4_JEWELLST.jpg",
+          "name": "Jewell Residence 4",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/jewell/5_JEWELLST.jpg",
+          "name": "Jewell Residence 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/jewell/6_JEWELLST.jpg",
+          "name": "Jewell Residence 6",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/jewell/7_JEWELLST.jpg",
+          "name": "Jewell Residence 7",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/jewell/8_JEWELLST.jpg",
+          "name": "Jewell Residence 8",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/jewell/9_JEWELLST.jpg",
+          "name": "Jewell Residence 9",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/jewell/10_JEWELLST.jpg",
+          "name": "Jewell Residence 10",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/jewell/11_JEWELLST.jpg",
+          "name": "Jewell Residence 11",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "projectName": "Venado",
+      "projectdescription": [
+        "New construction",
+        "4 bedrooms plus office, 3.5 baths, 4125 sf",
+        "Transitional Architecture",
+        "Floating stairs",
+        "Two-story entry"
+      ],
+      "mainImageUrl" : "../../assets/residential/Venado/1_VENADO.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Designer"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/Venado/2_VENADO.jpg",
+          "name": "Venado Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Venado/3_VENADO.jpg",
+          "name": "Venado Residence 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Venado/4_VENADO.jpg",
+          "name": "Venado Residence 4",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Venado/5_VENADO.jpg",
+          "name": "Venado Residence 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Venado/6_VENADO.jpg",
+          "name": "Venado Residence 6",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Venado/7_VENADO.jpg",
+          "name": "Venado Residence 7",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Venado/8_VENADO.jpg",
+          "name": "Venado Residence 8",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Venado/9_VENADO.jpg",
+          "name": "Venado Residence 9",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Venado/10_VENADO.jpg",
+          "name": "Venado Residence 10",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "projectName": "Brownwood Remodel",
+      "projectdescription": [
+        "First floor remodel",
+        "North Austin Mid-Century",
+        "Playful Finishes",
+        "Open Stairs",
+        "Pool And Deck for Indoor/Outdoor Living"
+      ],
+      "mainImageUrl" : "../../assets/residential/brownwood/1_BROWNWOOD.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interiors"
+        },
+        {
+          "name": "Streamline GC",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/brownwood/2_BROWNWOOD.jpg",
+          "name": "Brownwood Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/brownwood/3_BROWNWOOD.jpg",
+          "name": "Brownwood Residence 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/brownwood/4_BROWNWOOD.jpg",
+          "name": "Brownwood Residence 4",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/brownwood/5_BROWNWOOD.jpg",
+          "name": "Brownwood Residence 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/brownwood/6_BROWNWOOD.jpg",
+          "name": "Brownwood Residence 6",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/brownwood/7_BROWNWOOD.jpg",
+          "name": "Brownwood Residence 7",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/brownwood/8_BROWNWOOD.jpg",
+          "name": "Brownwood Residence 8",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/brownwood/9_BROWNWOOD.jpg",
+          "name": "Brownwood Residence 9",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "projectName": "South 2nd St. Bungalows",
+      "projectdescription": [
+        "New construction",
+        "Units A1/A2-3 bedrooms, 2.5 Bathrooms, 2100 sf",
+        "Units B1/B2-2 bedrooms, 1.5 Bathrooms, 1050 sf",
+        "Urban farmhouse",
+        "Single family with ADU",
+        "Breezeway & courtyard"
+      ],
+      "mainImageUrl" : "../../assets/residential/S2Bunglows/headerImage.jpg",
+      "mainImageUrlFull" : "../../assets/residential/S2Bunglows/bv_extfrontele.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Designer"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/S2Bunglows/bv_bed01.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/S2Bunglows/bv_ext01.jpg",
+          "full": "../../assets/residential/S2Bunglows/portrait-bv_ext01.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/S2Bunglows/bv_ext02.jpg",
+          "full": "../../assets/residential/S2Bunglows/portrait-bv_ext02.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/S2Bunglows/bv_ext03.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/S2Bunglows/bv_ext04.jpg",
+          "full": "../../assets/residential/S2Bunglows/portrait-bv_ext04.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/S2Bunglows/bv_ext05.jpg",
+          "full": "../../assets/residential/S2Bunglows/portrait-bv_ext05.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/S2Bunglows/bv_frontele02.jpg",
+          "full": "../../assets/residential/S2Bunglows/portrait-bv_frontele02.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/S2Bunglows/bv_office.jpg",
+          "full": "../../assets/residential/S2Bunglows/portrait-bv_office.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/S2Bunglows/bv_patio02.jpg",
+          "full": "../../assets/residential/S2Bunglows/portrait-bv_patio02.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/S2Bunglows/bv_stairdetail.jpg",
+          "full": "../../assets/residential/S2Bunglows/portrait-bv_stairdetail.jpg",
+          "name": "Bed 1",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "projectName": "West 9th St.",
+      "projectdescription": [
+        "New construction",
+        "4 bedrooms, 3.5 baths, 3600 sf",
+        "Contemporary architecture in Deep Eddy neighborhood",
+        "Basement apartment",
+        "Floating staircase",
+        "Private courtyard"
+      ],
+      "mainImageUrl": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_1.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Designer"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_5.jpg",
+          "full": "../../assets/residential/West9St/portrait-20191127_WorkShopNo5_W9th_Web_5.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_6.jpg",
+          "full": "../../assets/residential/West9St/portrait-20191127_WorkShopNo5_W9th_Web_6.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_7.jpg",
+          "full": "../../assets/residential/West9St/portrait-20191127_WorkShopNo5_W9th_Web_7.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_9.jpg",
+          "full": "../../assets/residential/West9St/portrait-20191127_WorkShopNo5_W9th_Web_9.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_12.jpg",
+          "full": "../../assets/residential/West9St/portrait-20191127_WorkShopNo5_W9th_Web_12.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_14.jpg",
+          "full": "../../assets/residential/West9St/portrait-20191127_WorkShopNo5_W9th_Web_14.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_17.jpg",
+          "full": "../../assets/residential/West9St/portrait-20191127_WorkShopNo5_W9th_Web_17.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_2.jpg",
+          "name": "2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_3.jpg",
+          "name": "3",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_4.jpg",
+          "name": "4",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_8.jpg",
+          "name": "8",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_10.jpg",
+          "name": "10",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_11.jpg",
+          "name": "11",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_13.jpg",
+          "name": "13",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_15.jpg",
+          "name": "15",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_16.jpg",
+          "name": "16",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_18.jpg",
+          "name": "18",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_19.jpg",
+          "name": "19",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_20.jpg",
+          "name": "20",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/West9St/20191127_WorkShopNo5_W9th_Web_21.jpg",
+          "name": "Back Ext 1",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "projectName": "Knollwood Cove",
+      "projectdescription": [
+        "New construction ",
+        "4 bedrooms, 4 baths, 3400 sf",
+        "Inspired by mid-century architecture",
+        "Embedded within the building site",
+        "Two decks and a hall of windows"
+      ],
+      "mainImageUrl" : "../../assets/residential/knollwood/knollliving01wfire.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Designer"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/knollwood/bvknollwoodrearelev2.jpg",
+          "name": "Real Elevation",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/knollwood/knollbed.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/knollwood/Knollkit02.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/knollwood/headerImage.jpg",
+          "full": "../../assets/residential/knollwood/portrait-bvknollwood_entrance.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/knollwood/knollbathv2.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/knollwood/Knollstair.jpg",
+          "full": "../../assets/residential/knollwood/portrait-Knollstair.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/knollwood/bv_exteriordetail05.jpg",
+          "full": "../../assets/residential/knollwood/portrait-bv_exteriordetail05.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/knollwood/bvknollwood_extdetail03.jpg",
+          "full": "../../assets/residential/knollwood/portrait-bvknollwood_extdetail03.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/knollwood/knollbathv2.jpg",
+          "full": "../../assets/residential/knollwood/portrait-knollbathv2.jpg",
+          "name": "Bed 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/knollwood/bvknollwood_detail01.jpg",
+          "name": "Bed 1",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "projectName": "Walton Remodel",
+      "projectdescription": [
+        "Remodel ",
+        "Mid-century upgrade",
+        "New master wing and a new garage",
+        "Integrated construction with the existing architecture"
+      ],
+      "mainImageUrl" : "../../assets/residential/Walton/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Design"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/Walton/image1.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image2.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image3.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image4.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image5.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image6.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image7.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image8.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image9.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image10.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image11.jpg",
+          "name": "Walton",
+          "full": "../../assets/residential/Walton/image11-vertical.jpg",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image12.jpg",
+          "full": "../../assets/residential/Walton/image12-vertical.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image13.jpg",
+          "full": "../../assets/residential/Walton/image13-vertical.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image14.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image15.jpg",
+          "full": "../../assets/residential/Walton/image15-vertical.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image16.jpg",
+          "full": "../../assets/residential/Walton/image16-vertical.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image17.jpg",
+          "name": "Walton",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Walton/image18.jpg",
+          "name": "Walton",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "projectName": "1800 Alegria",
+      "projectdescription": [
+        "New construction",
+        "4 bedrooms, 4 baths, 3000 sf",
+        "Modern Box meets Traditional Farmhouse",
+        "Designed to adapt to Floodplain",
+        "Flexible spaces"
+      ],
+      "mainImageUrl" : "../../assets/residential/alegria1800/1_1800ALEGRIA.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interiors"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/alegria1800/2_1800ALEGRIA.jpg",
+          "name": "1800 Alegria Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/alegria1800/3_1800ALEGRIA.jpg",
+          "name": "1800 Alegria Residence 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/alegria1800/4_1800ALEGRIA.jpg",
+          "name": "1800 Alegria Residence 4",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/alegria1800/5_1800ALEGRIA.jpg",
+          "name": "1800 Alegria Residence 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/alegria1800/6_1800ALEGRIA.jpg",
+          "name": "1800 Alegria Residence 6",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/alegria1800/7_1800ALEGRIA.jpg",
+          "name": "1800 Alegria Residence 7",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/alegria1800/8_1800ALEGRIA.jpg",
+          "name": "1800 Alegria Residence 8",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "projectName": "Cameron Residence",
+      "projectdescription": [
+        "New construction",
+        "3 bedrooms, 3 baths, 2,500 sf",
+        "Nestled into the bluff",
+        "Lake views",
+        "Designed to maximize sustainable living"
+      ],
+      "mainImageUrl" : "../../assets/residential/CameronResidence/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Jackie Burke",
+          "position": "Interior Designer"
+        },
+        {
+          "name": "Native",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/CameronResidence/image9.jpg",
+          "name": "Finley",
+          "full": "../../assets/residential/CameronResidence/image9-vertical.jpg",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/CameronResidence/image1.jpg",
+          "name": "Finley",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/CameronResidence/image2.jpg",
+          "name": "Finley",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/CameronResidence/image3.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/CameronResidence/image4.jpg",
+          "name": "ENFIELD RD.",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/CameronResidence/image5.jpg",
+          "name": "Cameron Residence 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/CameronResidence/image6.jpg",
+          "name": "KNOLLWOOD COVE RD.",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/CameronResidence/image7.jpg",
+          "name": "WEST 9TH ST.",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/CameronResidence/image8.jpg",
+          "name": "Venado",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "projectName": "West 49th Street",
+      "projectdescription": [
+        "New construction",
+        "3 bedrooms, 2.5 bath, 3150 sf",
+        "Modern architecture",
+        "Butterfly roof",
+        "Attic exemption"
+      ],
+      "mainImageUrl" : "../../assets/residential/w_49/1_W49th.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Designer"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/w_49/2_W49th.jpg",
+          "name": "West 49th Street Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/w_49/3_W49th.jpg",
+          "name": "West 49th Street Residence 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/w_49/4_W49th.jpg",
+          "name": "West 49th Street Residence 4",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/w_49/5_W49th.jpg",
+          "name": "West 49th Street Residence 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/w_49/6_W49th.jpg",
+          "name": "West 49th Street Residence 6",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/w_49/7_W49th.jpg",
+          "name": "West 49th Street Residence 7",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/w_49/8_W49th.jpg",
+          "name": "West 49th Street Residence 8",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/w_49/9_W49th.jpg",
+          "name": "West 49th Street Residence 9",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/w_49/10_W49th.jpg",
+          "name": "West 49th Street Residence 10",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/w_49/11_W49th.jpg",
+          "name": "West 49th Street Residence 11",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/w_49/12_W49th.jpg",
+          "name": "West 49th Street Residence 12",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "projectName": "Lindenwood Remodel",
+      "projectdescription": [
+        "Remodel and addition",
+        "Mid-century meets modern styling",
+        "Improved flow",
+        "Filled with natural light"
+      ],
+      "mainImageUrl" : "../../assets/residential/Lindenwood/10-WorkshopNo5_Lindenwood_Web_25.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Design"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/Lindenwood/01-WorkshopNo5_Lindenwood_Web_2.jpg",
+          "name": "Lindenwood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Lindenwood/02-WorkshopNo5_Lindenwood_Web_3.jpg",
+          "name": "Lindenwood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Lindenwood/03-WorkshopNo5_Lindenwood_Web_4.jpg",
+          "name": "Lindenwood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Lindenwood/04-WorkshopNo5_Lindenwood_Web_6.jpg",
+          "name": "Lindenwood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Lindenwood/05-WorkshopNo5_Lindenwood_Web_10.jpg",
+          "name": "Lindenwood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Lindenwood/06-WorkshopNo5_Lindenwood_Web_16.jpg",
+          "name": "Lindenwood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Lindenwood/07-WorkshopNo5_Lindenwood_Web_12.jpg",
+          "name": "Lindenwood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Lindenwood/08-WorkshopNo5_Lindenwood_Web_21.jpg",
+          "name": "Lindenwood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Lindenwood/09-WorkshopNo5_Lindenwood_Web_23.jpg",
+          "name": "Lindenwood",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "projectName": "Crestway",
+      "projectdescription": [
+        "New construction",
+        "4 bedrooms, 4 baths, 4,440 sf",
+        "Contemporary home in an urban forest",
+        "Courtyard with pool",
+        "Beautiful vaulted rooms"
+      ],
+      "mainImageUrl" : "../../assets/residential/Crestway/01WorkshopNo5_Crestway_Web_1.JPG",
+      "mainImageUrlFull" : "../../assets/residential/Crestway/01WorkshopNo5_Crestway_Web_1.JPG",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Design"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/Crestway/02WorkshopNo5_Crestway_Web_8.JPG",
+          "name": "Crestway",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Crestway/03WorkshopNo5_Crestway_Web_9.JPG",
+          "name": "Crestway",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Crestway/04WorkshopNo5_Crestway_Web_13.JPG",
+          "name": "Crestway",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Crestway/05WorkshopNo5_Crestway_Web_15.JPG",
+          "name": "Crestway",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Crestway/06WorkshopNo5_Crestway_Web_20.JPG",
+          "name": "Crestway",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Crestway/07WorkshopNo5_Crestway_Web_23.JPG",
+          "name": "Crestway",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Crestway/08WorkshopNo5_Crestway_Web_26.JPG",
+          "name": "Crestway",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Crestway/09WorkshopNo5_Crestway_Web_29.JPG",
+          "name": "Crestway",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Crestway/10WorkshopNo5_Crestway_Web_30.JPG",
+          "name": "Crestway",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Crestway/11WorkshopNo5_Crestway_Web_31.JPG",
+          "name": "Crestway",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "projectName": "Chiappero",
+      "projectdescription": [
+        "New Construction",
+        "5 beds, 3 baths, playroom, 4,214 sf",
+        "Glassy two-story entry volume",
+        "Mature trees",
+        "Contemporary architecture"
+      ],
+      "mainImageUrl" : "../../assets/residential/chiappero/002Leonid_Furmansky_Workshop_NO5_Web_ 38.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interiors"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/chiappero/012Leonid_Furmansky_Workshop_NO5_Web_ 22.jpg",
+          "name": "Chiappero Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/chiappero/011Leonid_Furmansky_Workshop_NO5_Web_ 16.jpg",
+          "name": "Chiappero Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/chiappero/003Leonid_Furmansky_Workshop_NO5_Web_ 17.jpg",
+          "name": "Chiappero Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/chiappero/004Leonid_Furmansky_Workshop_NO5_Web_ 33.jpg",
+          "name": "Chiappero Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/chiappero/005Leonid_Furmansky_Workshop_NO5_Web_ 2.jpg",
+          "name": "Chiappero Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/chiappero/006Leonid_Furmansky_Workshop_NO5_Web_ 29.jpg",
+          "name": "Chiappero Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/chiappero/007Leonid_Furmansky_Workshop_NO5_Web_ 37.jpg",
+          "name": "Chiappero Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/chiappero/008Leonid_Furmansky_Workshop_NO5_Web_ 31.jpg",
+          "name": "Chiappero Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/chiappero/009Leonid_Furmansky_Workshop_NO5_Web_ 14.jpg",
+          "name": "Chiappero Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/chiappero/010Leonid_Furmansky_Workshop_NO5_Web_ 23.jpg",
+          "name": "Chiappero Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/chiappero/001Leonid_Furmansky_Workshop_NO5_Web_.jpg",
+          "name": "Chiappero Residence 2",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "projectName": "Burney",
+      "projectdescription": [
+        "New Construction",
+        "4 bedrooms, 3 bathrooms, Media room, 3,676 sf",
+        "Mid-Century inspired with butterfly roof",
+        "Ribbon windows"
+      ],
+      "photos_soon": false,
+      "mainImageUrl" : "../../assets/residential/burney/1_Burney.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interiors"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/burney/2_Burney.jpg",
+          "name": "Burney Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/burney/3_Burney.jpg",
+          "name": "Burney Residence 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/burney/4_Burney.jpg",
+          "name": "Burney Residence 4",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/burney/5_Burney.jpg",
+          "name": "Burney Residence 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/burney/6_Burney.jpg",
+          "name": "Burney Residence 6",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/burney/7_Burney.jpg",
+          "name": "Burney Residence 7",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/burney/8_Burney.jpg",
+          "name": "Burney Residence 8",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/burney/9_Burney.jpg",
+          "name": "Burney Residence 9",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/burney/10_Burney.jpg",
+          "name": "Burney Residence 10",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/burney/11_Burney.jpg",
+          "full": "../../assets/residential/burney/11_Burney-full.jpg",
+          "name": "Burney Residence 11",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "projectName": "Loma Linda",
+      "projectdescription": [
+        "New Construction",
+        "4 beds, 4 baths, office, 4,000 sf",
+        "Westlake Hills",
+        "Two Stories with a basement level built into slope",
+        "Contemporary architecture"
+      ],
+      "photos_soon": false,
+      "mainImageUrl" : "../../assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_ 1.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interiors"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_ 34.jpg",
+          "name": "Loma Linda Residence 34",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_ 35.jpg",
+          "name": "Loma Linda Residence 35",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_ 36.jpg",
+          "name": "Loma Linda Residence 36",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_ 32.jpg",
+          "name": "Loma Linda Residence 32",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_ 9.jpg",
+          "name": "Loma Linda Residence 9",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_ 25.jpg",
+          "name": "Loma Linda Residence 25",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_ 24.jpg",
+          "name": "Loma Linda Residence 24",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_ 22.jpg",
+          "name": "Loma Linda Residence 22",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_ 11.jpg",
+          "name": "Loma Linda Residence 11",
+          "show": false
+        }
+        
+        
+      ]
+    },
+    {
+      "id": "28",
+      "projectName": "Robbins Road",
+      "projectdescription": [
+        "New Construction",
+        "4 beds, 4.5 baths, media room, 4,200 sf",
+        "Lake Austin Waterfront",
+        "Indoor/Outdoor living",
+        "Sloping lot with large trees"
+      ],
+      "photos_soon": true,
+      "mainImageUrl" : "../../assets/residential/robbinsroad/stuccostreetfinal.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interiors"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/robbinsroad/stuccolakefinal.jpg",
+          "name": "Robbins Road Residence 2",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "projectName": "Palo Duro",
+      "projectdescription": [
+        "Remodel and addition",
+        "3 beds, 2.5 baths, office, 2,550 sf",
+        "Enlarged kitchen and living areas",
+        "Master Suite with vaulted ceilings"
+      ],
+      "photos_soon": true,
+      "mainImageUrl" : "../../assets/residential/paloduro/1_PALODURO.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interiors"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/paloduro/2_PALODURO.jpg",
+          "name": "Palo Duro Residence 2",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "projectName": "Oltorf",
+      "projectdescription": [
+        "New Construction",
+        "4 beds, 3.5 baths, bonus room, 2,656 sf",
+        "Courtyard with heritage oak tree",
+        "Second floor balcony with downtown views",
+        "Contemporary architecture"
+      ],
+      "photos_soon": true,
+      "mainImageUrl" : "../../assets/residential/oltorf/1_OLTORF.png",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interiors"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/oltorf/2_OLTORF.png",
+          "name": "Oltorf Residence 2",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "projectName": "W. St. John's",
+      "projectdescription": [
+        "New construction",
+        "3 bedrooms, 3 baths, 3,140 sf",
+        "Part of a living community",
+        "The screened porch faces the sidewalk",
+        "Accessory dwelling"
+      ],
+      "photos_soon": true,
+      "mainImageUrl" : "../assets/residential/StJohns/1701_W_St_Johns_Front_View_Render.jpg",
+      "mainImageUrlFull" : "../assets/residential/StJohns/1701_W_St_Johns_Front_View_Render-full.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Design"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../assets/residential/StJohns/1701_W_St_Johns__ADU_FRONT_Render.jpg",
+          "full": "../../assets/residential/StJohns/1701_W_St_Johns__ADU_FRONT_Render-full.jpg",
+          "name": "St. John's",
+          "show": false
+        },
+        {
+          "url": "../assets/residential/StJohns/1701_W_St_Johns_Side_View_Render.jpg",
+          "full": "../assets/residential/StJohns/1701_W_St_Johns_Side_View_Render-full.jpg",
+          "name": "St. John's",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "projectName": "Englewood Remodel",
+      "archive": true,
+      "projectdescription": [
+        "Remodel",
+        "A Central Austin original",
+        "Joined the house and detached garage",
+        "Updated kitchen",
+        "Revamped the master suite"
+      ],
+      "mainImageUrl" : "../../assets/residential/Englewood/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "reVision Austin",
+          "position": "Contactor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/Englewood/englewood5.jpg",
+          "name": "Englewood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Englewood/englewood6.jpg",
+          "name": "Englewood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Englewood/englewood4.jpg",
+          "name": "Englewood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Englewood/englewood7.jpg",
+          "name": "Englewood",
+          "full": "../../assets/residential/Englewood/englewood7-vertical.jpg",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Englewood/englewood8.jpg",
+          "name": "Englewood",
+          "full": "../../assets/residential/Englewood/englewood8-vertical.jpg",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Englewood/englewood2.jpg",
+          "name": "Englewood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Englewood/englewood10.jpg",
+          "name": "Englewood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Englewood/englewood11.jpg",
+          "name": "Englewood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Englewood/englewood12.jpg",
+          "name": "Englewood",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Englewood/englewood1.jpg",
+          "name": "Englewood",
+          "full": "../../assets/residential/Englewood/englewood1-vertical.jpg",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Englewood/englewood3.jpg",
+          "name": "Englewood",
+          "full": "../../assets/residential/Englewood/englewood3-vertical.jpg",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "projectName": "Miriam Remodel",
+      "archive": true,
+      "projectdescription": [
+        "Remodel",
+        "New master suite & laundry room",
+        "Remodeled kitchen",
+        "Mud room and deck"
+      ],
+      "mainImageUrl" : "../../assets/residential/Miriam/image11.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Caprock Builders",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/Miriam/image1.jpg",
+          "name": "Miriam",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Miriam/image2.jpg",
+          "name": "Miriam",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Miriam/image3.jpg",
+          "name": "Miriam",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Miriam/image4.jpg",
+          "name": "Miriam",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Miriam/image5.jpg",
+          "name": "Miriam",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Miriam/image6.jpg",
+          "full": "../../assets/residential/Miriam/image6-vertical.jpg",
+          "name": "Miriam",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Miriam/image7.jpg",
+          "full": "../../assets/residential/Miriam/image7-vertical.jpg",
+          "name": "Miriam",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Miriam/image8.jpg",
+          "full": "../../assets/residential/Miriam/image8-vertical.jpg",
+          "name": "Miriam",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Miriam/image9.jpg",
+          "full": "../../assets/residential/Miriam/image9-vertical.jpg",
+          "name": "Miriam",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Miriam/image10.jpg",
+          "full": "../../assets/residential/Miriam/image10-vertical.jpg",
+          "name": "Miriam",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Miriam/image12.jpg",
+          "full": "../../assets/residential/Miriam/image12-vertical.jpg",
+          "name": "Miriam",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "projectName": "Richcreek Residence",
+      "projectdescription": [
+        "New construction",
+        "4 bedrooms, 3.5 baths, 2800 sf",
+        "Craftsman inspired",
+        "Playful family home that features an attic playroom"
+      ],
+      "mainImageUrl" : "../../assets/residential/RichcreekResidence/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No.5",
+          "position": "Architect"
+        },
+        {
+          "name": "Reed Construction",
+          "position": "Contactor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/RichcreekResidence/image1.jpg",
+          "name": "Richcreek Residence 1",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/RichcreekResidence/image2.jpg",
+          "name": "Richcreek Residence 2",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/RichcreekResidence/image3.jpg",
+          "name": "Richcreek Residence 3",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/RichcreekResidence/image4.jpg",
+          "name": "Richcreek Residence 4",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/RichcreekResidence/image5.jpg",
+          "name": "Richcreek Residence 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/RichcreekResidence/image6.jpg",
+          "name": "Richcreek Residence 6",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "projectName": "Finley Residence",
+      "projectdescription": [
+        "New construction",
+        "4 bedrooms, 3 baths, 3430 sf",
+        "Mid-Century Modern",
+        "Backyard studio",
+        "Vaulted entry with clerestory"
+      ],
+      "mainImageUrl" : "../../assets/residential/Finley/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interior Designer"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/Finley/image1.jpg",
+          "name": "Finley",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Finley/image2.jpg",
+          "name": "Finley",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Finley/image3.jpg",
+          "name": "ENFIELD RD.",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Finley/image4.jpg",
+          "name": "ENFIELD RD.",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Finley/image5.jpg",
+          "name": "Finley Residence 5",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Finley/image6.jpg",
+          "name": "Finley 6",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Finley/image7.jpg",
+          "name": "KNOLLWOOD COVE RD.",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Finley/image8.jpg",
+          "name": "WEST 9TH ST.",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "projectName": "Alegria Residence",
+      "projectdescription": [
+        "New construction",
+        "3 bedrooms, 2.5 baths, 2800 sf",
+        "Modern farmhouse style",
+        "Shiplap dining",
+        "Glassy entry and blue island"
+      ],
+      "mainImageUrl" : "../../assets/residential/Alegria/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Reed Construction",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/Alegria/image1.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Alegria/image2.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Alegria/image3.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Alegria/image4.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Alegria/image5.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Alegria/image6.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Alegria/image7.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Alegria/image8.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Alegria/image9.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "projectName": "Tarrytown Remodel",
+      "archive": true,
+      "projectdescription": [
+        "Remodel",
+        "Enlarged master bath and reconfigured kitchen and laundry room",
+        "Added a powder room",
+		    "Traditional style"
+      ],
+      "mainImageUrl" : "../../assets/residential/Enfield/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/Enfield/image1.jpg",
+          "name": "Finley",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Enfield/image2.jpg",
+          "name": "Enfield",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Enfield/image3.jpg",
+          "name": "ALEGRIA",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Enfield/image4.jpg",
+          "name": "ENFIELD RD.",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Enfield/image5.jpg",
+          "name": "WEST 9TH ST.",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Enfield/image6.jpg",
+          "name": "ENFIELD RD.",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Enfield/image7.jpg",
+          "name": "Enfield Residence 7",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/Enfield/image8.jpg",
+          "name": "KNOLLWOOD COVE RD.",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "projectName": "Perez Residence",
+      "archive": true,
+      "projectdescription": [
+        "New construction",
+        "3 bedrooms, 2 baths, 2100 sf",
+        "Floodplain variance ",
+        "Roof deck",
+        "Contemporary facelift"
+      ],
+      "mainImageUrl" : "../../assets/residential/Perez/headerImage.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/Perez/image2.jpg",
+          "name": "test",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "projectName": "Bull Creek",
+      "projectdescription": [],
+      "mainImageUrl" : "../../assets/residential/coming-soon.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interiors"
+        },
+        {
+          "name": "Streamline GC",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": []
+    },
+    {
+      "id": "31",
+      "projectName": "West 55th Residence",
+      "projectdescription": [],
+      "mainImageUrl" : "../../assets/residential/coming-soon.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interiors"
+        },
+        {
+          "name": "Streamline GC",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": []
+    },
+    {
+      "id": "32",
+      "projectName": "Keffer M Bath Remodel",
+      "projectdescription": [],
+      "mainImageUrl" : "../../assets/residential/coming-soon.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interiors"
+        },
+        {
+          "name": "Streamline GC",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": []
+    },
+    {
+      "id": "33",
+      "projectName": "Tisdale",
+      "projectdescription": [],
+      "mainImageUrl" : "../../assets/residential/coming-soon.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interiors"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": []
+    },
+    {
+      "id": "34",
+      "projectName": "Southwood",
+      "projectdescription": [],
+      "mainImageUrl" : "../../assets/residential/coming-soon.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interiors"
+        }
+      ],
+      "projectDetails": []
+    },
+    {
+      "id": "35",
+      "projectName": "Nasco",
+      "projectdescription": [],
+      "mainImageUrl" : "../../assets/residential/coming-soon.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interiors"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": []
+    },
+    {
+      "id": "36",
+      "projectName": "Twin Oaks Bungalow #1",
+      "projectdescription": [],
+      "photos_soon": true,
+      "mainImageUrl" : "../../assets/residential/twin-oaks-bungalow-1/twin-oaks-1-front.png",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/twin-oaks-bungalow-1/twin-oaks-1-back.png",
+          "name": "",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "37",
+      "projectName": "Twin Oaks Bungalow #2",
+      "photos_soon": false,
+      "mainImageUrl" : "../../assets/residential/twin-oaks-bungalow-2/TwinOaks_HR_02.jpg",
+      "projectdescription": [
+        "New Construction",
+        "5 bedrooms, 5.5 bathrooms, 4382 sf",
+        "Modern home with butterfly roof and floor-to-ceiling windows"
+      ],
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Workshop No. 5",
+          "position": "Interiors"
+        },
+        {
+          "name": "Streamline",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/twin-oaks-bungalow-2/TwinOaks_HR_16.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/twin-oaks-bungalow-2/TwinOaks_HR_14.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/twin-oaks-bungalow-2/TwinOaks_HR_11.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/twin-oaks-bungalow-2/TwinOaks_HR_09.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/twin-oaks-bungalow-2/TwinOaks_HR_07.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/twin-oaks-bungalow-2/TwinOaks_HR_04.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/twin-oaks-bungalow-2/TwinOaks_HR_01.jpg",
+          "name": "",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": "38",
+      "projectName": "Tisdale",
+      "projectdescription": [],
+      "photos_soon": true,
+      "mainImageUrl" : "../../assets/residential/tisdale/tisdale1.png",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/tisdale/tisdale2.png",
+          "name": "",
+          "show": false
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "projectName": "4205 Venado",
+      "projectdescription": [
+        "New Construction",
+        "4 bedrooms, 4 bathrooms, 3,818 sf",
+        "California modern home, luxurious indoor-outdoor feeling"
+      ],
+      "photos_soon": false,
+      "mainImageUrl" : "../../assets/residential/venado-2/DSC04052.jpg",
+      "projectPersons": [
+        {
+          "name": "Workshop No. 5",
+          "position": "Architect"
+        },
+        {
+          "name": "Amy Mosier",
+          "position": "Interiors"
+        },
+        {
+          "name": "Mosier Luxury Homes",
+          "position": "Contractor"
+        }
+      ],
+      "projectDetails": [
+        {
+          "url": "../../assets/residential/venado-2/DSC03855.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/venado-2/DSC03912.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/venado-2/DSC03945.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/venado-2/DSC03984.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/venado-2/DSC04009.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/venado-2/DSC04018.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/venado-2/DSC04103.jpg",
+          "name": "",
+          "show": false
+        },
+        {
+          "url": "../../assets/residential/venado-2/DSC04139-cropped.jpg",
+          "name": "",
+          "show": false,
+          "full": "../../assets/residential/venado-2/DSC04139.jpg"
+        },
+        {
+          "url": "../../assets/residential/venado-2/DSC04267.jpg",
+          "name": "",
+          "show": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+<div class="container">
+
+  <div class="font-cardo">
+    <h1 class="text-center font-weight-normal display-2">The Blog</h1>
+    <div class="mt-4 text-center betterFont">
+      <label class="text-muted p-2 font-italic">Explore </label>
+      <label class="text-muted p-2" style="transform: scale(3.9,1); font-size: 1.3rem;">- </label>
+      <label class="p-2 text-danger">Residential </label>
+      <label class="text-muted p-2" style="font-size: 1.3rem;">/</label>
+      <label class="p-2 text-danger">Commercial </label>
+    </div>
+  </div>
+  <section>
+    <div class="row mt-4">
+      <div *ngFor="let image of imageCollection" (deferLoad)="image.show = true" class="col-md-12 col-lg-12 my-5">
+        <ng-container *ngIf="image.show">
+          <div class="text-center font-cardo">
+            <img style="width:88%;" [src]="image.url">
+            <h2 class="mt-5 font-weight-bold" style="font-size: 40px;">{{image.title}}</h2>
+            <h5 class="mt-4 text-muted font-italic">{{image.date}}</h5>
+            <p class="mt-4 col-8 m-auto" style="font-size:1.8rem;">{{image.description}}</p>
+          </div>
+          <div class="text-center my-4">
+            <button class="btn btn-light p-3 px-5 font-weight-normal" style="border: 2px solid #111111">READ MORE</button>
+
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<app-contactinfo-component></app-contactinfo-component>

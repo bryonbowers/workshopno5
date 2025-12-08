@@ -1,0 +1,23 @@
+.product-carousel{
+  max-height: 600px;
+  min-height: 386px;
+}
+
+
+@media (max-width: 582px) {
+  .product-carousel {
+    max-height: 600px;
+    min-height: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .image-height {
+    min-height: 300px;
+  }
+}
+
+
+
+/*style="position: absolute;bottom: 0;"
+
+*/

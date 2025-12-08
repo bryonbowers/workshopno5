@@ -1,0 +1,87 @@
+<!-- Portfolio Hero -->
+<section class="portfolio-hero noise-overlay">
+  <div class="portfolio-hero-image ken-burns">
+    <img src="../assets/residential/venado-2/DSC03855.jpg" alt="Residential Architecture & Interior Design">
+  </div>
+  <div class="portfolio-hero-content">
+    <div class="container">
+      <div class="row align-items-center min-vh-50">
+        <div class="col-lg-6">
+          <span class="section-eyebrow text-white-50" data-animate="fade-up">Our Portfolio</span>
+          <h1 class="portfolio-hero-title text-reveal" data-animate="fade-up">Residential</h1>
+          <p class="portfolio-hero-subtitle" data-animate="fade-up">Thoughtfully designed homes that blend timeless elegance with modern living.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Grid -->
+<section class="portfolio-grid-section py-5">
+  <div class="container-fluid px-4">
+    <!-- Skeleton Loading State -->
+    <div class="row g-4" *ngIf="isLoading">
+      <div class="col-sm-6 col-lg-4" *ngFor="let i of [1,2,3,4,5,6]">
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-image"></div>
+          <div class="skeleton skeleton-title"></div>
+          <div class="skeleton skeleton-subtitle"></div>
+          <div class="skeleton skeleton-line"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="row g-4 stagger-children" *ngIf="!isLoading">
+      <ng-container *ngFor="let image of imageCollection; let i = index">
+        <div class="col-sm-6 col-lg-4" *ngIf="!image.archive" data-animate="fade-up">
+          <article class="portfolio-card premium-card">
+            <a href="#" (click)="$event.preventDefault();goToProject(image.id)" class="portfolio-card-link">
+              <div class="portfolio-card-image image-reveal">
+                <img [src]="image.url" [alt]="image.name" loading="lazy">
+                <span *ngIf="image.photos_soon" class="portfolio-badge">Photos Coming Soon</span>
+                <div class="portfolio-card-overlay">
+                  <span class="view-project">
+                    <i class="fas fa-arrow-right"></i>
+                  </span>
+                </div>
+              </div>
+            </a>
+            <div class="portfolio-card-content">
+              <h3 class="portfolio-card-title">
+                <a href="#" (click)="$event.preventDefault();goToProject(image.id)">{{image.name}}</a>
+              </h3>
+              <p class="portfolio-card-subtitle" *ngIf="image.subtitle">{{image.subtitle}}</p>
+              <p class="portfolio-card-summary" *ngIf="image.summary">{{image.summary}}</p>
+            </div>
+          </article>
+        </div>
+      </ng-container>
+      <div class="col-sm-6 col-lg-4" data-animate="fade-up">
+        <a [routerLink]="['/residential-archive']" class="archive-card">
+          <div class="archive-card-content">
+            <i class="fas fa-archive mb-3"></i>
+            <span class="archive-card-text">View Archived Projects</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="portfolio-cta py-5">
+  <div class="container text-center py-4 py-lg-5" data-animate="scale-up">
+    <span class="section-eyebrow">Explore More</span>
+    <h2 class="cta-title mb-4">See more of our work.</h2>
+    <a [routerLink]="['/commercial']" class="btn btn-lg btn-primary btn-magnetic glow-hover">
+      <span class="btn-text">View Commercial Portfolio</span>
+      <i class="fas fa-arrow-right ms-2"></i>
+    </a>
+  </div>
+</section>
+
+<app-consultation-component></app-consultation-component>
+
+<app-contactinfo-component></app-contactinfo-component>

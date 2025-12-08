@@ -1,0 +1,114 @@
+<div class="admin-dashboard" *ngIf="isAdmin$ | async; else notAdmin">
+  <div class="admin-header">
+    <h1>Admin Dashboard</h1>
+    <div class="admin-actions">
+      <button class="btn btn-secondary" (click)="migrateData()" [disabled]="isMigrating">
+        {{ isMigrating ? 'Migrating...' : 'Migrate JSON to Firestore' }}
+      </button>
+      <button class="btn btn-outline-secondary" (click)="signOut()">Sign Out</button>
+    </div>
+  </div>
+
+  <div *ngIf="migrationMessage" class="alert alert-info">
+    {{ migrationMessage }}
+  </div>
+
+  <div class="tabs">
+    <button
+      class="tab-btn"
+      [class.active]="activeTab === 'residential'"
+      (click)="setActiveTab('residential')">
+      Residential Projects
+    </button>
+    <button
+      class="tab-btn"
+      [class.active]="activeTab === 'commercial'"
+      (click)="setActiveTab('commercial')">
+      Commercial Projects
+    </button>
+  </div>
+
+  <!-- Loading State -->
+  <div class="text-center py-5" *ngIf="isLoading">
+    <p>Loading projects...</p>
+  </div>
+
+  <!-- Residential Projects -->
+  <div class="projects-section" *ngIf="activeTab === 'residential' && !isLoading">
+    <div class="section-header">
+      <h2>Residential Projects ({{ residentialProjects.length }})</h2>
+      <button class="btn btn-primary" (click)="createProject('residential')">
+        + New Project
+      </button>
+    </div>
+
+    <div class="projects-list">
+      <div class="project-card" *ngFor="let project of residentialProjects">
+        <div class="project-image">
+          <img [src]="project.url" [alt]="project.name" onerror="this.src='assets/placeholder.jpg'">
+        </div>
+        <div class="project-info">
+          <h3>{{ project.name }}</h3>
+          <p class="project-id">ID: {{ project.id }}</p>
+          <p>{{ project.summary }}</p>
+          <div class="project-meta">
+            <span class="badge" [class.badge-success]="project.show" [class.badge-secondary]="!project.show">
+              {{ project.show ? 'Visible' : 'Hidden' }}
+            </span>
+            <span class="badge badge-info" *ngIf="project.photos_soon">Photos Coming Soon</span>
+            <span class="badge badge-warning" *ngIf="project.archive">Archived</span>
+          </div>
+        </div>
+        <div class="project-actions">
+          <button class="btn btn-sm btn-primary" (click)="editProject('residential', project.id)">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteProject('residential', project.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Commercial Projects -->
+  <div class="projects-section" *ngIf="activeTab === 'commercial' && !isLoading">
+    <div class="section-header">
+      <h2>Commercial Projects ({{ commercialProjects.length }})</h2>
+      <button class="btn btn-primary" (click)="createProject('commercial')">
+        + New Project
+      </button>
+    </div>
+
+    <div class="projects-list">
+      <div class="project-card" *ngFor="let project of commercialProjects">
+        <div class="project-image">
+          <img [src]="project.url" [alt]="project.name" onerror="this.src='assets/placeholder.jpg'">
+        </div>
+        <div class="project-info">
+          <h3>{{ project.name }}</h3>
+          <p class="project-id">ID: {{ project.id }}</p>
+          <p>{{ project.summary }}</p>
+          <div class="project-meta">
+            <span class="badge" [class.badge-success]="project.show" [class.badge-secondary]="!project.show">
+              {{ project.show ? 'Visible' : 'Hidden' }}
+            </span>
+            <span class="badge badge-info" *ngIf="project.photos_soon">Photos Coming Soon</span>
+          </div>
+        </div>
+        <div class="project-actions">
+          <button class="btn btn-sm btn-primary" (click)="editProject('commercial', project.id)">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteProject('commercial', project.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #notAdmin>
+  <div class="access-denied">
+    <h2>Access Denied</h2>
+    <p *ngIf="user$ | async as user; else noUser">
+      You ({{ user.email }}) do not have admin access.
+    </p>
+    <ng-template #noUser>
+      <p>Please <a routerLink="/login">sign in</a> to access the admin dashboard.</p>
+    </ng-template>
+  </div>
+</ng-template>

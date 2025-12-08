@@ -1,0 +1,327 @@
+{
+  "residentialComponent" : [
+    {
+      "id" : 47,
+      "url" : "../assets/residential/venado-2/DSC04052.jpg",
+      "name" : "4205 Venado",
+      "summary" : "California modern home, luxurious indoor-outdoor feeling",
+      "show" : true
+    },
+    {
+      "id" : 39,
+      "url" : "../assets/residential/heritage-way/heritage-way-12.jpg",
+      "name" : "Heritage Way",
+      "summary": "Transitional home with bonus attic space and roof deck",
+      "photos_soon": false,
+      "show" : true
+    },
+    {
+      "id": 37,
+      "url": "../assets/residential/twin-oaks-bungalow-2/TwinOaks_HR_02.jpg",
+      "name": "Twin Oaks Bungalow #2",
+      "summary": "Modern home with butterfly roof and floor-to-ceiling windows",
+      "archive": false,
+      "photos_soon": false,
+      "show": true
+    },
+    {
+      "id" : 40,
+      "url" : "../assets/residential/william-holland/william-holland-front.png",
+      "name" : "William Holland",
+      "summary": "Transitional-inspired home with garage apartment, vaulted living space",
+      "photos_soon": true,
+      "show" : true
+    },
+    {
+      "id" : 41,
+      "url" : "../assets/residential/w55th/1907KENWOOD-1.jpg",
+      "name" : "W. 55th Street",
+      "summary": "Remodel of a cozy cottage with an addition, modern refresh with vibrant colors",
+      "photos_soon": false,
+      "show" : true
+    },
+    {
+      "id": 22,
+      "url": "../assets/residential/lomalinda/Workshop_NO.5_Loma_Linda_Web_ 1.jpg",
+      "name": "Loma Linda",
+      "summary": "Two Stories in Westlake Hills with basement level built into slope",
+      "photos_soon": false,
+      "show": true
+    },
+    {
+      "id" : 42,
+      "url" : "../assets/residential/round-up/round-up-front.png",
+      "name" : "Round Up",
+      "summary": "Remodel of a Midcentury home with a new connection to the outdoor living",
+      "photos_soon": true,
+      "show" : true
+    },
+    {
+      "id" : 43,
+      "url" : "../assets/residential/nasco/Rendering_Front.jpg",
+      "name" : "Nasco",
+      "summary": "A contemporary take on Mid-century architecture, designed for accessibility.",
+      "photos_soon": true,
+      "show" : true
+    },
+    {
+      "id" : 44,
+      "url" : "../assets/residential/pebble-path/pebble-path-front.png",
+      "name" : "Pebble Path",
+      "summary": "Transitional architecture as a home for a growing family",
+      "photos_soon": true,
+      "show" : true
+    },
+    {
+      "id" : 45,
+      "url" : "../assets/residential/la-casa/la-casa-side.png",
+      "name" : "La Casa",
+      "summary": "3-unit residential project with a central drive court and unique yard spaces",
+      "photos_soon": true,
+      "show" : true
+    },
+    {
+      "id" : 46,
+      "url" : "../assets/residential/pasadena/pasadena-render.png",
+      "name" : "Pasadena",
+      "summary": "Contemporary home with an art deco flair, casita guest house with a covered walkway",
+      "photos_soon": true,
+      "show" : true
+    },
+    {
+      "id" : 24,
+      "url" : "../assets/residential/burney/1_Burney.jpg",
+      "name" : "Burney",
+      "summary": "Mid-Century inspired with butterfly roof and ribbon windows",
+      "photos_soon": false,
+      "show" : true
+    },
+    {
+      "id" : 17,
+      "url" : "../assets/residential/Crestway/01WorkshopNo5_Crestway_Web_1.JPG",
+      "name" : "Crestway",
+      "subtitle": "Contemporary home in an Urban Forest",
+      "summary": "New construction nestled into the trees with courtyard and pool",
+      "show" : false
+    },
+    {
+      "id" : 23,
+      "url" : "../assets/residential/chiappero/002Leonid_Furmansky_Workshop_NO5_Web_ 38.jpg",
+      "name" : "Chiappero",
+      "summary": "5 Bedrooms, glassy two-story entry volume",
+      "show" : false
+    },
+    {
+      "id" : 16,
+      "url" : "../assets/residential/Lindenwood/10-WorkshopNo5_Lindenwood_Web_25.jpg",
+      "name" : "Lindenwood Remodel",
+      "subtitle": "Mid-century Meets Modern Styling",
+      "summary": "Addition and remodel to improve flow and fill with light",
+      "show" : false
+    },
+    {
+      "id" : 19,
+      "url" : "../assets/residential/Oxford/01_Oxford.jpg",
+      "name" : "Oxford Avenue",
+      "subtitle": "Uniquely Modern Home",
+      "summary": "Indoor/Outdoor living with grand staircase and bonus flex room under dormer",
+      "show" : false
+    },
+    {
+      "id" : 12,
+      "url" : "../assets/residential/winflo/20211201_WorkshopNo5_Winflo_Web_1.jpg",
+      "name" : "Winflo",
+      "summary": "Modern home with downtown views",
+      "show" : false
+    },
+    {
+      "id" : 29,
+      "url" : "../assets/residential/woodrow/WorkshopNo5_WoodrowKitchen_Web_03.jpg",
+      "name" : "Woodrow Kitchen",
+      "summary": "Interior remodel of 900 sf of living space",
+      "show" : false
+    },
+    {
+      "id" : 25,
+      "url" : "../assets/residential/jewell/1_JEWELLST.jpg",
+      "name" : "Jewell",
+      "summary": "Modern treehouse on a lot with heritage pecan trees",
+      "show" : false
+    },
+    {
+      "id" : 8,
+      "url" : "../assets/residential/Venado/1_VENADO.jpg",
+      "name" : "Venado",
+      "summary": "Grand entry with remodel/addition",
+      "show" : false
+    },
+    {
+      "id" : 21,
+      "url" : "../assets/residential/brownwood/1_BROWNWOOD.jpg",
+      "name" : "Brownwood Remodel",
+      "summary": "North Austin Mid-Century with pool and deck for indoor/outdoor living",
+      "show" : false
+    },
+    {
+      "id" : 5,
+      "url" : "../assets/residential/S2Bunglows/headerImage.jpg",
+      "name" : "South 2nd Bungalows",
+      "summary": "Single Family with Secondary dwelling",
+      "show" : false
+    },
+    {
+      "id" : 7,
+      "url" : "../assets/residential/West9St/headerImage.jpg",
+      "name" : "West 9th St.",
+      "summary": "Contemporary urban home",
+      "show" : false
+    },
+    {
+      "id" : 6,
+      "url" : "../assets/residential/knollwood/headerImage.jpg",
+      "name" : "Knollwood Cove Rd.",
+      "summary": "House with windows",
+      "show" : false
+    },
+    {
+      "id" : 14,
+      "url" : "../assets/residential/Walton/headerImage.jpg",
+      "name" : "Walton Remodel",
+      "subtitle": "Mid-century Upgrade",
+      "summary": "New master wing and a new garage, integrated construction with the existing architecture",
+      "show" : false
+    },
+    {
+      "id" : 20,
+      "url" : "../assets/residential/alegria1800/1_1800ALEGRIA.jpg",
+      "name" : "1800 Alegria",
+      "summary": "Modern Box meets Traditional Farmhouse",
+      "show" : false
+    },
+    {
+      "id" : 11,
+      "url" : "../assets/residential/CameronResidence/headerImage.jpg",
+      "name" : "Cameron",
+      "subtitle": "New Construction",
+      "summary": "Gorgeous sustainable 3 bed, 3 bath contemporary home with expansive views of Lake Austin, sparkling pool and modern kitchen.",
+      "show" : false
+    },
+    {
+      "id" : 9,
+      "url" : "../assets/residential/w_49/1_W49th.jpg",
+      "name" : "West 49th St.",
+      "summary": "Butterfly roof and Habitable Attic",
+      "show" : false
+    },
+    {
+      "id" : 28,
+      "url" : "../assets/residential/robbinsroad/stuccostreetfinal.jpg",
+      "name" : "Robbins Road",
+      "summary": "Indoor/Outdoor living on sloping lot with large trees",
+      "photos_soon": true,
+      "show" : false
+    },
+    {
+      "id" : 27,
+      "url" : "../assets/residential/paloduro/1_PALODURO.jpg",
+      "name" : "Palo Duro",
+      "summary": "Remodel and addition with enlarged kitchen and living areas",
+      "photos_soon": true,
+      "show" : false
+    },
+    {
+      "id" : 26,
+      "url" : "../assets/residential/oltorf/1_OLTORF.png",
+      "name" : "Oltorf",
+      "summary": "Courtyard and second floor balcony with downtown views",
+      "photos_soon": true,
+      "show" : false
+    },
+    {
+      "id" : 18,
+      "url" : "../assets/residential/StJohns/1701_W_St_Johns_Front_View_Render.jpg",
+      "name" : "W. St. Johns",
+      "subtitle": "Part of the community",
+      "summary": "Screened porch faces the sidewalk, stylish accessory dwelling",
+      "photos_soon": true,
+      "show" : false,
+      "archive": true
+    },
+    {
+      "id" : 13,
+      "url" : "../assets/residential/Englewood/headerImage.jpg",
+      "name" : "Englewood Remodel",
+      "subtitle": "A Central Austin Original",
+      "summary": "Joined the house and detached garage with larger living area, updated kitchen, and master suite",
+      "archive": true,
+      "show" : false
+    },
+    {
+      "id" : 15,
+      "url" : "../assets/residential/Miriam/image11.jpg",
+      "name" : "Miriam Remodel",
+      "subtitle": "East-Side Facelift And Addition",
+      "summary": "New master suite & laundry room with remodeled kitchen, mud room and deck",
+      "archive": true,
+      "show" : false
+    },
+    {
+      "id" : 1,
+      "url" : "../assets/residential/RichcreekResidence/headerImage.jpg",
+      "name" : "Richcreek",
+      "archive": true,
+      "summary" : "Craftsman inspired single family home",
+      "show" : false
+    },
+    {
+      "id" : 2,
+      "url" : "../assets/residential/Finley/headerImage.jpg",
+      "name" : "Finley",
+      "archive": true,
+      "summary": "Midcentury Modern single family home",
+      "show" : false
+    },
+    {
+      "id" : 3,
+      "url" : "../assets/residential/Alegria/headerImage.jpg",
+      "name" : "Alegria",
+      "archive": true,
+      "summary": "Modern Farmhouse single family home",
+      "show" : false
+    },
+    {
+      "id" : 4,
+      "url" : "../assets/residential/Enfield/headerImage.jpg",
+      "name" : "Tarrytown Remodel",
+      "summary": "Dream kitchen remodel",
+      "archive": true,
+      "show" : false
+    },
+    {
+      "id" : 10,
+      "url" : "../assets/residential/Perez/headerImage.jpg",
+      "name" : "Perez",
+      "summary": "Contemporary remodel in 25 year floodplain",
+      "archive": true,
+      "show" : false
+    },
+    {
+      "id" : 36,
+      "url" : "../assets/residential/twin-oaks-bungalow-1/twin-oaks-1-front.png",
+      "name" : "Twin Oaks Bungalow #1",
+      "summary": "",
+      "archive": false,
+      "photos_soon": true,
+      "show" : false
+    },
+    {
+      "id" : 38,
+      "url" : "../assets/residential/tisdale/tisdale1.png",
+      "name" : "Tisdale",
+      "summary": "",
+      "archive": false,
+      "photos_soon": true,
+      "show" : false
+    }
+  ]
+}

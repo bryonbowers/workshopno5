@@ -1,0 +1,28 @@
+<div>
+  <h2 class="mb-4">Awards &amp; Tours</h2>
+  <div class="awards-grid mb-5">
+    <div
+      class="award-item"
+      *ngFor="let award of awardCollection; let i = index"
+    >
+      <a
+        [href]="award.url"
+        class="d-flex no-link-style flex-row align-items-center"
+        target="_blank"
+      >
+        <img
+          [src]="award.image"
+          [alt]="award.alt"
+          class="award-img mr-2 shadow-sm mr-md-3"
+        />
+        <div class="award-content">
+          <h4 class="h6 font-weight-bold mb-0" [innerHTML]="award.title"></h4>
+          <p
+            class="mb-0 text-muted text-sm article-description"
+            [innerHTML]="award.description"
+          ></p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

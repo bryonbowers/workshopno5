@@ -1,0 +1,157 @@
+<div class="project-editor" *ngIf="isAdmin$ | async; else notAdmin">
+  <div class="editor-header">
+    <h1>{{ isNewProject ? 'New' : 'Edit' }} {{ projectType | titlecase }} Project</h1>
+    <div class="editor-actions">
+      <button class="btn btn-outline-secondary" (click)="cancel()">Cancel</button>
+      <button class="btn btn-primary" (click)="save()" [disabled]="isSaving">
+        {{ isSaving ? 'Saving...' : 'Save Project' }}
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="isLoading" class="loading">Loading...</div>
+
+  <div *ngIf="uploadProgress !== null" class="upload-progress">
+    <div class="progress-bar" [style.width.%]="uploadProgress"></div>
+    <span>{{ uploadStatus }} {{ uploadProgress | number:'1.0-0' }}%</span>
+  </div>
+
+  <div class="editor-content" *ngIf="!isLoading">
+    <!-- List Display Settings -->
+    <section class="form-section">
+      <h2>List Display Settings</h2>
+      <p class="section-description">These settings control how the project appears in the project list pages.</p>
+
+      <div class="form-group">
+        <label>List Thumbnail Image</label>
+        <div class="image-upload">
+          <img *ngIf="listForm.get('url')?.value" [src]="listForm.get('url')?.value" class="preview-image">
+          <input type="file" accept="image/*" (change)="onListImageSelected($event)">
+          <input type="text" [formControl]="listForm.get('url')" placeholder="Or enter image URL">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Display Name</label>
+        <input type="text" [formControl]="listForm.get('name')" placeholder="Project name for list">
+      </div>
+
+      <div class="form-group">
+        <label>Summary</label>
+        <textarea [formControl]="listForm.get('summary')" placeholder="Brief description for list view" rows="2"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Subtitle (optional)</label>
+        <input type="text" [formControl]="listForm.get('subtitle')" placeholder="Optional subtitle">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" [formControl]="listForm.get('show')">
+            Show on Website
+          </label>
+        </div>
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" [formControl]="listForm.get('photos_soon')">
+            Photos Coming Soon
+          </label>
+        </div>
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" [formControl]="listForm.get('archive')">
+            Archived
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="form-section">
+      <h2>Project Details</h2>
+      <p class="section-description">These settings control the detailed project page content.</p>
+
+      <div class="form-group">
+        <label>Project Name</label>
+        <input type="text" [formControl]="projectForm.get('projectName')" placeholder="Full project name">
+      </div>
+
+      <div class="form-group">
+        <label>Main Image</label>
+        <div class="image-upload">
+          <img *ngIf="projectForm.get('mainImageUrl')?.value" [src]="projectForm.get('mainImageUrl')?.value" class="preview-image">
+          <input type="file" accept="image/*" (change)="onMainImageSelected($event)">
+          <input type="text" [formControl]="projectForm.get('mainImageUrl')" placeholder="Or enter image URL">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Main Image Full Resolution (optional)</label>
+        <input type="text" [formControl]="projectForm.get('mainImageUrlFull')" placeholder="Full resolution image URL">
+      </div>
+    </section>
+
+    <!-- Description Lines -->
+    <section class="form-section">
+      <h2>Description</h2>
+      <div class="array-items" [formGroup]="projectForm">
+        <div formArrayName="projectdescription">
+          <div *ngFor="let desc of descriptionArray.controls; let i = index" class="array-item">
+            <input type="text" [formControlName]="i" placeholder="Description line {{ i + 1 }}">
+            <button type="button" class="btn btn-sm btn-danger" (click)="removeDescription(i)">Remove</button>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-secondary" (click)="addDescription()">+ Add Description Line</button>
+    </section>
+
+    <!-- Team Members -->
+    <section class="form-section">
+      <h2>Project Team</h2>
+      <div class="array-items" [formGroup]="projectForm">
+        <div formArrayName="projectPersons">
+          <div *ngFor="let person of personsArray.controls; let i = index" [formGroupName]="i" class="array-item person-item">
+            <input type="text" formControlName="name" placeholder="Name">
+            <input type="text" formControlName="position" placeholder="Position/Role">
+            <button type="button" class="btn btn-sm btn-danger" (click)="removePerson(i)">Remove</button>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-secondary" (click)="addPerson()">+ Add Team Member</button>
+    </section>
+
+    <!-- Project Images/Details -->
+    <section class="form-section">
+      <h2>Project Gallery</h2>
+      <div class="array-items" [formGroup]="projectForm">
+        <div formArrayName="projectDetails">
+          <div *ngFor="let detail of detailsArray.controls; let i = index" [formGroupName]="i" class="array-item detail-item">
+            <div class="detail-preview">
+              <img *ngIf="detail.get('url')?.value" [src]="detail.get('url')?.value" class="thumbnail">
+            </div>
+            <div class="detail-fields">
+              <div class="detail-upload">
+                <input type="file" accept="image/*" (change)="onDetailImageSelected($event, i)">
+                <input type="text" formControlName="url" placeholder="Image URL">
+              </div>
+              <input type="text" formControlName="name" placeholder="Image name/caption">
+              <input type="text" formControlName="full" placeholder="Full resolution URL (optional)">
+            </div>
+            <button type="button" class="btn btn-sm btn-danger" (click)="removeDetail(i)">Remove</button>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-secondary" (click)="addDetail()">+ Add Gallery Image</button>
+    </section>
+  </div>
+</div>
+
+<ng-template #notAdmin>
+  <div class="access-denied">
+    <h2>Access Denied</h2>
+    <p>You do not have permission to edit projects.</p>
+    <a routerLink="/admin">Back to Admin Dashboard</a>
+  </div>
+</ng-template>
