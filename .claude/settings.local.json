@@ -37,7 +37,9 @@
       "Bash(git reset:*)",
       "Bash(git rm:*)",
       "Bash(gh:*)",
-      "Bash(git rev-list:*)"
+      "Bash(git rev-list:*)",
+      "Bash(git branch:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []

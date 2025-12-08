@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, collection, doc, setDoc, deleteDoc, collectionData, docData, getDocs, query, orderBy } from '@angular/fire/firestore';
+import { Firestore, collection, doc, setDoc, deleteDoc, collectionData, docData, getDocs } from '@angular/fire/firestore';
 import { Storage, ref, uploadBytesResumable, getDownloadURL, deleteObject } from '@angular/fire/storage';
 import { Observable, from, of, BehaviorSubject } from 'rxjs';
-import { map, tap, catchError, shareReplay, switchMap } from 'rxjs/operators';
+import { map, tap, catchError, shareReplay } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { CacheService } from './cache.service';
@@ -42,10 +42,6 @@ export interface Project {
   archive?: boolean;
 }
 
-export interface ProjectWithListData extends Project {
-  listData: ProjectListItem;
-}
-
 @Injectable({
   providedIn: 'root'
 })
@@ -55,347 +51,228 @@ export class ProjectService {
   private http = inject(HttpClient);
   private cacheService = inject(CacheService);
 
-  // In-memory observables for reactive updates
-  private residentialList$ = new BehaviorSubject<ProjectListItem[] | null>(null);
-  private commercialList$ = new BehaviorSubject<ProjectListItem[] | null>(null);
-  private allResidentialProjects$ = new BehaviorSubject<Project[] | null>(null);
-  private allCommercialProjects$ = new BehaviorSubject<Project[] | null>(null);
+  // In-memory cache for instant access
+  private residentialList: ProjectListItem[] | null = null;
+  private commercialList: ProjectListItem[] | null = null;
+  private residentialProjects: Map<string, Project> = new Map();
+  private commercialProjects: Map<string, Project> = new Map();
 
+  // Loading flags to prevent duplicate requests
   private residentialListLoading = false;
   private commercialListLoading = false;
-  private residentialDetailsLoading = false;
-  private commercialDetailsLoading = false;
+  private residentialDetailsLoaded = false;
+  private commercialDetailsLoaded = false;
+
+  // Shared observables
+  private residentialList$: Observable<ProjectListItem[]> | null = null;
+  private commercialList$: Observable<ProjectListItem[]> | null = null;
 
   constructor() {
-    // Initialize from cache
+    // Load from localStorage cache on init
     const cachedResList = this.cacheService.getResidentialList();
     if (cachedResList) {
-      this.residentialList$.next(cachedResList);
+      this.residentialList = cachedResList;
     }
     const cachedComList = this.cacheService.getCommercialList();
     if (cachedComList) {
-      this.commercialList$.next(cachedComList);
+      this.commercialList = cachedComList;
     }
   }
 
-  // ============ PUBLIC API - Fast cached reads ============
+  // ============ PUBLIC API - Instant cached reads ============
 
   getResidentialProjects(): Observable<ProjectListItem[]> {
-    // Return cached data immediately if available
-    const cached = this.cacheService.getResidentialList();
-    if (cached) {
-      // Still fetch in background to update cache
-      this.fetchResidentialListFromFirestore();
-      return of(cached);
+    // Return from memory immediately
+    if (this.residentialList) {
+      return of(this.residentialList);
     }
 
-    // No cache, fetch from Firestore
-    return this.fetchResidentialListFromFirestore();
+    // Return shared observable if already loading
+    if (this.residentialList$) {
+      return this.residentialList$;
+    }
+
+    // Load from JSON (fast)
+    this.residentialList$ = this.http.get<{residentialComponent: ProjectListItem[]}>('./assets/data/residential/residentialListData.json').pipe(
+      map(data => data.residentialComponent || []),
+      tap(projects => {
+        this.residentialList = projects;
+        this.cacheService.setResidentialList(projects);
+        this.residentialList$ = null;
+      }),
+      shareReplay(1),
+      catchError(() => of([]))
+    );
+
+    return this.residentialList$;
   }
 
   getCommercialProjects(): Observable<ProjectListItem[]> {
-    const cached = this.cacheService.getCommercialList();
-    if (cached) {
-      this.fetchCommercialListFromFirestore();
-      return of(cached);
+    if (this.commercialList) {
+      return of(this.commercialList);
     }
-    return this.fetchCommercialListFromFirestore();
+
+    if (this.commercialList$) {
+      return this.commercialList$;
+    }
+
+    this.commercialList$ = this.http.get<{commercialComponent: ProjectListItem[]}>('./assets/data/commercial/commercialListData.json').pipe(
+      map(data => data.commercialComponent || []),
+      tap(projects => {
+        this.commercialList = projects;
+        this.cacheService.setCommercialList(projects);
+        this.commercialList$ = null;
+      }),
+      shareReplay(1),
+      catchError(() => of([]))
+    );
+
+    return this.commercialList$;
   }
 
   getResidentialProjectDetails(id: string): Observable<Project | null> {
-    // Check memory cache first
-    const cached = this.cacheService.getResidentialProject(id);
+    // Check memory cache
+    const cached = this.residentialProjects.get(id);
     if (cached) {
-      // Fetch in background to keep fresh
-      this.fetchResidentialProjectFromFirestore(id).subscribe();
       return of(cached);
     }
 
-    return this.fetchResidentialProjectFromFirestore(id);
+    // Check localStorage cache
+    const localCached = this.cacheService.getResidentialProject(id);
+    if (localCached) {
+      this.residentialProjects.set(id, localCached);
+      return of(localCached);
+    }
+
+    // Load from JSON
+    return this.http.get<{projectData: Project[]}>('./assets/data/residential/projectDetails/projectDetailsData.json').pipe(
+      map(data => {
+        const project = data.projectData?.find(p => p.id?.toString() === id) || null;
+        if (project) {
+          this.residentialProjects.set(id, project);
+          this.cacheService.setResidentialProject(id, project);
+        }
+        return project;
+      }),
+      catchError(() => of(null))
+    );
   }
 
   getCommercialProjectDetails(id: string): Observable<Project | null> {
-    const cached = this.cacheService.getCommercialProject(id);
+    const cached = this.commercialProjects.get(id);
     if (cached) {
-      this.fetchCommercialProjectFromFirestore(id).subscribe();
       return of(cached);
     }
 
-    return this.fetchCommercialProjectFromFirestore(id);
+    const localCached = this.cacheService.getCommercialProject(id);
+    if (localCached) {
+      this.commercialProjects.set(id, localCached);
+      return of(localCached);
+    }
+
+    return this.http.get<{projectData: Project[]}>('./assets/data/commercial/projectDetails/projectDetailsData.json').pipe(
+      map(data => {
+        const project = data.projectData?.find(p => p.id?.toString() === id) || null;
+        if (project) {
+          this.commercialProjects.set(id, project);
+          this.cacheService.setCommercialProject(id, project);
+        }
+        return project;
+      }),
+      catchError(() => of(null))
+    );
   }
 
-  // ============ Preload all projects for instant navigation ============
+  // ============ Preload all project details ============
 
   preloadAllResidentialProjects(): Observable<Project[]> {
-    if (this.allResidentialProjects$.value) {
-      return of(this.allResidentialProjects$.value);
+    if (this.residentialDetailsLoaded) {
+      return of(Array.from(this.residentialProjects.values()));
     }
 
-    if (this.residentialDetailsLoading) {
-      return this.allResidentialProjects$.asObservable().pipe(
-        switchMap(v => v ? of(v) : of([]))
-      );
-    }
-
-    this.residentialDetailsLoading = true;
-
-    const residentialRef = collection(this.firestore, 'residential-projects');
-    return collectionData(residentialRef).pipe(
-      map(data => data as Project[]),
+    return this.http.get<{projectData: Project[]}>('./assets/data/residential/projectDetails/projectDetailsData.json').pipe(
+      map(data => data.projectData || []),
       tap(projects => {
-        this.allResidentialProjects$.next(projects);
-        this.cacheService.preloadResidentialProjects(projects);
-        this.residentialDetailsLoading = false;
+        projects.forEach(p => {
+          if (p.id) {
+            this.residentialProjects.set(p.id.toString(), p);
+            this.cacheService.setResidentialProject(p.id.toString(), p);
+          }
+        });
+        this.residentialDetailsLoaded = true;
       }),
-      catchError(err => {
-        console.error('Error preloading residential projects:', err);
-        this.residentialDetailsLoading = false;
-        // Fallback to JSON
-        return this.loadResidentialProjectsFromJson();
-      }),
-      shareReplay(1)
+      shareReplay(1),
+      catchError(() => of([]))
     );
   }
 
   preloadAllCommercialProjects(): Observable<Project[]> {
-    if (this.allCommercialProjects$.value) {
-      return of(this.allCommercialProjects$.value);
+    if (this.commercialDetailsLoaded) {
+      return of(Array.from(this.commercialProjects.values()));
     }
 
-    if (this.commercialDetailsLoading) {
-      return this.allCommercialProjects$.asObservable().pipe(
-        switchMap(v => v ? of(v) : of([]))
-      );
-    }
-
-    this.commercialDetailsLoading = true;
-
-    const commercialRef = collection(this.firestore, 'commercial-projects');
-    return collectionData(commercialRef).pipe(
-      map(data => data as Project[]),
-      tap(projects => {
-        this.allCommercialProjects$.next(projects);
-        this.cacheService.preloadCommercialProjects(projects);
-        this.commercialDetailsLoading = false;
-      }),
-      catchError(err => {
-        console.error('Error preloading commercial projects:', err);
-        this.commercialDetailsLoading = false;
-        return this.loadCommercialProjectsFromJson();
-      }),
-      shareReplay(1)
-    );
-  }
-
-  // ============ Private Firestore fetchers ============
-
-  private fetchResidentialListFromFirestore(): Observable<ProjectListItem[]> {
-    if (this.residentialListLoading) {
-      return this.residentialList$.asObservable().pipe(
-        switchMap(v => v ? of(v) : of([]))
-      );
-    }
-
-    this.residentialListLoading = true;
-
-    const residentialListRef = collection(this.firestore, 'residential-list');
-    return collectionData(residentialListRef).pipe(
-      map(data => data as ProjectListItem[]),
-      tap(projects => {
-        this.residentialList$.next(projects);
-        this.cacheService.setResidentialList(projects);
-        this.residentialListLoading = false;
-      }),
-      catchError(err => {
-        console.error('Firestore error, falling back to JSON:', err);
-        this.residentialListLoading = false;
-        return this.loadResidentialListFromJson();
-      }),
-      shareReplay(1)
-    );
-  }
-
-  private fetchCommercialListFromFirestore(): Observable<ProjectListItem[]> {
-    if (this.commercialListLoading) {
-      return this.commercialList$.asObservable().pipe(
-        switchMap(v => v ? of(v) : of([]))
-      );
-    }
-
-    this.commercialListLoading = true;
-
-    const commercialListRef = collection(this.firestore, 'commercial-list');
-    return collectionData(commercialListRef).pipe(
-      map(data => data as ProjectListItem[]),
-      tap(projects => {
-        this.commercialList$.next(projects);
-        this.cacheService.setCommercialList(projects);
-        this.commercialListLoading = false;
-      }),
-      catchError(err => {
-        console.error('Firestore error, falling back to JSON:', err);
-        this.commercialListLoading = false;
-        return this.loadCommercialListFromJson();
-      }),
-      shareReplay(1)
-    );
-  }
-
-  private fetchResidentialProjectFromFirestore(id: string): Observable<Project | null> {
-    const projectRef = doc(this.firestore, 'residential-projects', id);
-    return docData(projectRef).pipe(
-      map(data => data as Project | null),
-      tap(project => {
-        if (project) {
-          this.cacheService.setResidentialProject(id, project);
-        }
-      }),
-      catchError(err => {
-        console.error('Error fetching residential project:', err);
-        return this.loadResidentialProjectFromJson(id);
-      })
-    );
-  }
-
-  private fetchCommercialProjectFromFirestore(id: string): Observable<Project | null> {
-    const projectRef = doc(this.firestore, 'commercial-projects', id);
-    return docData(projectRef).pipe(
-      map(data => data as Project | null),
-      tap(project => {
-        if (project) {
-          this.cacheService.setCommercialProject(id, project);
-        }
-      }),
-      catchError(err => {
-        console.error('Error fetching commercial project:', err);
-        return this.loadCommercialProjectFromJson(id);
-      })
-    );
-  }
-
-  // ============ JSON Fallbacks ============
-
-  private loadResidentialListFromJson(): Observable<ProjectListItem[]> {
-    return this.http.get<{residentialComponent: ProjectListItem[]}>('./assets/data/residential/residentialListData.json').pipe(
-      map(data => data.residentialComponent || []),
-      tap(projects => {
-        this.residentialList$.next(projects);
-        this.cacheService.setResidentialList(projects);
-      }),
-      catchError(() => of([]))
-    );
-  }
-
-  private loadCommercialListFromJson(): Observable<ProjectListItem[]> {
-    return this.http.get<{commercialComponent: ProjectListItem[]}>('./assets/data/commercial/commercialListData.json').pipe(
-      map(data => data.commercialComponent || []),
-      tap(projects => {
-        this.commercialList$.next(projects);
-        this.cacheService.setCommercialList(projects);
-      }),
-      catchError(() => of([]))
-    );
-  }
-
-  private loadResidentialProjectFromJson(id: string): Observable<Project | null> {
-    return this.http.get<{projectData: Project[]}>('./assets/data/residential/projectDetails/projectDetailsData.json').pipe(
-      map(data => data.projectData?.find(p => p.id?.toString() === id) || null),
-      tap(project => {
-        if (project) {
-          this.cacheService.setResidentialProject(id, project);
-        }
-      }),
-      catchError(() => of(null))
-    );
-  }
-
-  private loadCommercialProjectFromJson(id: string): Observable<Project | null> {
-    return this.http.get<{projectData: Project[]}>('./assets/data/commercial/projectDetails/projectDetailsData.json').pipe(
-      map(data => data.projectData?.find(p => p.id?.toString() === id) || null),
-      tap(project => {
-        if (project) {
-          this.cacheService.setCommercialProject(id, project);
-        }
-      }),
-      catchError(() => of(null))
-    );
-  }
-
-  private loadResidentialProjectsFromJson(): Observable<Project[]> {
-    return this.http.get<{projectData: Project[]}>('./assets/data/residential/projectDetails/projectDetailsData.json').pipe(
-      map(data => data.projectData || []),
-      tap(projects => {
-        this.allResidentialProjects$.next(projects);
-        this.cacheService.preloadResidentialProjects(projects);
-      }),
-      catchError(() => of([]))
-    );
-  }
-
-  private loadCommercialProjectsFromJson(): Observable<Project[]> {
     return this.http.get<{projectData: Project[]}>('./assets/data/commercial/projectDetails/projectDetailsData.json').pipe(
       map(data => data.projectData || []),
       tap(projects => {
-        this.allCommercialProjects$.next(projects);
-        this.cacheService.preloadCommercialProjects(projects);
+        projects.forEach(p => {
+          if (p.id) {
+            this.commercialProjects.set(p.id.toString(), p);
+            this.cacheService.setCommercialProject(p.id.toString(), p);
+          }
+        });
+        this.commercialDetailsLoaded = true;
       }),
+      shareReplay(1),
       catchError(() => of([]))
     );
   }
 
-  // ============ Admin CRUD Operations ============
+  // ============ Admin CRUD (Firestore) ============
 
   async saveResidentialProject(project: Project): Promise<void> {
     const projectRef = doc(this.firestore, 'residential-projects', project.id);
     await setDoc(projectRef, project, { merge: true });
-    // Invalidate cache
-    this.cacheService.invalidateResidentialProject(project.id);
-    this.allResidentialProjects$.next(null);
+    this.residentialProjects.set(project.id, project);
+    this.cacheService.setResidentialProject(project.id, project);
   }
 
   async saveCommercialProject(project: Project): Promise<void> {
     const projectRef = doc(this.firestore, 'commercial-projects', project.id);
     await setDoc(projectRef, project, { merge: true });
-    this.cacheService.invalidateCommercialProject(project.id);
-    this.allCommercialProjects$.next(null);
+    this.commercialProjects.set(project.id, project);
+    this.cacheService.setCommercialProject(project.id, project);
   }
 
   async saveResidentialListItem(item: ProjectListItem): Promise<void> {
     const itemRef = doc(this.firestore, 'residential-list', item.id.toString());
     await setDoc(itemRef, item, { merge: true });
     this.cacheService.invalidateResidentialList();
-    this.residentialList$.next(null);
+    this.residentialList = null;
   }
 
   async saveCommercialListItem(item: ProjectListItem): Promise<void> {
     const itemRef = doc(this.firestore, 'commercial-list', item.id.toString());
     await setDoc(itemRef, item, { merge: true });
     this.cacheService.invalidateCommercialList();
-    this.commercialList$.next(null);
+    this.commercialList = null;
   }
 
   async deleteResidentialProject(id: string): Promise<void> {
     const projectRef = doc(this.firestore, 'residential-projects', id);
     const listRef = doc(this.firestore, 'residential-list', id);
-    await Promise.all([
-      deleteDoc(projectRef),
-      deleteDoc(listRef)
-    ]);
+    await Promise.all([deleteDoc(projectRef), deleteDoc(listRef)]);
+    this.residentialProjects.delete(id);
     this.cacheService.invalidateResidentialProject(id);
-    this.residentialList$.next(null);
-    this.allResidentialProjects$.next(null);
+    this.residentialList = null;
   }
 
   async deleteCommercialProject(id: string): Promise<void> {
     const projectRef = doc(this.firestore, 'commercial-projects', id);
     const listRef = doc(this.firestore, 'commercial-list', id);
-    await Promise.all([
-      deleteDoc(projectRef),
-      deleteDoc(listRef)
-    ]);
+    await Promise.all([deleteDoc(projectRef), deleteDoc(listRef)]);
+    this.commercialProjects.delete(id);
     this.cacheService.invalidateCommercialProject(id);
-    this.commercialList$.next(null);
-    this.allCommercialProjects$.next(null);
+    this.commercialList = null;
   }
 
   // ============ Image Upload ============
@@ -423,90 +300,65 @@ export class ProjectService {
     return from(deleteObject(storageRef));
   }
 
-  // ============ Migration helpers ============
+  // ============ Migration ============
 
   async migrateResidentialDataToFirestore(): Promise<void> {
     const listData = await firstValueFrom(this.http.get<{residentialComponent: ProjectListItem[]}>('./assets/data/residential/residentialListData.json'));
     const detailsData = await firstValueFrom(this.http.get<{projectData: Project[]}>('./assets/data/residential/projectDetails/projectDetailsData.json'));
 
-    if (listData) {
+    if (listData?.residentialComponent) {
       for (const item of listData.residentialComponent) {
         await this.saveResidentialListItem(item);
       }
     }
 
-    if (detailsData) {
+    if (detailsData?.projectData) {
       for (const project of detailsData.projectData) {
         await this.saveResidentialProject(project);
       }
     }
-
-    // Clear cache after migration
-    this.cacheService.invalidateAll();
   }
 
   async migrateCommercialDataToFirestore(): Promise<void> {
     const listData = await firstValueFrom(this.http.get<{commercialComponent: ProjectListItem[]}>('./assets/data/commercial/commercialListData.json'));
     const detailsData = await firstValueFrom(this.http.get<{projectData: Project[]}>('./assets/data/commercial/projectDetails/projectDetailsData.json'));
 
-    if (listData) {
+    if (listData?.commercialComponent) {
       for (const item of listData.commercialComponent) {
         await this.saveCommercialListItem(item);
       }
     }
 
-    if (detailsData) {
+    if (detailsData?.projectData) {
       for (const project of detailsData.projectData) {
         await this.saveCommercialProject(project);
       }
     }
-
-    this.cacheService.invalidateAll();
   }
 
   // ============ ID Generation ============
 
   async getNextResidentialId(): Promise<number> {
-    // Try from cache first
-    const cached = this.cacheService.getResidentialList();
-    if (cached && cached.length > 0) {
-      const maxId = Math.max(...cached.map(item =>
-        typeof item.id === 'number' ? item.id : parseInt(item.id as unknown as string, 10) || 0
-      ));
-      return maxId + 1;
+    if (this.residentialList && this.residentialList.length > 0) {
+      return Math.max(...this.residentialList.map(item => Number(item.id) || 0)) + 1;
     }
 
-    // Fall back to Firestore query
-    const residentialListRef = collection(this.firestore, 'residential-list');
-    const querySnapshot = await getDocs(residentialListRef);
-    if (querySnapshot.empty) {
-      return 1;
+    const data = await firstValueFrom(this.getResidentialProjects());
+    if (data.length > 0) {
+      return Math.max(...data.map(item => Number(item.id) || 0)) + 1;
     }
-    const maxId = Math.max(...querySnapshot.docs.map(doc => {
-      const data = doc.data() as ProjectListItem;
-      return typeof data.id === 'number' ? data.id : parseInt(data.id as unknown as string, 10) || 0;
-    }));
-    return maxId + 1;
+    return 1;
   }
 
   async getNextCommercialId(): Promise<number> {
-    const cached = this.cacheService.getCommercialList();
-    if (cached && cached.length > 0) {
-      const maxId = Math.max(...cached.map(item =>
-        typeof item.id === 'number' ? item.id : parseInt(item.id as unknown as string, 10) || 0
-      ));
-      return maxId + 1;
+    if (this.commercialList && this.commercialList.length > 0) {
+      return Math.max(...this.commercialList.map(item => Number(item.id) || 0)) + 1;
     }
 
-    const commercialListRef = collection(this.firestore, 'commercial-list');
-    const querySnapshot = await getDocs(commercialListRef);
-    if (querySnapshot.empty) {
-      return 1;
+    const data = await firstValueFrom(this.getCommercialProjects());
+    if (data.length > 0) {
+      return Math.max(...data.map(item => Number(item.id) || 0)) + 1;
     }
-    const maxId = Math.max(...querySnapshot.docs.map(doc => {
-      const data = doc.data() as ProjectListItem;
-      return typeof data.id === 'number' ? data.id : parseInt(data.id as unknown as string, 10) || 0;
-    }));
-    return maxId + 1;
+    return 1;
   }
 }
