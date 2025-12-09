@@ -8,6 +8,16 @@ service cloud.firestore {
               request.auth.token.email == 'bryon.bowers@gmail.com');
     }
 
+    // Check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Check if user owns the document
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
     // Residential projects - public read, admin write
     match /residential-projects/{projectId} {
       allow read: if true;
@@ -34,6 +44,19 @@ service cloud.firestore {
     match /contact-submissions/{submissionId} {
       allow create: if true;
       allow read, update, delete: if isAdmin();
+    }
+
+    // User roles - only admins can read/write, users can read their own role
+    match /user-roles/{userId} {
+      allow read: if isAdmin() || isOwner(userId);
+      allow write: if isAdmin();
+    }
+
+    // Active sessions - users can manage their own session, admins can read all
+    match /active-sessions/{userId} {
+      allow read: if isAdmin();
+      allow create, update: if isOwner(userId);
+      allow delete: if isOwner(userId) || isAdmin();
     }
   }
 }

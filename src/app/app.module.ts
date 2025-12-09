@@ -33,6 +33,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard.component';
 import { DeferLoadDirective } from './common/directives/defer-load.directive';
 import { ProjectEditorComponent } from './admin/project-editor.component';
 import { WaterEffectComponent } from './common/water-effect/water-effect.component';
+import { AdminGuard } from './guards/admin.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -89,11 +90,11 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
       { path: 'contact', component: ContactUsComponent },
       { path: 'contact-us', component: ContactUsComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'admin', component: AdminDashboardComponent },
+      { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard] },
       { path: 'ADMIN', redirectTo: 'admin', pathMatch: 'full' },
       { path: 'Admin', redirectTo: 'admin', pathMatch: 'full' },
-      { path: 'admin/project/:type/:id', component: ProjectEditorComponent },
-      { path: 'admin/project/:type', component: ProjectEditorComponent },
+      { path: 'admin/project/:type/:id', component: ProjectEditorComponent, canActivate: [AdminGuard] },
+      { path: 'admin/project/:type', component: ProjectEditorComponent, canActivate: [AdminGuard] },
       { path: 'productDetails/:page/:id', component: ProductDetailsComponent },
       { path: 'productDetails', component: ProductDetailsComponent }
     ]),

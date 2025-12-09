@@ -232,6 +232,152 @@
   }
 }
 
+// Users Section
+.users-section {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+
+    .text-muted {
+      color: #666;
+      font-size: 14px;
+    }
+  }
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-card {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  align-items: center;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.user-avatar {
+  position: relative;
+  flex-shrink: 0;
+
+  img, .avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .status-indicator {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid white;
+
+    &.online {
+      background: #28a745;
+    }
+
+    &.away {
+      background: #ffc107;
+    }
+
+    &.offline {
+      background: #6c757d;
+    }
+  }
+}
+
+.user-info {
+  flex: 1;
+
+  h4 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .user-email {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-size: 14px;
+  }
+
+  .user-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .last-active {
+      font-size: 13px;
+      color: #888;
+    }
+  }
+}
+
+.user-session {
+  text-align: right;
+
+  small {
+    font-size: 12px;
+  }
+}
+
+.badge-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.security-info {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+
+  h4 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    color: #495057;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #666;
+    font-size: 14px;
+
+    li {
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .admin-header {
     flex-direction: column;
@@ -247,5 +393,18 @@
   .project-actions {
     flex-direction: row;
     justify-content: center;
+  }
+
+  .user-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .user-info .user-meta {
+    justify-content: center;
+  }
+
+  .user-session {
+    text-align: center;
   }
 }

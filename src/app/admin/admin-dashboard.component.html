@@ -26,6 +26,12 @@
       (click)="setActiveTab('commercial')">
       Commercial Projects
     </button>
+    <button
+      class="tab-btn"
+      [class.active]="activeTab === 'users'"
+      (click)="setActiveTab('users')">
+      Active Users
+    </button>
   </div>
 
   <!-- Loading State -->
@@ -97,6 +103,57 @@
           <button class="btn btn-sm btn-danger" (click)="deleteProject('commercial', project.id)">Delete</button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Active Users -->
+  <div class="users-section" *ngIf="activeTab === 'users'">
+    <div class="section-header">
+      <h2>Currently Active Users</h2>
+      <p class="text-muted">Users who have been active in the last 5 minutes</p>
+    </div>
+
+    <div class="users-list" *ngIf="activeUsers$ | async as activeUsers">
+      <div class="alert alert-info" *ngIf="activeUsers.length === 0">
+        No active users at the moment.
+      </div>
+
+      <div class="user-card" *ngFor="let user of activeUsers">
+        <div class="user-avatar">
+          <img *ngIf="user.photoURL" [src]="user.photoURL" [alt]="user.displayName || user.email">
+          <div *ngIf="!user.photoURL" class="avatar-placeholder">
+            {{ (user.displayName || user.email || '?')[0].toUpperCase() }}
+          </div>
+          <span class="status-indicator online"></span>
+        </div>
+        <div class="user-info">
+          <h4>{{ user.displayName || 'Unknown User' }}</h4>
+          <p class="user-email">{{ user.email }}</p>
+          <div class="user-meta">
+            <span class="badge" [ngClass]="getRoleBadgeClass(user.role)">
+              {{ user.role | uppercase }}
+            </span>
+            <span class="last-active">
+              Active: {{ getTimeSince(user.lastActive) }}
+            </span>
+          </div>
+        </div>
+        <div class="user-session">
+          <small class="text-muted">
+            Session started: {{ user.loginTime | date:'short' }}
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="security-info mt-4">
+      <h4>Security Information</h4>
+      <ul>
+        <li>Admin access is restricted to approved email addresses</li>
+        <li>All admin actions are logged</li>
+        <li>Sessions expire after 5 minutes of inactivity</li>
+        <li>Firestore security rules protect all admin data</li>
+      </ul>
     </div>
   </div>
 </div>

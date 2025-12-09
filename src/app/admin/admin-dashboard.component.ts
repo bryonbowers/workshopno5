@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { AdminService } from '../services/admin.service';
+import { AdminService, ActiveSession } from '../services/admin.service';
 import { AuthService, User } from '../services/auth.service';
 import { ProjectService, ProjectListItem, Project } from '../services/project.service';
 import { CacheService } from '../services/cache.service';
@@ -15,13 +15,14 @@ import { CacheService } from '../services/cache.service';
 export class AdminDashboardComponent implements OnInit {
   user$: Observable<User | null>;
   isAdmin$: Observable<boolean>;
+  activeUsers$: Observable<ActiveSession[]>;
   residentialProjects: ProjectListItem[] = [];
   commercialProjects: ProjectListItem[] = [];
 
   isLoading = false;
   isMigrating = false;
   migrationMessage = '';
-  activeTab: 'residential' | 'commercial' = 'residential';
+  activeTab: 'residential' | 'commercial' | 'users' = 'residential';
 
   constructor(
     private adminService: AdminService,
@@ -32,6 +33,7 @@ export class AdminDashboardComponent implements OnInit {
   ) {
     this.user$ = this.authService.user$;
     this.isAdmin$ = this.adminService.isAdmin$;
+    this.activeUsers$ = this.adminService.activeUsers$;
   }
 
   ngOnInit(): void {
@@ -82,8 +84,27 @@ export class AdminDashboardComponent implements OnInit {
     this.loadProjects();
   }
 
-  setActiveTab(tab: 'residential' | 'commercial'): void {
+  setActiveTab(tab: 'residential' | 'commercial' | 'users'): void {
     this.activeTab = tab;
+  }
+
+  getTimeSince(date: Date): string {
+    const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
+    if (seconds < 60) return 'Just now';
+    const minutes = Math.floor(seconds / 60);
+    if (minutes < 60) return `${minutes}m ago`;
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours}h ago`;
+    const days = Math.floor(hours / 24);
+    return `${days}d ago`;
+  }
+
+  getRoleBadgeClass(role: string): string {
+    switch (role) {
+      case 'admin': return 'badge-danger';
+      case 'editor': return 'badge-warning';
+      default: return 'badge-secondary';
+    }
   }
 
   editProject(type: string, id: number): void {
