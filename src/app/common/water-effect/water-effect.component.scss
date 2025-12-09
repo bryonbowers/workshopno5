@@ -1,11 +1,6 @@
-// Water Effect Component Styles
-// Soothing, subtle water animation with mouse interaction
+// Snow Effect - Gentle falling snowflakes
 
-$water-color: rgba(147, 197, 214, 1);
-$water-color-light: rgba(180, 220, 240, 1);
-$water-color-pale: rgba(200, 230, 245, 1);
-
-.water-container {
+.snow-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -16,338 +11,45 @@ $water-color-pale: rgba(200, 230, 245, 1);
   overflow: hidden;
 }
 
-// Water streams flowing down - positioned between content
-.water-streams {
+.snowflake {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.8) 40%,
+    rgba(240, 248, 255, 0.6) 70%,
+    rgba(220, 240, 255, 0.3) 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    0 0 6px rgba(255, 255, 255, 0.5),
+    0 0 12px rgba(255, 255, 255, 0.2);
+  will-change: transform, top, left;
 
-  .stream {
+  // Subtle inner glow
+  &::before {
+    content: '';
     position: absolute;
-    width: 4px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba($water-color, 0.25) 5%,
-      rgba($water-color, 0.45) 20%,
-      rgba($water-color, 0.55) 50%,
-      rgba($water-color, 0.45) 80%,
-      rgba($water-color, 0.25) 95%,
-      transparent 100%
-    );
-    border-radius: 4px;
-    transition: left 0.15s ease-out;
-    will-change: transform, left;
-    box-shadow: 0 0 8px rgba($water-color, 0.3),
-                0 0 16px rgba($water-color, 0.15);
-
-    .stream-glow {
-      position: absolute;
-      top: 0;
-      left: -6px;
-      width: 16px;
-      height: 100%;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba($water-color-pale, 0.2) 20%,
-        rgba($water-color-pale, 0.3) 50%,
-        rgba($water-color-pale, 0.2) 80%,
-        transparent 100%
-      );
-      filter: blur(6px);
-    }
-
-    // Sparkle effect - more visible
-    &::after {
-      content: '';
-      position: absolute;
-      top: 30%;
-      left: -2px;
-      width: 8px;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 50%;
-      animation: sparkle 2s ease-in-out infinite;
-      box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-    }
-
-    // Second sparkle at different position
-    &::before {
-      content: '';
-      position: absolute;
-      top: 60%;
-      left: -1px;
-      width: 6px;
-      height: 6px;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      animation: sparkle 2.5s ease-in-out infinite;
-      animation-delay: 0.5s;
-    }
-  }
-}
-
-@keyframes sparkle {
-  0%, 100% { opacity: 0; transform: translateY(0); }
-  50% { opacity: 1; transform: translateY(20px); }
-}
-
-// Water droplets - larger and more visible
-.water-droplets {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  .droplet {
-    position: absolute;
-    width: 8px;
-    height: 14px;
-    background: radial-gradient(
-      ellipse at 30% 30%,
-      rgba(255, 255, 255, 0.8) 0%,
-      rgba($water-color-light, 0.6) 40%,
-      rgba($water-color, 0.4) 100%
-    );
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    transition: left 0.1s ease-out;
-    will-change: transform, top, left;
-    box-shadow: 0 2px 8px rgba($water-color, 0.4),
-                0 0 4px rgba(255, 255, 255, 0.3);
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 3px;
-      height: 3px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-    }
-  }
-}
-
-// Pool at the bottom - more visible
-.water-pool {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 150px;
-
-  .pool-surface {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to top,
-      rgba($water-color, 0.25) 0%,
-      rgba($water-color, 0.15) 40%,
-      rgba($water-color, 0.05) 80%,
-      transparent 100%
-    );
-
-    // Subtle wave pattern
-    &::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: 0;
-      width: 200%;
-      height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C150,80 350,40 600,60 C850,80 1050,40 1200,60 L1200,120 L0,120 Z' fill='rgba(147,197,214,0.05)'/%3E%3C/svg%3E");
-      background-repeat: repeat-x;
-      background-size: 50% 100%;
-      animation: waveMove 25s linear infinite;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: -4px;
-      left: 0;
-      width: 200%;
-      height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,50 C200,70 400,30 600,50 C800,70 1000,30 1200,50 L1200,120 L0,120 Z' fill='rgba(180,220,240,0.03)'/%3E%3C/svg%3E");
-      background-repeat: repeat-x;
-      background-size: 50% 100%;
-      animation: waveMove 18s linear infinite reverse;
-    }
-  }
-
-  .pool-depth {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: linear-gradient(
-      to top,
-      rgba($water-color, 0.08) 0%,
-      transparent 100%
-    );
-  }
-}
-
-@keyframes waveMove {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-// Ripples on pool surface
-.water-ripples {
-  position: absolute;
-  bottom: 80px;
-  left: 0;
-  width: 100%;
-  height: 40px;
-
-  .ripple {
-    position: absolute;
-    width: 40px;
-    height: 12px;
-    border: 1px solid rgba($water-color-light, 0.3);
-    border-radius: 50%;
-    transform-origin: center;
-    will-change: transform, opacity;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 3px;
-      left: 5px;
-      width: 30px;
-      height: 6px;
-      border: 1px solid rgba($water-color-light, 0.15);
-      border-radius: 50%;
-    }
-  }
-}
-
-// Rising mist - more visible
-.water-mist {
-  position: absolute;
-  bottom: 50px;
-  left: 0;
-  width: 100%;
-  height: 280px;
-  overflow: hidden;
-
-  .mist-particle {
-    position: absolute;
-    background: radial-gradient(
-      ellipse at center,
-      rgba($water-color-pale, 0.35) 0%,
-      rgba($water-color-pale, 0.2) 30%,
-      rgba($water-color-pale, 0.08) 60%,
-      transparent 100%
-    );
-    border-radius: 50%;
-    filter: blur(15px);
-    will-change: transform, opacity;
-  }
-}
-
-// Light reflections
-.water-reflections {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  width: 100%;
-  height: 60px;
-
-  .reflection {
-    position: absolute;
-    bottom: 15px;
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.12) 30%,
-      rgba(255, 255, 255, 0.18) 50%,
-      rgba(255, 255, 255, 0.12) 70%,
-      transparent 100%
-    );
+    top: 15%;
+    left: 15%;
+    width: 30%;
+    height: 30%;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
     filter: blur(1px);
-    animation: shimmer 8s ease-in-out infinite;
-
-    &:nth-child(1) {
-      left: 8%;
-      animation-delay: 0s;
-      animation-duration: 7s;
-    }
-
-    &:nth-child(2) {
-      left: 30%;
-      animation-delay: 2s;
-      animation-duration: 9s;
-      width: 60px;
-    }
-
-    &:nth-child(3) {
-      left: 55%;
-      animation-delay: 4s;
-      animation-duration: 6s;
-      width: 100px;
-    }
-
-    &:nth-child(4) {
-      left: 80%;
-      animation-delay: 1s;
-      animation-duration: 8s;
-      width: 70px;
-    }
-  }
-}
-
-@keyframes shimmer {
-  0%, 100% {
-    opacity: 0.3;
-    transform: scaleX(1) translateX(0);
-  }
-  25% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.6;
-    transform: scaleX(1.3) translateX(5px);
-  }
-  75% {
-    opacity: 0.4;
   }
 }
 
 // Accessibility: respect reduced motion preference
 @media (prefers-reduced-motion: reduce) {
-  .water-container {
+  .snow-container {
     display: none;
   }
 }
 
-// Performance: simplify on mobile
+// Reduce snowflakes on mobile for performance
 @media (max-width: 768px) {
-  .water-streams .stream:nth-child(n+5) {
+  .snowflake:nth-child(n+40) {
     display: none;
-  }
-
-  .water-droplets .droplet:nth-child(n+6) {
-    display: none;
-  }
-
-  .water-mist .mist-particle:nth-child(n+6) {
-    display: none;
-  }
-
-  .water-mist .mist-particle {
-    filter: blur(8px);
   }
 }

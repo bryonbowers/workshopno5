@@ -1,42 +1,17 @@
-import { Component, OnInit, OnDestroy, HostListener, ElementRef, NgZone } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, NgZone } from '@angular/core';
 
-interface WaterStream {
+interface Snowflake {
   id: number;
   x: number;
   baseX: number;
   y: number;
-  height: number;
-  speed: number;
-  delay: number;
-  deflection: number;
-  deflectionTarget: number;
-}
-
-interface MistParticle {
-  id: number;
-  x: number;
-  y: number;
   size: number;
   speed: number;
-  delay: number;
   opacity: number;
-}
-
-interface Droplet {
-  id: number;
-  x: number;
-  y: number;
-  speed: number;
-  active: boolean;
-}
-
-interface Ripple {
-  id: number;
-  x: number;
-  y: number;
-  scale: number;
-  opacity: number;
-  active: boolean;
+  wobble: number;
+  wobbleSpeed: number;
+  rotation: number;
+  rotationSpeed: number;
 }
 
 @Component({
@@ -45,25 +20,18 @@ interface Ripple {
   styleUrls: ['./water-effect.component.scss']
 })
 export class WaterEffectComponent implements OnInit, OnDestroy {
-  streams: WaterStream[] = [];
-  mistParticles: MistParticle[] = [];
-  droplets: Droplet[] = [];
-  ripples: Ripple[] = [];
+  snowflakes: Snowflake[] = [];
 
   private mouseX = -1000;
   private mouseY = -1000;
   private animationFrame: number | null = null;
   private lastTime = 0;
-  private poolHeight = 120;
-  private interactionRadius = 80;
+  private interactionRadius = 100;
 
-  constructor(private ngZone: NgZone, private elementRef: ElementRef) {}
+  constructor(private ngZone: NgZone) {}
 
   ngOnInit(): void {
-    this.initializeStreams();
-    this.initializeMist();
-    this.initializeDroplets();
-    this.initializeRipples();
+    this.initializeSnowflakes();
 
     // Run animation outside Angular zone for performance
     this.ngZone.runOutsideAngular(() => {
@@ -89,223 +57,92 @@ export class WaterEffectComponent implements OnInit, OnDestroy {
     this.mouseY = -1000;
   }
 
-  private initializeStreams(): void {
-    // Position streams between the 3-column grid (at ~33% and ~66% gaps)
-    // Plus some along the edges for visual balance
-    const positions = [
-      3,    // left edge
-      15,   // between edge and first column
-      33,   // between column 1 and 2 (main stream)
-      34,   // second stream in same gap
-      50,   // center
-      66,   // between column 2 and 3 (main stream)
-      67,   // second stream in same gap
-      85,   // between last column and edge
-      97    // right edge
-    ];
-    this.streams = positions.map((x, i) => ({
-      id: i,
-      x: x,
-      baseX: x,
-      y: -50 - (Math.random() * 200), // stagger start positions
-      height: 200 + Math.random() * 150, // longer streams
-      speed: 0.12 + Math.random() * 0.06, // slightly faster
-      delay: Math.random() * 8000,
-      deflection: 0,
-      deflectionTarget: 0
-    }));
+  private initializeSnowflakes(): void {
+    // Create 60 snowflakes spread across the screen
+    this.snowflakes = Array.from({ length: 60 }, (_, i) => this.createSnowflake(i, true));
   }
 
-  private initializeMist(): void {
-    this.mistParticles = Array.from({ length: 16 }, (_, i) => ({
-      id: i,
-      x: 5 + Math.random() * 90,
-      y: 0,
-      size: 80 + Math.random() * 80, // larger mist particles
-      speed: 0.025 + Math.random() * 0.025,
-      delay: Math.random() * 12000,
-      opacity: 0
-    }));
-  }
-
-  private initializeDroplets(): void {
-    // More droplets, positioned near stream locations
-    const streamPositions = [15, 33, 50, 66, 85];
-    this.droplets = Array.from({ length: 15 }, (_, i) => ({
-      id: i,
-      x: streamPositions[i % streamPositions.length] + (Math.random() * 6 - 3),
-      y: Math.random() * -100,
-      speed: 0.15 + Math.random() * 0.1, // faster drops
-      active: true
-    }));
-  }
-
-  private initializeRipples(): void {
-    this.ripples = Array.from({ length: 8 }, (_, i) => ({
-      id: i,
-      x: 10 + (i * 12),
-      y: 0,
-      scale: 0,
-      opacity: 0,
-      active: false
-    }));
+  private createSnowflake(id: number, randomY: boolean = false): Snowflake {
+    return {
+      id,
+      x: Math.random() * 100,
+      baseX: Math.random() * 100,
+      y: randomY ? Math.random() * 100 : -5 - Math.random() * 10,
+      size: 3 + Math.random() * 8, // 3-11px
+      speed: 0.015 + Math.random() * 0.025, // slow falling
+      opacity: 0.3 + Math.random() * 0.5,
+      wobble: 0,
+      wobbleSpeed: 0.5 + Math.random() * 1.5,
+      rotation: Math.random() * 360,
+      rotationSpeed: (Math.random() - 0.5) * 2
+    };
   }
 
   private animate(time: number): void {
     const deltaTime = time - this.lastTime;
     this.lastTime = time;
 
-    this.updateStreams(deltaTime);
-    this.updateMist(deltaTime);
-    this.updateDroplets(deltaTime);
-    this.updateRipples(deltaTime);
+    if (deltaTime > 0) {
+      this.updateSnowflakes(deltaTime);
+    }
 
     this.animationFrame = requestAnimationFrame((t) => this.animate(t));
   }
 
-  private updateStreams(deltaTime: number): void {
-    const viewportHeight = window.innerHeight;
+  private updateSnowflakes(deltaTime: number): void {
     const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
 
-    this.streams.forEach(stream => {
-      // Update Y position
-      stream.y += stream.speed * deltaTime;
+    this.snowflakes.forEach(flake => {
+      // Gentle falling
+      flake.y += flake.speed * deltaTime;
+
+      // Wobble side to side
+      flake.wobble += flake.wobbleSpeed * deltaTime * 0.01;
+      const wobbleOffset = Math.sin(flake.wobble) * 0.3;
+
+      // Rotate
+      flake.rotation += flake.rotationSpeed * deltaTime * 0.05;
+
+      // Calculate pixel position for mouse interaction
+      const flakePixelX = (flake.baseX / 100) * viewportWidth;
+      const flakePixelY = (flake.y / 100) * viewportHeight;
+
+      // Mouse interaction - push snowflakes away gently
+      const dx = this.mouseX - flakePixelX;
+      const dy = this.mouseY - flakePixelY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < this.interactionRadius) {
+        const force = (this.interactionRadius - distance) / this.interactionRadius;
+        const pushX = (dx > 0 ? -1 : 1) * force * 3;
+        const pushY = (dy > 0 ? -1 : 1) * force * 2;
+        flake.x = flake.baseX + wobbleOffset + pushX;
+        flake.y += pushY * 0.1;
+      } else {
+        flake.x = flake.baseX + wobbleOffset;
+      }
 
       // Reset when off screen
-      if (stream.y > viewportHeight + stream.height) {
-        stream.y = -stream.height - 50;
-        stream.delay = 0;
-      }
-
-      // Calculate stream position in pixels
-      const streamPixelX = (stream.baseX / 100) * viewportWidth;
-
-      // Check mouse interaction
-      const dx = this.mouseX - streamPixelX;
-      const dy = this.mouseY - stream.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      if (distance < this.interactionRadius && stream.y > 0 && stream.y < viewportHeight) {
-        // Calculate deflection - push water away from mouse
-        const force = (this.interactionRadius - distance) / this.interactionRadius;
-        const deflectDirection = dx > 0 ? -1 : 1;
-        stream.deflectionTarget = deflectDirection * force * 60;
-      } else {
-        // Gradually return to original position
-        stream.deflectionTarget = 0;
-      }
-
-      // Smooth deflection
-      stream.deflection += (stream.deflectionTarget - stream.deflection) * 0.1;
-      stream.x = stream.baseX + (stream.deflection / viewportWidth) * 100;
-    });
-  }
-
-  private updateMist(deltaTime: number): void {
-    const viewportHeight = window.innerHeight;
-
-    this.mistParticles.forEach(particle => {
-      particle.y += particle.speed * deltaTime;
-
-      // Fade in and out - higher max opacity for visibility
-      if (particle.y < 60) {
-        particle.opacity = Math.min(0.6, particle.y / 60 * 0.6);
-      } else if (particle.y > 180) {
-        particle.opacity = Math.max(0, (250 - particle.y) / 70 * 0.6);
-      }
-
-      // Reset
-      if (particle.y > 250) {
-        particle.y = 0;
-        particle.x = 5 + Math.random() * 90;
-        particle.opacity = 0;
+      if (flake.y > 105) {
+        flake.y = -5;
+        flake.baseX = Math.random() * 100;
+        flake.x = flake.baseX;
+        flake.size = 3 + Math.random() * 8;
+        flake.speed = 0.015 + Math.random() * 0.025;
+        flake.opacity = 0.3 + Math.random() * 0.5;
       }
     });
   }
 
-  private updateDroplets(deltaTime: number): void {
-    const viewportHeight = window.innerHeight;
-    const viewportWidth = window.innerWidth;
-
-    this.droplets.forEach(droplet => {
-      droplet.y += droplet.speed * deltaTime;
-
-      // Check mouse collision for droplets too
-      const dropletPixelX = (droplet.x / 100) * viewportWidth;
-      const dropletPixelY = (droplet.y / 100) * viewportHeight;
-      const dx = this.mouseX - dropletPixelX;
-      const dy = this.mouseY - dropletPixelY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      if (distance < 50) {
-        // Splash away from mouse
-        droplet.x += (dx > 0 ? -2 : 2);
-      }
-
-      // Reset
-      if (droplet.y > 100) {
-        droplet.y = -10;
-        droplet.x = 5 + Math.random() * 90;
-
-        // Trigger a ripple
-        const availableRipple = this.ripples.find(r => !r.active);
-        if (availableRipple) {
-          availableRipple.x = droplet.x;
-          availableRipple.scale = 0.5;
-          availableRipple.opacity = 0.4;
-          availableRipple.active = true;
-        }
-      }
-    });
-  }
-
-  private updateRipples(deltaTime: number): void {
-    this.ripples.forEach(ripple => {
-      if (ripple.active) {
-        ripple.scale += 0.002 * deltaTime;
-        ripple.opacity -= 0.0003 * deltaTime;
-
-        if (ripple.opacity <= 0) {
-          ripple.active = false;
-          ripple.scale = 0;
-          ripple.opacity = 0;
-        }
-      }
-    });
-  }
-
-  getStreamStyle(stream: WaterStream) {
+  getSnowflakeStyle(flake: Snowflake) {
     return {
-      left: stream.x + '%',
-      top: stream.y + 'px',
-      height: stream.height + 'px',
-      opacity: stream.y > 0 ? 1 : 0
-    };
-  }
-
-  getMistStyle(particle: MistParticle) {
-    return {
-      left: particle.x + '%',
-      bottom: particle.y + 'px',
-      width: particle.size + 'px',
-      height: particle.size + 'px',
-      opacity: particle.opacity
-    };
-  }
-
-  getDropletStyle(droplet: Droplet) {
-    return {
-      left: droplet.x + '%',
-      top: droplet.y + '%',
-      opacity: droplet.y > 0 && droplet.y < 95 ? 0.6 : 0
-    };
-  }
-
-  getRippleStyle(ripple: Ripple) {
-    return {
-      left: ripple.x + '%',
-      transform: `scale(${ripple.scale})`,
-      opacity: ripple.opacity
+      left: flake.x + '%',
+      top: flake.y + '%',
+      width: flake.size + 'px',
+      height: flake.size + 'px',
+      opacity: flake.opacity,
+      transform: `rotate(${flake.rotation}deg)`
     };
   }
 }
