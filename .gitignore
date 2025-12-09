@@ -49,3 +49,18 @@ firebasereferenceproject/
 firebasereferenceproject/
 api/
 keys/
+
+# Secrets and credentials - NEVER commit these
+*.pem
+*.key
+*.p12
+*.pfx
+*-adminsdk-*.json
+*service*account*.json
+credentials*.json
+secrets*.json
+.env
+.env.*
+!.env.example
+*.secret
+serviceAccountKey.json
