@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { provideHttpClient, withInterceptorsFromDi, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { environment } from '../environments/environment';
 import { AdminDashboardComponent } from './admin/admin-dashboard.component';
 import { DeferLoadDirective } from './common/directives/defer-load.directive';
 import { ProjectEditorComponent } from './admin/project-editor.component';
+import { WaterEffectComponent } from './common/water-effect/water-effect.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -65,10 +67,12 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
     LoginComponent,
     AdminDashboardComponent,
     ProjectEditorComponent,
-    DeferLoadDirective
+    DeferLoadDirective,
+    WaterEffectComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
     FormsModule,

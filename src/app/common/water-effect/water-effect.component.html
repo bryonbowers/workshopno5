@@ -1,0 +1,53 @@
+<div class="water-container">
+  <!-- Flowing water streams -->
+  <div class="water-streams">
+    <div
+      *ngFor="let stream of streams"
+      class="stream"
+      [ngStyle]="getStreamStyle(stream)">
+      <div class="stream-glow"></div>
+    </div>
+  </div>
+
+  <!-- Falling droplets -->
+  <div class="water-droplets">
+    <div
+      *ngFor="let droplet of droplets"
+      class="droplet"
+      [ngStyle]="getDropletStyle(droplet)">
+    </div>
+  </div>
+
+  <!-- Pool at the bottom -->
+  <div class="water-pool">
+    <div class="pool-surface"></div>
+    <div class="pool-depth"></div>
+  </div>
+
+  <!-- Ripples on the pool surface -->
+  <div class="water-ripples">
+    <div
+      *ngFor="let ripple of ripples"
+      class="ripple"
+      [class.active]="ripple.active"
+      [ngStyle]="getRippleStyle(ripple)">
+    </div>
+  </div>
+
+  <!-- Rising mist -->
+  <div class="water-mist">
+    <div
+      *ngFor="let particle of mistParticles"
+      class="mist-particle"
+      [ngStyle]="getMistStyle(particle)">
+    </div>
+  </div>
+
+  <!-- Ambient reflections -->
+  <div class="water-reflections">
+    <div class="reflection"></div>
+    <div class="reflection"></div>
+    <div class="reflection"></div>
+    <div class="reflection"></div>
+  </div>
+</div>

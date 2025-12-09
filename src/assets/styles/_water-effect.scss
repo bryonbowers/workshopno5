@@ -1,0 +1,432 @@
+// Soothing Water Effect
+// Subtle flowing water from crevices with pooling and mist
+
+.water-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+// Water streams flowing down from crevices
+.water-streams {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  .stream {
+    position: absolute;
+    top: -20px;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(147, 197, 214, 0.15) 10%,
+      rgba(147, 197, 214, 0.25) 50%,
+      rgba(147, 197, 214, 0.15) 90%,
+      transparent 100%
+    );
+    border-radius: 2px;
+    animation: flowDown var(--flow-duration, 8s) ease-in infinite;
+    animation-delay: var(--flow-delay, 0s);
+    opacity: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -1px;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(200, 230, 245, 0.1) 50%,
+        transparent 100%
+      );
+      filter: blur(2px);
+    }
+
+    // Individual stream positions and timing
+    &:nth-child(1) {
+      left: 8%;
+      height: 180px;
+      --flow-duration: 7s;
+      --flow-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      left: 23%;
+      height: 220px;
+      --flow-duration: 9s;
+      --flow-delay: 2s;
+    }
+
+    &:nth-child(3) {
+      left: 45%;
+      height: 160px;
+      --flow-duration: 6s;
+      --flow-delay: 4s;
+    }
+
+    &:nth-child(4) {
+      left: 67%;
+      height: 200px;
+      --flow-duration: 8s;
+      --flow-delay: 1s;
+    }
+
+    &:nth-child(5) {
+      left: 82%;
+      height: 240px;
+      --flow-duration: 10s;
+      --flow-delay: 3s;
+    }
+
+    &:nth-child(6) {
+      left: 92%;
+      height: 170px;
+      --flow-duration: 7s;
+      --flow-delay: 5s;
+    }
+  }
+}
+
+@keyframes flowDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(100vh + 100%));
+    opacity: 0;
+  }
+}
+
+// Water droplets for more organic feel
+.water-droplets {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  .droplet {
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(180, 220, 240, 0.4) 0%,
+      rgba(147, 197, 214, 0.2) 50%,
+      transparent 100%
+    );
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: dropletFall var(--drop-duration, 4s) ease-in infinite;
+    animation-delay: var(--drop-delay, 0s);
+    opacity: 0;
+
+    &:nth-child(1) { left: 12%; --drop-duration: 3.5s; --drop-delay: 0.5s; }
+    &:nth-child(2) { left: 28%; --drop-duration: 4s; --drop-delay: 1.2s; }
+    &:nth-child(3) { left: 35%; --drop-duration: 3s; --drop-delay: 2.8s; }
+    &:nth-child(4) { left: 52%; --drop-duration: 4.5s; --drop-delay: 0.8s; }
+    &:nth-child(5) { left: 71%; --drop-duration: 3.2s; --drop-delay: 1.9s; }
+    &:nth-child(6) { left: 78%; --drop-duration: 4.2s; --drop-delay: 3.1s; }
+    &:nth-child(7) { left: 88%; --drop-duration: 3.8s; --drop-delay: 0.3s; }
+    &:nth-child(8) { left: 5%; --drop-duration: 4.1s; --drop-delay: 2.2s; }
+  }
+}
+
+@keyframes dropletFall {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100vh) scale(0.8);
+    opacity: 0;
+  }
+}
+
+// Pool at the bottom
+.water-pool {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to top,
+    rgba(147, 197, 214, 0.12) 0%,
+    rgba(147, 197, 214, 0.08) 30%,
+    rgba(147, 197, 214, 0.03) 70%,
+    transparent 100%
+  );
+
+  // Gentle wave layers
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+  }
+
+  &::before {
+    top: -10px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C150,90 350,30 600,60 C850,90 1050,30 1200,60 L1200,120 L0,120 Z' fill='rgba(147,197,214,0.06)'/%3E%3C/svg%3E");
+    animation: waveGentleMove 20s linear infinite;
+  }
+
+  &::after {
+    top: -5px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C200,70 400,20 600,50 C800,80 1000,30 1200,40 L1200,120 L0,120 Z' fill='rgba(180,220,240,0.04)'/%3E%3C/svg%3E");
+    animation: waveGentleMove 15s linear infinite reverse;
+    animation-delay: -5s;
+  }
+}
+
+@keyframes waveGentleMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+// Ripples where water hits the pool
+.water-ripples {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  .ripple {
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    border: 1px solid rgba(180, 220, 240, 0.2);
+    border-radius: 50%;
+    animation: rippleExpand 4s ease-out infinite;
+    opacity: 0;
+
+    &:nth-child(1) { left: 8%; --ripple-delay: 0s; }
+    &:nth-child(2) { left: 23%; --ripple-delay: 2s; }
+    &:nth-child(3) { left: 45%; --ripple-delay: 4s; }
+    &:nth-child(4) { left: 67%; --ripple-delay: 1s; }
+    &:nth-child(5) { left: 82%; --ripple-delay: 3s; }
+
+    animation-delay: var(--ripple-delay, 0s);
+  }
+}
+
+@keyframes rippleExpand {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+// Mist effect rising from the pool
+.water-mist {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+
+  .mist-particle {
+    position: absolute;
+    bottom: 0;
+    width: var(--mist-size, 80px);
+    height: var(--mist-size, 80px);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(200, 230, 245, 0.08) 0%,
+      rgba(200, 230, 245, 0.04) 40%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    filter: blur(8px);
+    animation: mistRise var(--mist-duration, 12s) ease-out infinite;
+    animation-delay: var(--mist-delay, 0s);
+    opacity: 0;
+
+    &:nth-child(1) {
+      left: 5%;
+      --mist-size: 100px;
+      --mist-duration: 14s;
+      --mist-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      left: 15%;
+      --mist-size: 60px;
+      --mist-duration: 10s;
+      --mist-delay: 3s;
+    }
+
+    &:nth-child(3) {
+      left: 30%;
+      --mist-size: 90px;
+      --mist-duration: 13s;
+      --mist-delay: 1s;
+    }
+
+    &:nth-child(4) {
+      left: 45%;
+      --mist-size: 70px;
+      --mist-duration: 11s;
+      --mist-delay: 5s;
+    }
+
+    &:nth-child(5) {
+      left: 55%;
+      --mist-size: 110px;
+      --mist-duration: 15s;
+      --mist-delay: 2s;
+    }
+
+    &:nth-child(6) {
+      left: 68%;
+      --mist-size: 65px;
+      --mist-duration: 9s;
+      --mist-delay: 4s;
+    }
+
+    &:nth-child(7) {
+      left: 80%;
+      --mist-size: 85px;
+      --mist-duration: 12s;
+      --mist-delay: 6s;
+    }
+
+    &:nth-child(8) {
+      left: 90%;
+      --mist-size: 75px;
+      --mist-duration: 11s;
+      --mist-delay: 1.5s;
+    }
+  }
+}
+
+@keyframes mistRise {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-180px) translateX(20px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+// Ambient light reflections on the pool
+.water-reflections {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+
+  .reflection {
+    position: absolute;
+    bottom: 20px;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.15) 50%,
+      transparent 100%
+    );
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: reflectionShimmer var(--shimmer-duration, 8s) ease-in-out infinite;
+    animation-delay: var(--shimmer-delay, 0s);
+
+    &:nth-child(1) { left: 10%; --shimmer-duration: 7s; --shimmer-delay: 0s; }
+    &:nth-child(2) { left: 25%; --shimmer-duration: 9s; --shimmer-delay: 2s; }
+    &:nth-child(3) { left: 40%; --shimmer-duration: 6s; --shimmer-delay: 4s; }
+    &:nth-child(4) { left: 60%; --shimmer-duration: 8s; --shimmer-delay: 1s; }
+    &:nth-child(5) { left: 75%; --shimmer-duration: 10s; --shimmer-delay: 3s; }
+    &:nth-child(6) { left: 88%; --shimmer-duration: 7s; --shimmer-delay: 5s; }
+  }
+}
+
+@keyframes reflectionShimmer {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scaleX(1.5);
+  }
+}
+
+// Reduce motion for accessibility
+@media (prefers-reduced-motion: reduce) {
+  .water-container {
+    display: none;
+  }
+}
+
+// Hide on smaller screens for performance
+@media (max-width: 768px) {
+  .water-streams .stream {
+    &:nth-child(n+4) {
+      display: none;
+    }
+  }
+
+  .water-mist .mist-particle {
+    &:nth-child(n+5) {
+      display: none;
+    }
+  }
+
+  .water-droplets .droplet {
+    &:nth-child(n+5) {
+      display: none;
+    }
+  }
+}
