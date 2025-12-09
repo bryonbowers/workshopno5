@@ -90,14 +90,26 @@ export class WaterEffectComponent implements OnInit, OnDestroy {
   }
 
   private initializeStreams(): void {
-    const positions = [8, 18, 32, 48, 62, 76, 88, 95];
+    // Position streams between the 3-column grid (at ~33% and ~66% gaps)
+    // Plus some along the edges for visual balance
+    const positions = [
+      3,    // left edge
+      15,   // between edge and first column
+      33,   // between column 1 and 2 (main stream)
+      34,   // second stream in same gap
+      50,   // center
+      66,   // between column 2 and 3 (main stream)
+      67,   // second stream in same gap
+      85,   // between last column and edge
+      97    // right edge
+    ];
     this.streams = positions.map((x, i) => ({
       id: i,
       x: x,
       baseX: x,
-      y: -50,
-      height: 150 + Math.random() * 100,
-      speed: 0.08 + Math.random() * 0.04,
+      y: -50 - (Math.random() * 200), // stagger start positions
+      height: 200 + Math.random() * 150, // longer streams
+      speed: 0.12 + Math.random() * 0.06, // slightly faster
       delay: Math.random() * 8000,
       deflection: 0,
       deflectionTarget: 0
@@ -105,23 +117,25 @@ export class WaterEffectComponent implements OnInit, OnDestroy {
   }
 
   private initializeMist(): void {
-    this.mistParticles = Array.from({ length: 12 }, (_, i) => ({
+    this.mistParticles = Array.from({ length: 16 }, (_, i) => ({
       id: i,
       x: 5 + Math.random() * 90,
       y: 0,
-      size: 60 + Math.random() * 60,
-      speed: 0.02 + Math.random() * 0.02,
+      size: 80 + Math.random() * 80, // larger mist particles
+      speed: 0.025 + Math.random() * 0.025,
       delay: Math.random() * 12000,
       opacity: 0
     }));
   }
 
   private initializeDroplets(): void {
-    this.droplets = Array.from({ length: 10 }, (_, i) => ({
+    // More droplets, positioned near stream locations
+    const streamPositions = [15, 33, 50, 66, 85];
+    this.droplets = Array.from({ length: 15 }, (_, i) => ({
       id: i,
-      x: 5 + Math.random() * 90,
+      x: streamPositions[i % streamPositions.length] + (Math.random() * 6 - 3),
       y: Math.random() * -100,
-      speed: 0.1 + Math.random() * 0.1,
+      speed: 0.15 + Math.random() * 0.1, // faster drops
       active: true
     }));
   }
@@ -193,15 +207,15 @@ export class WaterEffectComponent implements OnInit, OnDestroy {
     this.mistParticles.forEach(particle => {
       particle.y += particle.speed * deltaTime;
 
-      // Fade in and out
-      if (particle.y < 50) {
-        particle.opacity = Math.min(0.4, particle.y / 50 * 0.4);
-      } else if (particle.y > 150) {
-        particle.opacity = Math.max(0, (200 - particle.y) / 50 * 0.4);
+      // Fade in and out - higher max opacity for visibility
+      if (particle.y < 60) {
+        particle.opacity = Math.min(0.6, particle.y / 60 * 0.6);
+      } else if (particle.y > 180) {
+        particle.opacity = Math.max(0, (250 - particle.y) / 70 * 0.6);
       }
 
       // Reset
-      if (particle.y > 200) {
+      if (particle.y > 250) {
         particle.y = 0;
         particle.x = 5 + Math.random() * 90;
         particle.opacity = 0;
