@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener, NgZone } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ChangeDetectorRef } from '@angular/core';
 
 interface Snowflake {
   id: number;
@@ -28,15 +28,12 @@ export class WaterEffectComponent implements OnInit, OnDestroy {
   private lastTime = 0;
   private interactionRadius = 100;
 
-  constructor(private ngZone: NgZone) {}
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.initializeSnowflakes();
-
-    // Run animation outside Angular zone for performance
-    this.ngZone.runOutsideAngular(() => {
-      this.animate(0);
-    });
+    this.lastTime = performance.now();
+    this.animate();
   }
 
   ngOnDestroy(): void {
@@ -78,15 +75,17 @@ export class WaterEffectComponent implements OnInit, OnDestroy {
     };
   }
 
-  private animate(time: number): void {
-    const deltaTime = time - this.lastTime;
-    this.lastTime = time;
+  private animate(): void {
+    const now = performance.now();
+    const deltaTime = now - this.lastTime;
+    this.lastTime = now;
 
-    if (deltaTime > 0) {
+    if (deltaTime > 0 && deltaTime < 100) { // Cap deltaTime to avoid jumps
       this.updateSnowflakes(deltaTime);
+      this.cdr.detectChanges();
     }
 
-    this.animationFrame = requestAnimationFrame((t) => this.animate(t));
+    this.animationFrame = requestAnimationFrame(() => this.animate());
   }
 
   private updateSnowflakes(deltaTime: number): void {
