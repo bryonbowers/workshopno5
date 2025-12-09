@@ -69,10 +69,10 @@ export class WaterEffectComponent implements OnInit, OnDestroy {
       baseX: Math.random() * 100,
       y: randomY ? Math.random() * 100 : -5 - Math.random() * 10,
       size: 3 + Math.random() * 8, // 3-11px
-      speed: 0.015 + Math.random() * 0.025, // slow falling
-      opacity: 0.3 + Math.random() * 0.5,
+      speed: 0.3 + Math.random() * 0.4, // visible falling speed
+      opacity: 0.4 + Math.random() * 0.5,
       wobble: 0,
-      wobbleSpeed: 0.5 + Math.random() * 1.5,
+      wobbleSpeed: 1 + Math.random() * 2,
       rotation: Math.random() * 360,
       rotationSpeed: (Math.random() - 0.5) * 2
     };
@@ -93,16 +93,19 @@ export class WaterEffectComponent implements OnInit, OnDestroy {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
+    // Normalize deltaTime (target 60fps = 16.67ms per frame)
+    const normalizedDelta = deltaTime / 16.67;
+
     this.snowflakes.forEach(flake => {
-      // Gentle falling
-      flake.y += flake.speed * deltaTime;
+      // Gentle falling - move as percentage of viewport
+      flake.y += flake.speed * normalizedDelta;
 
       // Wobble side to side
-      flake.wobble += flake.wobbleSpeed * deltaTime * 0.01;
-      const wobbleOffset = Math.sin(flake.wobble) * 0.3;
+      flake.wobble += flake.wobbleSpeed * normalizedDelta * 0.05;
+      const wobbleOffset = Math.sin(flake.wobble) * 0.5;
 
       // Rotate
-      flake.rotation += flake.rotationSpeed * deltaTime * 0.05;
+      flake.rotation += flake.rotationSpeed * normalizedDelta;
 
       // Calculate pixel position for mouse interaction
       const flakePixelX = (flake.baseX / 100) * viewportWidth;
@@ -129,8 +132,8 @@ export class WaterEffectComponent implements OnInit, OnDestroy {
         flake.baseX = Math.random() * 100;
         flake.x = flake.baseX;
         flake.size = 3 + Math.random() * 8;
-        flake.speed = 0.015 + Math.random() * 0.025;
-        flake.opacity = 0.3 + Math.random() * 0.5;
+        flake.speed = 0.3 + Math.random() * 0.4;
+        flake.opacity = 0.4 + Math.random() * 0.5;
       }
     });
   }
